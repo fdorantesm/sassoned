@@ -12,12 +12,32 @@
 	margin 0
 	@extends .lsn
 	
-for x in 1..3
+for x in 1..4
 	.cols-{x}
 		columns: x
 		-webkit-columns: x
 		-moz-columns: x
 		
-ul.inline
-	li
-		display inline-block
+ul, ol
+	
+	&.inline
+		li
+			display inline-block
+	
+	&.lsd
+		list-style decimal
+	
+	&.lsdlz
+		list-style decimal-leading-zero
+		
+	&.lsla
+		list-style lower-alpha
+		
+	&.lslr
+		list-style lower-roman
+	
+	&.lsua
+		list-style upper-alpha
+	
+	&.lsur
+		list-style upper-roman
