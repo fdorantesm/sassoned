@@ -1,0 +1,24 @@
+$breakpoint = {
+	
+	xs: {
+		max: 480
+	},
+	
+	sm: {
+		min: 481, 
+		max: 960
+	},
+
+	md: {
+		min: 961, 
+		max: 1280
+	},
+
+	lg: {
+		min: 1281
+	}
+	
+}
+
+breakpoint(size, point)
+	return $breakpoint[size][point] || 0
