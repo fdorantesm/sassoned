@@ -1,10 +1,13 @@
-class(pf,cl,ini,val)
-	for s in 1..ini
-		.{pf}{s}0
-			{cl} unit(val*s, px) !important
+class(name, attr, i ,gap)
+	for x in 1..i
+		.{name}{x}0
+			{attr} unit(gap*x, px) !important
 
 .h100p
 	height 100%
+
+.h75p
+	height 75%
 
 .h50p
 	height 50%
@@ -12,21 +15,21 @@ class(pf,cl,ini,val)
 .h25p
 	height 25%
 
-.h100vh
-	height 100vh
-
-.wvw
-	width 100vw
+.h0
+	height 0
 
 .hin
 	height inherit
 
-.h0
-	height 0
+.h100vh
+	height 100vh
+
+.w100vw
+	width 100vw
 	
-class(l,left,100,10)
-class(t,top,100,10)
-class(h,height,100,10)
+class(l,left,5,10)
+class(t,top,5,10)
+class(h,height,5,10)
 
 class(mt,margin-top,5,10)
 class(ml,margin-left,5,10)
@@ -86,8 +89,3 @@ class(pl,padding-left,5,10)
 
 .b0
 	bottom 0 !important
-
-
-for x in 0..10
-	.z{x}
-		z-index x !important
