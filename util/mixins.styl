@@ -1,0 +1,4 @@
+class(name, attr, type, from=0, to=50, gap=5, important=false)
+	for x in (from/gap)..(to/gap)
+		.{name}{x*gap}
+			{attr} unit(gap*x, type) (important ? !important : null)
