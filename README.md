@@ -1,5 +1,5 @@
-# oocss-framework
-Oriented Object CSS
+# OOCSS
+Oriented Objects CSS
 
 ## Installation
 
@@ -16,7 +16,8 @@ stylus -c -u nib bootstrap.styl
 ## Classes
 
 ### Anchor
-*  remove underline and outline
+*  Remove underline and outline
+*  Add transition on hover
 
 ### Background
 * Background colors (grayscale: #FFF, #EEE, #CCC, #AAA, #999, #666, #333, #000)
@@ -58,11 +59,20 @@ stylus -c -u nib bootstrap.styl
 ### Font
 Font-size in px, em and rem
 
+* 8px - 48px with 2px gap
+* 50px - 100px with 10px gap
+* 0.5em - 3em with 0.25em gap
+* 0.5rem - 3rem with 0.25rem gap
+
 ### Form
 * Custom select with angle-down
+* Outline 0 on each form control
 
 ### Generals
 * Width 100%
+* Width 100vw
+
+No grid included, you can use the grid system that you preffer
 
 ### Height
 * Height 0
@@ -70,12 +80,18 @@ Font-size in px, em and rem
 * Height 50%
 * Height 75%
 * Height 100%
-* Height from 10px to 50px and 100px - 500px
+* Height from 10px to 50px with 10px gap
+* Height from 100px to 500px with 100px gap
 
 ### List
 * Reseted list without padding and list-style
 * Inline list
-* Some list-style properties
+* List style decimal
+* List style decimal leading zero
+* List style lower alpha
+* List style lower roman
+* List style upper alpha
+* List style upper roman
 
 ### Margin and padding
 * Margin and padding (normal, left, top, right bottom) from 5px to 50px with gap 5px
@@ -125,17 +141,29 @@ Font-size in px, em and rem
 ### Z Index
 * Z-index from -1 to 10
 
-## Breakpoints
-* xs <- 480px
-* sm 481px - 960px
-* md 961px - 1280px
-* lg 1281px ->
+### Breakpoints and media queries
+|   Size   |   Min   |   Max   | Mixin |
+| :-: | :-:| :-: | :-: |
+| xs|  | 480px| xs() |
+| sm | 481px | 960px | sm() |
+|md | 961px | 1280px | md() |
+| lg | 1281px| | lg() |
 
-### Media queries
-* xs()
-* sm()
-* md()
-* lg()
+Example:
+
+<pre>
++xs()
+	//rules
+	
++sm()
+	//rules
+	
++md()
+	//rules
+	
++lg()
+	//rules
+</pre>
 
 ### Credits
 * Material palette color thanks to @danlevan https://github.com/danlevan/google-material-color
