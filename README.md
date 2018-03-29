@@ -75,7 +75,8 @@ Font-size in px, em and rem
 ### Grid
 * Flex (based on flexboxgrid)
 * Float (based on twbs bootstrap)
-* Inline (based on wp grid by Ricardo Aguirre)
+* Inline (same as bootstrap but using inline-block)
+* Wp (Using fractions like col-md-1-2 eq col-md-6 based on wp grid by Ricardo Aguirre)
 
 NOTE: It's just based on previous grid system, doesn't contains another elements outside grid.
 
