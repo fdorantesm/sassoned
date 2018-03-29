@@ -23,7 +23,7 @@ grid(size, type = 'flex', columns = 12, media-queries = false)
 				-ms-flex-wrap wrap
 				flex-wrap wrap
 			else
-				if type == 'inline'
+				if type == 'inline' || type == 'wp'
 					display block
 				else
 					display table
@@ -39,7 +39,7 @@ grid(size, type = 'flex', columns = 12, media-queries = false)
 				-ms-flex 0 0 auto
 				flex 0 0 auto
 			else
-				if type == 'inline'
+				if type == 'inline' || type == 'wp'
 					display inline-block
 					vertical-align top
 				else
@@ -56,33 +56,49 @@ grid(size, type = 'flex', columns = 12, media-queries = false)
 				max-width 100%
 	
 	// columns
-	for x in 1..columns
-		$width = round((x/columns)*100, 8)
-		.col-{size}-{x}
-			if type == 'flex'
-				-ms-flex-preferred-size unit($width, '%')
-				flex-basis unit($width, '%')
-				max-width unit($width,'%')
-			else
-				width unit($width, '%')
+	if type != 'wp'
+		for x in 1..columns
+			$width = round((x/columns)*100, 8)
+			.col-{size}-{x}
+				if type == 'flex'
+					-ms-flex-preferred-size unit($width, '%')
+					flex-basis unit($width, '%')
+					max-width unit($width,'%')
+				else
+					width unit($width, '%')
 	
-	//offsets
-	max-offset = columns - 1
-	for offset in 0..max-offset
-		.col-{size}-offset-{offset}
-			margin-left unit(round((offset/columns)*100, 8), '%')
+		//offsets
+		max-offset = columns - 1
+		for offset in 0..max-offset
+			.col-{size}-offset-{offset}
+				margin-left unit(round((offset/columns)*100, 8), '%')
 
-	
-	//push & pull
-	for item in 0..columns
 		
-		.col-{size}-push-{item}
-			left unit(round((item/columns)*100, 8), '%')
-		
-		.col-{size}-pull-{item}
-			right unit(round((item/columns)*100, 8), '%')
+		//push & pull
+		for item in 0..columns
+			
+			.col-{size}-push-{item}
+				left unit(round((item/columns)*100, 8), '%')
+			
+			.col-{size}-pull-{item}
+				right unit(round((item/columns)*100, 8), '%')
 
-
+	else
+		for x in 1..columns
+			for y in 1..x
+				if y!=x
+					$width= (y/x)*100
+					.col-{size}-{y}-{x}
+						width unit($width,'%')
+						for k in 1..x
+							if x!=k
+								$offset = (k/x) * 100
+								&.col-{size}-offset-{k}
+									margin-left unit($offset, '%')
+								&.col-{size}-pull-{k}
+									right unit($offset, '%')
+								&.col-{size}-push-{k}
+									left unit($offset, '%')
 xs()
 	@media only screen and (max-width: unit(breakpoint('xs', 'max'), px))
 		{block}
