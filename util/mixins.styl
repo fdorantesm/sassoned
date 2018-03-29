@@ -1,4 +1,103 @@
+@import 'variables'
+
 class(name, attr, type, from=0, to=50, gap=5, important=false)
 	for x in (from/gap)..(to/gap)
 		.{name}{x*gap}
 			{attr} unit(gap*x, type) (important ? !important : null)
+
+grid(size, type = 'flex', columns = 12, media-queries = false)
+	if media-queries
+		.row
+			box-sizing border-box
+			if type == 'flex'
+				display -webkit-box
+				display -ms-flexbox
+				display flex
+				-webkit-box-flex 0
+				-ms-flex 0 1 auto
+				flex 0 1 auto
+				-webkit-box-orient horizontal
+				-webkit-box-direction normal
+				-ms-flex-direction row
+				flex-direction row
+				-ms-flex-wrap wrap
+				flex-wrap wrap
+			else
+				if type == 'inline'
+					display block
+				else
+					display table
+					&:after, &:before
+						content ' '
+						display table
+			
+		// Column preset
+		[class^="col-"]
+			if type == 'flex'
+				box-sizing border-box
+				-webkit-box-flex 0
+				-ms-flex 0 0 auto
+				flex 0 0 auto
+			else
+				if type == 'inline'
+					display inline-block
+					vertical-align top
+				else
+					float left
+					
+		//Auto column
+		if type == 'flex'
+			.col-{size}
+				-webkit-box-flex 1
+				-ms-flex-positive 1
+				flex-grow 1
+				-ms-flex-preferred-size 0
+				flex-basis 0
+				max-width 100%
+	
+	// columns
+	for x in 1..columns
+		$width = round((x/columns)*100, 8)
+		.col-{size}-{x}
+			if type == 'flex'
+				-ms-flex-preferred-size unit($width, '%')
+				flex-basis unit($width, '%')
+				max-width unit($width,'%')
+			else
+				width unit($width, '%')
+	
+	//offsets
+	max-offset = columns - 1
+	for offset in 0..max-offset
+		.col-{size}-offset-{offset}
+			margin-left unit(round((offset/columns)*100, 8), '%')
+
+	
+	//push & pull
+	for item in 0..columns
+		
+		.col-{size}-push-{item}
+			left unit(round((item/columns)*100, 8), '%')
+		
+		.col-{size}-pull-{item}
+			right unit(round((item/columns)*100, 8), '%')
+
+
+xs()
+	@media only screen and (max-width: unit(breakpoint('xs', 'max'), px))
+		{block}
+
+sm()
+	@media only screen and (min-width: unit(breakpoint('sm', 'min'), px)) and (max-width: unit(breakpoint('sm', 'max'), px))
+		{block}
+
+md()
+	@media only screen and (min-width: unit(breakpoint('md', 'min'), px)) and (max-width: unit(breakpoint('md', 'max'), px))
+		{block}
+
+lg()
+	@media only screen and (min-width: unit(breakpoint('lg', 'min'), px))
+		{block}
+
+breakpoint(size, point)
+	return $breakpoint[size][point] || 0
