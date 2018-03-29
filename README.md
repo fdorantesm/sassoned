@@ -72,7 +72,12 @@ Font-size in px, em and rem
 * Width 100%
 * Width 100vw
 
-No grid included, you can use the grid system that you preffer
+### Grid
+* Flex (based on flexboxgrid)
+* Float (based on twbs bootstrap)
+* Inline (based on wp grid by Ricardo Aguirre)
+
+NOTE: It's just based on previous grid system, doesn't contains another elements outside grid.
 
 ### Height
 * Height 0
@@ -166,4 +171,6 @@ Example:
 </pre>
 
 ### Credits
-* Material palette color thanks to @danlevan https://github.com/danlevan/google-material-color
+* Material palette color: Thanks to @danlevan https://github.com/danlevan/google-material-color
+* Flexboxgrid: Thanks to @kristoferjoseph https://github.com/kristoferjoseph/flexboxgrid
+* Bootstrap: Thanks to Twitter https://github.com/twbs/bootstrap
