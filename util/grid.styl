@@ -1,12 +1,76 @@
 @import 'mixins'
 
-grid(xs, $grid-system, 12, true)
+.container,
+.container-fluid
+	margin-right auto
+	margin-left auto
 
-+sm()
-	grid(sm, $grid-system)
+.container
+	width 95%
+	max-width 460px
+	
+.row
+	box-sizing border-box
+	if $grid-system == 'flex'
+		display -webkit-box
+		display -ms-flexbox
+		display flex
+		-webkit-box-flex 0
+		-ms-flex 0 1 auto
+		flex 0 1 auto
+		-webkit-box-orient horizontal
+		-webkit-box-direction normal
+		-ms-flex-direction row
+		flex-direction row
+		-ms-flex-wrap wrap
+		flex-wrap wrap
+		&.reverse
+			-webkit-box-orient horizontal
+			  -webkit-box-direction reverse
+			  -ms-flex-direction row-reverse
+			  flex-direction row-reverse
+	else
+		if $grid-system == 'inline' || $grid-system == 'wp'
+			display block
+		else
+			display table
+			&:after, &:before
+				content ' '
+				display table
+	
+// Column preset
+[class^="col-"]
+	if $grid-system == 'flex'
+		box-sizing border-box
+		-webkit-box-flex 0
+		-ms-flex 0 0 auto
+		flex 0 0 auto
+		&.reverse
+			-webkit-box-orient vertical
+			  -webkit-box-direction reverse
+			  -ms-flex-direction column-reverse
+			  flex-direction column-reverse
+	else
+		if $grid-system == 'inline' || $grid-system == 'wp'
+			display inline-block
+			vertical-align top
+		else
+			float left
+
+if $responsive
+
+	grid(xs, $grid-system)
+
+	+sm()
+		width 90%
+		grid(sm, $grid-system)
 
 +md()
+	width 90%
+	max-width 1200px
 	grid(md, $grid-system)
 	
 +lg()
+	width 90%
+	max-width 1600px
 	grid(lg, $grid-system)

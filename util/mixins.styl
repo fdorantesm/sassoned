@@ -5,55 +5,69 @@ class(name, attr, type, from=0, to=50, gap=5, important=false)
 		.{name}{x*gap}
 			{attr} unit(gap*x, type) (important ? !important : null)
 
-grid(size, type = 'flex', columns = 12, media-queries = false)
-	if media-queries
-		.row
-			box-sizing border-box
-			if type == 'flex'
-				display -webkit-box
-				display -ms-flexbox
-				display flex
-				-webkit-box-flex 0
-				-ms-flex 0 1 auto
-				flex 0 1 auto
-				-webkit-box-orient horizontal
-				-webkit-box-direction normal
-				-ms-flex-direction row
-				flex-direction row
-				-ms-flex-wrap wrap
-				flex-wrap wrap
-			else
-				if type == 'inline' || type == 'wp'
-					display block
-				else
-					display table
-					&:after, &:before
-						content ' '
-						display table
-			
-		// Column preset
-		[class^="col-"]
-			if type == 'flex'
-				box-sizing border-box
-				-webkit-box-flex 0
-				-ms-flex 0 0 auto
-				flex 0 0 auto
-			else
-				if type == 'inline' || type == 'wp'
-					display inline-block
-					vertical-align top
-				else
-					float left
+grid(size, type = 'flex', columns = 12)
 					
-		//Auto column
-		if type == 'flex'
-			.col-{size}
-				-webkit-box-flex 1
-				-ms-flex-positive 1
-				flex-grow 1
-				-ms-flex-preferred-size 0
-				flex-basis 0
-				max-width 100%
+	//Auto column
+	if type == 'flex'
+		.col-{size}
+			-webkit-box-flex 1
+			-ms-flex-positive 1
+			flex-grow 1
+			-ms-flex-preferred-size 0
+			flex-basis 0
+			max-width 100%
+		
+		.start-{size}
+			-webkit-box-pack start
+			-ms-flex-pack start
+			justify-content flex-start
+			text-align start
+
+		.center-{size}
+			-webkit-box-pack center
+			-ms-flex-pack center
+			justify-content center
+			text-align center
+
+		.end-{size}
+			-webkit-box-pack end
+			-ms-flex-pack end
+			justify-content flex-end
+			text-align end
+
+		.top-{size}
+			-webkit-box-align start
+			-ms-flex-align start
+			align-items flex-start
+
+		.middle-{size}
+			-webkit-box-align center
+			-ms-flex-align center
+			align-items center
+
+		.bottom-{size}
+			-webkit-box-align end
+			-ms-flex-align end
+			align-items flex-end
+
+		.around-{size}
+			-ms-flex-pack distribute
+			justify-content space-around
+
+		.between-{size}
+			-webkit-box-pack justify
+			-ms-flex-pack justify
+			justify-content space-between
+
+		.first-{size}
+			-webkit-box-ordinal-group 0
+			-ms-flex-order -1
+			order -1
+
+		.last-{size}
+			-webkit-box-ordinal-group 2
+			-ms-flex-order 1
+			order 1
 	
 	// columns
 	if type != 'wp'
