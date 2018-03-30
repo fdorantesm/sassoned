@@ -137,12 +137,24 @@ NOTE: It's just based on previous grid system, doesn't contains another elements
 * Uppercase
 * Lowercase
 * Underline
+* Overline
+* Strike
+* Underline and overline at the same time
+* Underline, overline and strike at the same time
+* Bold
+* Normal
+* Italic
+* Oblique
 * Align left
 * Align right
 * Align center
 * Align justify
 * {size}-text-center
-* Parragraph reset without margin (optional)
+* Parragraph reset without margin (optional: using a class)
+* Decoration style solid
+* Decoration style dotted
+* Decoration style dashed
+* Decoration style wavy
 
 ### Z Index
 * Z-index from -1 to 10
