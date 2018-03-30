@@ -148,12 +148,12 @@ NOTE: It's just based on previous grid system, doesn't contains another elements
 * Z-index from -1 to 10
 
 ### Breakpoints and media queries
-|   Size   |   Min   |   Max   | Mixin |
-| :-: | :-:| :-: | :-: |
-| xs|  | 480px| xs() |
-| sm | 481px | 960px | sm() |
-|md | 961px | 1280px | md() |
-| lg | 1281px| | lg() |
+|   Size   |   Min   |   Max   | Mixin | Prefix |
+| :-: | :-:| :-: | :-: | :-: |
+| xs |  | 480px| xs() | .col-xs | 
+| sm | 481px | 960px | sm() | .col-sm |
+| md | 961px | 1280px | md() | .col-md |
+| lg | 1281px| | lg() | .col-lg |
 
 Example:
 
