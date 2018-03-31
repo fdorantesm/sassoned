@@ -1,0 +1,38 @@
+.visible, .hidden-sm, .hidden-md, .hidden-md-below, .hidden-md-above, .hidden-lg, .hidden-sm-above, .visible-sm-below, .visible-sm-above
+	display block
+	
+.hidden, .hidden-xs, .visible-xs, .visible-sm, .visible-md, .visible-lg, .visible-md-above, .visible-md-below, .hidden-sm-below, .hidden-md-below
+	display none
+
++xs()
+		
+	.hidden-md-below, .visible-sm-above
+		display none!important
+	
+	.visible-xs, .visible-md-below
+		display block!important
+		
+
++sm()
+	
+	.hidden-sm, .hidden-md-below, .hidden-sm-above
+		display none!important
+
+	.visible-md-below, .hidden-xs, .visible-sm
+		display block!important
+
++md()
+	
+	.hidden-md, .hidden-md-below, .hidden-md-above, .hidden-sm-above, .visible-sm-below
+		display none!important
+	
+	.visible-md, .visible-md-above, .visible-md-below, .hidden-lg, .hidden-sm-below, .hidden-xs
+		display block!important
+
++lg()
+	
+	.hidden-md-above, .hidden-lg, .hidden-sm-above, .visible-sm-below
+		display none!important
+	
+	.hidden-xs, .visible-lg, .visible-md-above, .hidden-md-below, .hidden-sm-below
+		display block!important

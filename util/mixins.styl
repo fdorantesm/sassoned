@@ -1,5 +1,6 @@
 @import 'variables'
 
+
 class(name, attr, type, from=0, to=50, gap=5, important=false)
 	for x in (from/gap)..(to/gap)
 		.{name}{x*gap}
@@ -9,7 +10,7 @@ grid(size, type = 'flex', columns = 12)
 					
 	//Auto column
 	if type == 'flex'
-		.col-{size}
+		.col-auto, .col-{size}
 			-webkit-box-flex 1
 			-ms-flex-positive 1
 			flex-grow 1
@@ -113,21 +114,32 @@ grid(size, type = 'flex', columns = 12)
 									right unit($offset, '%')
 								&.col-{size}-push-{k}
 									left unit($offset, '%')
-xs()
+
+xs(max-width = true)
 	@media only screen and (max-width: unit(breakpoint('xs', 'max'), px))
 		{block}
 
-sm()
-	@media only screen and (min-width: unit(breakpoint('sm', 'min'), px)) and (max-width: unit(breakpoint('sm', 'max'), px))
-		{block}
+sm(min-width = true, max-width = true)
+	if max-width
+		@media only screen and (min-width: unit(breakpoint('sm', 'min'), px)) and (max-width: unit(breakpoint('sm', 'max'), px))
+			{block}
+	else
+		@media only screen and (min-width: unit(breakpoint('sm', 'min'), px))
+			{block}
 
-md()
-	@media only screen and (min-width: unit(breakpoint('md', 'min'), px)) and (max-width: unit(breakpoint('md', 'max'), px))
-		{block}
-
-lg()
+md(min-width = true, max-width = true)
+	if max-width
+		@media only screen and (min-width: unit(breakpoint('md', 'min'), px)) and (max-width: unit(breakpoint('md', 'max'), px))
+			{block}
+	else
+		@media only screen and (min-width: unit(breakpoint('md', 'min'), px))
+			{block}
+			
+lg(max-width = true)
 	@media only screen and (min-width: unit(breakpoint('lg', 'min'), px))
 		{block}
 
 breakpoint(size, point)
 	return $breakpoint[size][point] || 0
+
+$md-up = md(true, false)

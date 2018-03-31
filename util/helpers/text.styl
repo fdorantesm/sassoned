@@ -62,6 +62,16 @@
 p.paragraph-reset
 	margin 0
 
+h1,h2,h3,h4,h5,h6
+	line-height $headings-line-height
+	font-weight $headings-font-weight
+
+for i in 1..6
+	h{i}
+		size = $font-size-h+i
+		font-size size
+
+
 +xs()
 	.xs-text-center
 		text-align center

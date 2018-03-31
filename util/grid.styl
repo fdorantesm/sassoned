@@ -6,8 +6,7 @@
 	margin-left auto
 
 .container
-	width 95%
-	max-width 460px
+	width 90%
 	
 .row
 	box-sizing border-box
@@ -40,8 +39,8 @@
 	
 // Column preset
 [class^="col-"]
+	box-sizing border-box
 	if $grid-system == 'flex'
-		box-sizing border-box
 		-webkit-box-flex 0
 		-ms-flex 0 0 auto
 		flex 0 0 auto
@@ -61,16 +60,36 @@ if $responsive
 
 	grid(xs, $grid-system)
 
-	+sm()
-		width 90%
+	+xs()
+		.container
+			max-width 460px
+		[class*="col-sm"]
+			width 100%
+			if $grid-system == 'flex'
+				flex-basis 100%
+
+	+sm(true, false)
+		
+		[class*="col-md"]
+			width 100%
+			if $grid-system == 'flex'
+				flex-basis 100%
+		
+		.container
+			width 90%
 		grid(sm, $grid-system)
 
-+md()
-	width 90%
-	max-width 1200px
++md(true, false)
+	
+	.container
+		width 90%
+		max-width 1200px
 	grid(md, $grid-system)
 	
+	
 +lg()
-	width 90%
-	max-width 1600px
+	
+	.container
+		width 90%
+		max-width 1600px
 	grid(lg, $grid-system)
