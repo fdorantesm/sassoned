@@ -1,0 +1,84 @@
+@import 'nib/normalize'
+@import '../../../util/palette'
+html
+	height 100%
+	min-height 100%
+
+body
+	height inherit
+	min-height inherit
+	margin 0
+	font-family sans-serif
+	main
+		height inherit
+		
+.btn
+	color #FFF
+	padding 11px 20px
+	border none
+	font-size 16px
+	text-transform uppercase
+	display block
+	&.flat
+		background palette('Blue', '500')
+		padding 1px
+		border none
+		box-sizing padding-box
+		> div
+			background #FFF
+			color palette('Blue', '500')
+			padding 10px 20px
+		
+	&.get
+		background palette('Green')
+
+.tags
+	li
+		padding 2px 5px
+		background #ccc
+		border-radius 3px
+		font-size 8px
+		&:not(:last-child)
+			margin-right 5px
+			
+.row
+	&.example
+		[class*="col"]
+			padding-right 10px
+			padding-left 10px
+			color paletteText('Purple', '800')
+			min-height 30px
+			&.green
+				background-color palette('Green')
+				
+			> *
+				display block
+				padding-top 20px
+				padding-bottom 20px
+				margin 1em auto
+				background palette('Purple', '800')
+
+table
+	thead
+		tr
+			background palette('Purple', '800')
+			color paletteText('Purple', '800')
+			th
+				padding 1em
+				font-weight 400
+	tbody
+		tr
+			background palette('Purple', '800')
+			color paletteText('Purple', '800')
+			td
+				padding 0.5em
+				text-align center
+				&:first-child
+					text-align left
+				&.success
+					background palette('Green', '600')
+					color paletteText('Green', '600')
+				&.disabled
+					background palette('Grey', '200')
+					color palette('Grey', '500')
+		

@@ -1,0 +1,37 @@
+extends layout
+include mixins
+
+block main
+	section.main.hin
+		.container.hin
+			.row.hin.aic.jcc
+				.col
+					.row.aic.jcc
+						.col-xs-12.tac
+							h1.fw300.fsp40 Oriented Objects CSS
+							p A light helper package to make front-end faster
+						.col
+							.p5
+								a.btn.flat(href="#")
+									div Go to docs
+
+						.col
+							.p5
+								a.btn.get(href="#")
+									div Download
+						.col-xs-12.tac
+							ul.list-reset.list-inline.tags
+								li flex
+								li grid
+								li margin
+								li padding
+								li text
+								li show
+								li hide
+								li +
+	section.grid
+		.container
+			include partials/flexbox
+	section.show-and-hide
+		.container
+			include partials/visible-and-hidden

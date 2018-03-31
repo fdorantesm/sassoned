@@ -1,0 +1,11 @@
+mixin escape()
+	- var oldBuf = buf;
+	- buf = [];
+	block
+	- buf  = oldBuf.concat(buf.map(jade.escape));
+
+mixin scape
+	- var oldBuf = pug_html;
+	- pug_html = '';
+	block
+	- pug_html = oldBuf + pug.escape(pug_html);
