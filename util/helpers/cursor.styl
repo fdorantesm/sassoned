@@ -1,15 +1,6 @@
-.cursor
-	&.pointer
-		cursor pointer
-	
-	&.default
-		cursor default
-	
-	&.text
-		cursor text
+cursors = default pointer text wait not-allowed
 
-	&.wait
-		cursor wait
-	
-	&.not-allowed
-		cursor not-allowed
+.cursor
+	for value in cursors
+		&.{value}
+			cursor value

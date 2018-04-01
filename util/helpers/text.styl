@@ -68,8 +68,7 @@ h1,h2,h3,h4,h5,h6
 
 for i in 1..6
 	h{i}
-		size = $font-size-h+i
-		font-size size
+		font-size lookup('$font-size-h' + i)
 
 
 +xs()

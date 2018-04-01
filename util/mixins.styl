@@ -1,16 +1,17 @@
 @import 'variables'
+@import 'functions'
 
-
-class(name, attr, type, from=0, to=50, gap=5, important=false)
+class(prefix, attr, type, from=0, to=50, gap=5, important=false)
 	for x in (from/gap)..(to/gap)
-		.{name}{x*gap}
+		val = isDecimal(x*gap) ? unit(percentage(x*gap),'') : x*gap
+		.{prefix}{val}
 			{attr} unit(gap*x, type) (important ? !important : null)
 
-grid(size, type = 'flex', columns = 12)
+grid(size, type = 'flex', columns = $grid-columns)
 					
 	//Auto column
 	if type == 'flex'
-		.col-auto, .col-{size}
+		.col
 			-webkit-box-flex 1
 			-ms-flex-positive 1
 			flex-grow 1
@@ -116,8 +117,12 @@ grid(size, type = 'flex', columns = 12)
 									left unit($offset, '%')
 
 xs(max-width = true)
-	@media only screen and (max-width: unit(breakpoint('xs', 'max'), px))
-		{block}
+	if max-width
+		@media only screen and (max-width: unit(breakpoint('xs', 'max'), px))
+			{block}
+	else
+		@media only screen and (min-width: unit(breakpoint('xs', 'max') + 1, px))
+			{block}
 
 sm(min-width = true, max-width = true)
 	if max-width
@@ -142,4 +147,5 @@ lg(max-width = true)
 breakpoint(size, point)
 	return $breakpoint[size][point] || 0
 
-$md-up = md(true, false)
+ifFlex()
+	return $grid-system == 'flex'
