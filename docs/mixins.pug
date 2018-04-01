@@ -1,11 +1,6 @@
-mixin escape()
-	- var oldBuf = buf;
-	- buf = [];
-	block
-	- buf  = oldBuf.concat(buf.map(jade.escape));
-
-mixin scape
+mixin scape()
 	- var oldBuf = pug_html;
 	- pug_html = '';
 	block
-	- pug_html = oldBuf + pug.escape(pug_html);
+	- pattern = pug_html.match(/\s*\n[\t\s]*/)
+	- pug_html = oldBuf + pug.escape(pug_html).replace(new RegExp(pattern, "g"),'\n');

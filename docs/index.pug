@@ -10,12 +10,12 @@ block main
 						.col-xs-12.tac
 							h1.fw300.fsp40 Oriented Objects CSS
 							p A light helper package to make front-end faster
-						.col
+						.col-auto
 							.p5
 								a.btn.flat(href="#")
 									div Go to docs
 
-						.col
+						.col-auto
 							.p5
 								a.btn.get(href="#")
 									div Download
@@ -35,3 +35,186 @@ block main
 	section.show-and-hide
 		.container
 			include partials/visible-and-hidden
+	section.helpers
+		.container
+			article
+				.p10
+					h3.fw300.fsp26 Anchors
+					p These styles set down the browser text decoration on hover, the outline and add a transition on hover
+					a(href="javascript:void(0)") This is a simple anchor
+				.p10
+					code.html
+						pre
+							+scape()
+								<a href="#">This is a simple anchor</a>
+			article
+				.p10
+					h3.fw300.fsp26 Background
+					p Theses styles has some background properties as colors, attachment or size
+					.pt10.pb10
+						span.bcE This text has background #EEE and its div is using the class bcE
+				.p10
+					code.html
+						pre
+							+scape()
+								<span class="bcE">This text has background #EEE and its span is using the class bcE</span>
+				.p10
+					table.purple.fw.table
+						thead
+							tr
+								th Class
+								th Property
+								th Value
+						tbody
+							each color, key in {0:"#000", 3:"#333", 6:"#666", 9:"#999", A:"#AAA", C:"#CCC", E:"#EEE", F:"#FFF"}
+								tr
+									td .bc#{key}
+									td background-color
+									td= color
+			article
+				.p10
+					h3.fw300.fsp26 Border
+				.p10
+					table.table.fw.purple
+						thead
+							tr
+								th Class
+								th.tal Property
+								th.tal Value
+						tbody
+							tr
+								td .bn
+								td.tal border
+								td.tal none
+							tr
+								td .bsn
+								td.tal border-style
+								td.tal none
+							tr
+								td .bss
+								td.tal border-style
+								td.tal solid
+							tr
+								td .bsw
+								td.tal border-style
+								td.tal wavy
+							tr
+								td .bsda
+								td.tal border-style
+								td.tal dashed
+							tr
+								td .bsdo
+								td.tal border-style
+								td.tal dotted
+							tr
+								td .btss
+								td.tal border-top-style
+								td.tal solid
+							tr
+								td .btsw
+								td.tal border-top-style
+								td.tal wavy
+							tr
+								td .btsda
+								td.tal border-top-style
+								td.tal dashed
+							tr
+								td .btsdo
+								td.tal border-top-style
+								td.tal dotted
+							tr
+								td .blss
+								td.tal border-left-style
+								td.tal solid
+							tr
+								td .blsw
+								td.tal border-left-style
+								td.tal wavy
+							tr
+								td .blsda
+								td.tal border-left-style
+								td.tal dashed
+							tr
+								td .blsdo
+								td.tal border-left-style
+								td.tal dotted
+							tr
+								td .brss
+								td.tal border-right-style
+								td.tal solid
+							tr
+								td .brsw
+								td.tal border-right-style
+								td.tal wavy
+							tr
+								td .brsda
+								td.tal border-right-style
+								td.tal dashed
+							tr
+								td .brsdo
+								td.tal border-right-style
+								td.tal dotted
+							tr
+								td .bbss
+								td.tal border-bottom-style
+								td.tal solid
+							tr
+								td .bbsw
+								td.tal border-bottom-style
+								td.tal wavy
+							tr
+								td .bbsda
+								td.tal border-bottom-style
+								td.tal dashed
+							tr
+								td .bbsdo
+								td.tal border-bottom-style
+								td.tal dotted
+							each value, key in {"br":"border-radius", "bw":"border-width", "btw":"border-top-width", "blw":"border-left-width", "brw":"border-right-width", "brw":"border-bottom-width"}
+								each i in [1,2,3,4,5,6,7,8,9,10]
+									tr
+										td .#{key}
+										td.tal #{value}
+										td.tal #{i}px
+			article
+				.p10
+					h3.fw300.fsp26 Box sizing
+					table.table.fw.purple
+						thead
+							tr
+								th Class
+								th.tal Value
+								th.tal Description
+						tbody
+							tr
+								td .bsb
+								td.tal border-box
+								td.tal The width and height properties (and min/max properties) includes content, padding and border.
+							tr
+								td .bsc
+								td.tal content-box
+								td.tal The width and height properties (and min/max properties) includes only the content. Border and padding are not included.
+			article
+				.p10
+					h3.fw300.fsp26 Colors
+					p These classes has some color properties
+					.pt10.pb10
+						span.cF.bc0 This text has color #FFF with .cF class
+				.p10
+					code.html
+						pre
+							+scape()
+								<span class="cF bc0">This text has color #FFF with .cF class</span>
+				.p10
+					table.purple.fw.table
+						thead
+							tr
+								th Class
+								th Property
+								th Value
+						tbody
+							each color, key in {0:"#000", 3:"#333", 6:"#666", 9:"#999", A:"#AAA", C:"#CCC", E:"#EEE", F:"#FFF"}
+								tr
+									td .c#{key}
+									td color
+									td= color

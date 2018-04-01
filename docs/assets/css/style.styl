@@ -59,20 +59,23 @@ body
 				background palette('Purple', '800')
 
 table
+	&.purple
+		thead
+			tr
+				background palette('Purple', '800')
+				color paletteText('Purple', '800')
+		tbody
+			tr:not(:nth-child(odd))
+				background palette('Purple', '100')
+				color paletteText('Purple', '100')
 	thead
-		tr
-			background palette('Purple', '800')
-			color paletteText('Purple', '800')
-			th
-				padding 1em
-				font-weight 400
+		th
+			padding 1em
+			font-weight 400
 	tbody
 		tr
-			background palette('Purple', '800')
-			color paletteText('Purple', '800')
 			td
 				padding 0.5em
-				text-align center
 				&:first-child
 					text-align left
 				&.success
@@ -81,4 +84,6 @@ table
 				&.disabled
 					background palette('Grey', '200')
 					color palette('Grey', '500')
-		
+
+code
+	padding 1em 2em!important

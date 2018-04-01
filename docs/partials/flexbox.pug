@@ -10,7 +10,7 @@ div
 		.row.example
 			- var n = 1
 			while n <= item
-				.col-auto.tac.fsp8
+				.col.tac.fsp8.col-sm
 					div
 				- n++
 .p10
@@ -18,54 +18,70 @@ div
 		pre
 			+scape()
 				.row
-					.col-auto
-					.col-auto
-					.col-auto
-						.col-auto
+					.col
+					.col
+					.col
+					.col
+.p10
+	h3.fw300.fsp26 Flex stack column
+	p This column stains flexible over its resolution size
+	.row.example
+		.col-md 
+			.tac Full width over md
+		.col-md 
+			.tac Full width over md
+		.col-md 
+			.tac Full width over md
+	.p10
+		code.html
+			pre
+				+scape()
+					.row
+						.col-md
+						.col-md
+						.col-md
 
 .p10
 	h3.fw300.fsp26 Content width column
 
 div
 	.row.example
-		- var n = 1
-		while n <= 18
-			.col.tac
-				div= n
-			- n++
+		each i in ["lorem ipsum", "hello world", "hi", "hi there"]
+			.col-auto.tac
+				div= i
 	.p10
 		code.html
 			pre
 				+scape()
 					.row
-						.col
-						.col
-						.col
-						.col
+						.col-auto
+						.col-auto
+						.col-auto
+						.col-auto
 .p10
 	h3.fw300.fsp26 12 Columns based
 
 div
 	.row.example
 		each i in [1,2,3]
-			.col-md-4
+			.col-md-4.col-xs
 				.tac col-md-4
 
 	.row.example
-		.col-md-8
+		.col-md-8.col-xs
 			.tac col-md-8
-		.col-md-4
+		.col-md-4.col-xs
 			.tac col-md-4
 
 	.row.example
 		each i in [1,2,3,4]
-			.col-md-3
+			.col-md-3.col-xs
 				.tac col-md-3
 
 	.row.example
-		.col-md-7
+		.col-md-7.col-xs
 			.tac col-md-7
-		.col-md-5
+		.col-md-5.col-xs
 			.tac col-md-5
 	//- each i in [1,2,3,4,5,6,7,8,9,10,11]
 	//- 	.row.example
@@ -101,8 +117,12 @@ div
 			pre
 				+scape()
 					.row
-						.col-md-4
-						.col-xs-6
+						.col-md-4.col-xs-6
+						.col-md-4.col-xs-6
+						.col-md-4.col-xs-6
+						.col-md-4.col-xs-6
+						.col-md-4.col-xs-6
+						.col-md-4.col-xs-6
 
 	.p10
 		h3.fw300.fsp26 Mobile, tablet and desktop resize
@@ -145,4 +165,4 @@ div
 						.col-md-3.col-sm-2.col-xs-12
 
 .pr10.pl10
-	p #[b Note]: Columns don't have side padding, the box color were made with an inner div
+	p #[b Note]: Columns don't have side padding, the box color were made with an inner div.
