@@ -1,1 +1,5 @@
 *.sublime-workspace
+*.sublime-project
+docs/*/*.pug
+docs/*/*.styl
+docs/*/*.coffee
