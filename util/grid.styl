@@ -75,11 +75,12 @@ if $responsive
 				flex-basis 100%
 				width 100%
 		
-		[class*="col-sm"]
-		[class*="col-md"]
+		[class^="col-sm"]
+		[class^="col-md"]
+		[class^="col-lg"]
 			width 100%
 			if isFlex()
-				flex-basis 100%
+				flex-basis auto
 
 	+sm(true, false)
 		
@@ -93,10 +94,11 @@ if $responsive
 				flex-basis 0
 				flex-grow 1
 
-		[class*="col-md"]
+		[class^="col-md"]
+		[class^="col-lg"]
 			width 100%
 			if isFlex()
-				flex-basis 100%
+				flex-basis auto
 			
 		grid(sm, $grid-system)
 
