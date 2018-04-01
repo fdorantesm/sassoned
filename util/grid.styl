@@ -36,8 +36,7 @@
 			&:after, &:before
 				content ' '
 				display table
-	
-// Column preset
+				
 [class^="col-"]
 	box-sizing border-box
 	if $grid-system == 'flex'
@@ -56,27 +55,48 @@
 		else
 			float left
 
+		
+	
+
 if $responsive
 
 	grid(xs, $grid-system)
+	
+	.col-lg
+		flex-basis 100%
+		width 100%
 
 	+xs()
 		.container
 			max-width 460px
+		
+		if isFlex()
+			.col-xs, .col-md
+				flex-basis 100%
+				width 100%
+		
 		[class*="col-sm"]
 			width 100%
-			if $grid-system == 'flex'
+			if isFlex()
 				flex-basis 100%
 
 	+sm(true, false)
 		
-		[class*="col-md"]
-			width 100%
-			if $grid-system == 'flex'
-				flex-basis 100%
-		
 		.container
 			width 90%
+		
+		if isFlex()
+			
+			.col-xs
+			.col-sm
+				flex-basis 0
+				flex-grow 1
+
+		[class*="col-md"]
+			width 100%
+			if isFlex()
+				flex-basis 100%
+			
 		grid(sm, $grid-system)
 
 +md(true, false)
@@ -84,6 +104,18 @@ if $responsive
 	.container
 		width 90%
 		max-width 1200px
+	
+	if isFlex()
+		.col-xs
+		.col-md
+			flex-basis 0
+			flex-grow 1
+		
+		.col-lg
+			flex-basis 100%
+			width 100%
+			
+
 	grid(md, $grid-system)
 	
 	
@@ -92,4 +124,13 @@ if $responsive
 	.container
 		width 90%
 		max-width 1600px
+	
+	if isFlex()	
+		
+		.col-lg
+			flex-basis 0
+			flex-grow 1
+			
+			
+		
 	grid(lg, $grid-system)
