@@ -1,6 +1,3 @@
-cursors = default pointer text wait not-allowed
-
-.cursor
-	for value in cursors
-		&.{value}
-			cursor value
+for value in $cursors
+	.cur{value}
+		cursor $cursors[value]
