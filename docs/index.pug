@@ -218,3 +218,73 @@ block main
 									td .c#{key}
 									td color
 									td= color
+			article
+				.p10
+					h3.fw300.fsp26 Position
+				.p10
+					table.table.purple.fw
+						thead
+							tr
+								th Class
+								th Property
+								th Value
+						tbody
+							tr
+								td .pr
+								td position
+								td relative
+							tr
+								td .pa
+								td position
+								td absolute
+							tr
+								td .ps
+								td position
+								td static
+							tr
+								td .pf
+								td position
+								td fixed
+							tr
+								td .pu
+								td position
+								td unset
+							each type, key in {t: 'top', l: 'left', r: 'right', b: 'bottom'}
+								- var i = 0
+								while i <= 50
+									tr
+										td .#{key + i}
+										td= type
+										td #{i}px
+									- i+=5
+			article
+				.p10
+					h3.fw300.fsp26 Floats
+				.p10
+					table.table.purple.fw
+						thead
+							tr
+								th Class
+								th Property
+								th Value
+						tbody
+							tr
+								td .fr
+								td float
+								td left
+							tr
+								td .fl
+								td float
+								td left
+							tr
+								td .fr
+								td float
+								td right
+							tr
+								td .fu
+								td float
+								td unset
+							tr
+								td .fn
+								td float
+								td none
