@@ -29,26 +29,48 @@ block main
 								li show
 								li hide
 								li +
-	.container
+	.fluid-container
 		.row
-			.col-md-3.visible-md-above :) sidebar
-			.col-lg-9
-				section.grid
-					include partials/flexbox
-				section.helpers
-					include partials/visible-and-hidden
-					include partials/background
-					include partials/border
-					include partials/box-sizing
-					include partials/color
-					include partials/cursor
-					include partials/display
-					include partials/flex
-					include partials/font
-					include partials/height
-					include partials/list
-					include partials/margin-and-padding
-					include partials/opacity-and-visibility
-					include partials/position
-					include partials/float
-					include partials/text
+			.col-md-3.col-lg-2.hidden-sm-below
+				aside
+					nav
+						ul.lsn.list-reset
+							li: a(href="#") OOCSS
+							li: a(href="#") Background
+							li: a(href="#") Border
+							li: a(href="#") Box sizing
+							li: a(href="#") Color
+							li: a(href="#") Cursor
+							li: a(href="#") Display
+							li: a(href="#") Float
+							li: a(href="#") Flex
+							li: a(href="#") Font
+							li: a(href="#") Grid
+							li: a(href="#") Height
+							li: a(href="#") List
+							li: a(href="#") Margin & Padding
+							li: a(href="#") Opacity & Visibility
+							li: a(href="#") Position
+							li: a(href="#") Text
+							li: a(href="#") Visible & Hidden
+			.col-md-9.col-lg-10
+				.p10.bcC
+					//- section.grid
+					//- 	include partials/flexbox
+					section.helpers
+						include partials/background
+						include partials/border
+						include partials/box-sizing
+						include partials/color
+						include partials/cursor
+						include partials/display
+						include partials/flex
+						include partials/float
+						include partials/font
+						include partials/height
+						include partials/list
+						include partials/margin-and-padding
+						include partials/opacity-and-visibility
+						include partials/position
+						include partials/text
+						include partials/visible-and-hidden
