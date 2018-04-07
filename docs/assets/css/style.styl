@@ -1,5 +1,9 @@
 @import 'nib/normalize'
 @import '../../../util/palette'
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+
+vendor-prefixes = moz webkit o ms khtml
+
 html
 	height 100%
 	min-height 100%
@@ -20,17 +24,17 @@ body
 	text-transform uppercase
 	display block
 	&.flat
-		background palette('Blue', '500')
+		background palette('Grey', '900')
 		padding 1px
 		border none
 		box-sizing padding-box
 		> div
 			background #FFF
-			color palette('Blue', '500')
+			color palette('Grey', '900')
 			padding 10px 20px
 		
 	&.get
-		background palette('Green')
+		background palette('Purple', '800')
 
 .tags
 	li
