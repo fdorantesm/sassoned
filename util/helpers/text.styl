@@ -4,9 +4,6 @@
 .ttl
 	text-transform lowecase
 
-.tdu
-	text-decoration underline
-
 .tac
 	text-align center
 
@@ -19,7 +16,7 @@
 .tal
 	text-align left
 
-.i
+.i, i
 	font-style italic
 
 .o
@@ -37,12 +34,11 @@
 .tdo
 	text-decoration overline
 
-.tds, del, s
+.tdlt, del, s
 	text-decoration line-through
 
 .tduo, .tdou
 	text-decoration underline overline
-
 
 .tduos, .tduso .tdous, .tdosu, .tdsou, .tdsuo
 	text-decoration underline overline line-through
@@ -69,7 +65,6 @@ h1,h2,h3,h4,h5,h6
 for i in 1..6
 	h{i}
 		font-size lookup('$font-size-h' + i)
-
 
 +xs()
 	.xs-text-center
