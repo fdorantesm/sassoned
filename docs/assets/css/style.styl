@@ -4,6 +4,13 @@
 
 vendor-prefixes = moz webkit o ms khtml
 
+normalize-html5()
+normalize-base()
+normalize-groups()
+normalize-table()
+normalize-text()
+
+
 html
 	height 100%
 	min-height 100%
@@ -11,8 +18,8 @@ html
 body
 	height inherit
 	min-height inherit
-	margin 0
-	font-family sans-serif
+	> header
+		height 60px
 	main
 		height inherit
 		
@@ -34,7 +41,7 @@ body
 			padding 10px 20px
 		
 	&.get
-		background palette('Purple', '800')
+		background palette('Deep Purple', '800')
 
 .tags
 	li
@@ -47,47 +54,75 @@ body
 			
 .row
 	&.example
+		// border 1px solid #f7f7f7
 		[class*="col"]
-			padding-right 10px
-			padding-left 10px
+			// padding-right 5px
+			// padding-left 5px
 			color paletteText('Purple', '800')
-			min-height 30px
 			&.green
 				background-color palette('Green')
 				
 			> *
+				min-height 20px
 				display block
 				padding-top 20px
 				padding-bottom 20px
-				margin 1em auto
+				margin 10px
 				background palette('Purple', '800')
 
 table
-	&.purple
-		thead
-			tr
-				background palette('Purple', '800')
-				color paletteText('Purple', '800')
-		tbody
-			tr:not(:nth-child(odd))
-				background palette('Purple', '100')
-				color paletteText('Purple', '100')
 	thead
-		th
-			padding 1em
-			font-weight 400
-	tbody
 		tr
-			td
-				padding 0.5em
-				&:first-child
-					text-align left
-				&.success
-					background palette('Green', '600')
-					color paletteText('Green', '600')
-				&.disabled
-					background palette('Grey', '200')
-					color palette('Grey', '500')
+			background palette('Purple', '800')
+			color paletteText('Purple', '800')
+	&.breakpoint-visibility
+		tbody
+			tr
+				td
+					&:first-child
+						text-align left
+						background palette('Purple', '800')
+						color paletteText('Purple', '800')
+					&.success
+						background palette('Green', 'A700')
+						color #FFF
+					&.disabled
+						background palette('Grey', '200')
+						color palette('Grey', '500')
 
+article
+	> h2, h3
+		font-weight 300
+	> h4, h5, h6
+		font-weight 400!important
+	> header
+		padding 10px
+		
 code
 	padding 1em 2em!important
+	font-size 14px
+	margin 25px 10px
+	
+aside
+	min-height 100%
+	ul
+		li, li a
+			color palette('Purple', '800')
+			transition unset
+		
+		li:hover, li:hover a
+			color palette('Purple', '800')
+			transition unset
+		
+		li
+			a
+				padding 0.75em 1em
+				display block
+			&:hover
+				background paletteText('Purple', '800')
+
+.oocss
+	color palette('Purple', '800')
+
+.bcp
+	background palette('Purple', '800')

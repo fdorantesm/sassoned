@@ -1,0 +1,52 @@
+extends layout
+include mixins
+
+block main
+	.container
+		.row
+			.col-md-3.col-lg-3.hidden-sm-below
+				aside.pt50
+					ul.lsn.list-reset
+						li: a(href="#background") Background
+						li: a(href="#border") Border
+						li: a(href="#box-sizing") Box sizing
+						li: a(href="#color") Color
+						li: a(href="#cursor") Cursor
+						li: a(href="#display") Display
+						li: a(href="#float") Float
+						li: a(href="#flex") Flex
+						li: a(href="#font") Font
+						li
+							a(href="#grid") Grid
+							ul.lsn
+								li: a(href="#grid-flex") Flex
+								li: a(href="#grid-float") Float
+								li: a(href="#grid-inline-block") Inline block
+						li: a(href="#height") Height
+						li: a(href="#list") List
+						li: a(href="#margin-padding") Margin & Padding
+						li: a(href="#opacity-visibility") Opacity & Visibility
+						li: a(href="#position") Position
+						li: a(href="#text") Text
+						li: a(href="#visible-hidden") Visible & Hidden
+			.col-md-9.col-lg-9
+				.p10
+					section.grid
+						include partials/flexbox
+					section.helpers
+						include partials/background
+						include partials/border
+						include partials/box-sizing
+						include partials/color
+						include partials/cursor
+						include partials/display
+						include partials/flex
+						include partials/float
+						include partials/font
+						include partials/height
+						include partials/list
+						include partials/margin-and-padding
+						include partials/opacity-and-visibility
+						include partials/position
+						include partials/text
+						include partials/visible-and-hidden
