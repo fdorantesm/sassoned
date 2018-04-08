@@ -137,20 +137,29 @@ xs(max-width = true)
 			{block}
 
 sm(min-width = true, max-width = true)
-	if max-width
+	if max-width && min-width
 		@media only screen and (min-width: unit(breakpoint('sm', 'min'), px)) and (max-width: unit(breakpoint('sm', 'max'), px))
 			{block}
 	else
-		@media only screen and (min-width: unit(breakpoint('sm', 'min'), px))
-			{block}
+		if min-width
+			@media only screen and (min-width: unit(breakpoint('sm', 'min'), px))
+				{block}
+		else
+			@media only screen and (max-width: unit(breakpoint('sm', 'max'), px))
+				{block}
+			
 
 md(min-width = true, max-width = true)
-	if max-width
+	if max-width && min-width
 		@media only screen and (min-width: unit(breakpoint('md', 'min'), px)) and (max-width: unit(breakpoint('md', 'max'), px))
 			{block}
 	else
-		@media only screen and (min-width: unit(breakpoint('md', 'min'), px))
-			{block}
+		if min-width
+			@media only screen and (min-width: unit(breakpoint('md', 'min'), px))
+				{block}
+		else
+			@media only screen and (max-width: unit(breakpoint('md', 'max'), px))
+				{block}
 			
 lg(max-width = true)
 	@media only screen and (min-width: unit(breakpoint('lg', 'min'), px))

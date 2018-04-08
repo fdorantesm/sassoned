@@ -1,5 +1,56 @@
+[class*="table-"]
+	tr 
+		&.cells-centered
+			td, th
+				text-align center
+		th
+			text-align left
+		td, th
+			padding unit($font-size-base/2, px) $font-size-base
+
 table.table
-	&.collapse
+	&-collapsed
 		border-collapse collapse
-	&.fixed
+		
+	&-fixed
 		table-layout fixed
+		
+	&-striped
+		tbody
+			tr:not(:nth-child(odd))
+				background #f7f7f7
+	&-centered
+		tr td, tr th
+			text-align center
+			
+		
++sm(false, true)
+	table.table
+		&-responsive
+			border-collapse collapse
+			border-spacing 0
+			display block
+			position relative
+			thead
+				float left
+				tr, tr th
+					display block
+					
+			thead, tbody
+				display block
+				tr
+					td, th
+						min-height 40px
+						padding 10px 1em!important
+				
+			tbody
+				overflow-x auto
+				position relative
+				white-space nowrap
+				width auto
+				tr
+					display inline-block
+					vertical-align top
+					white-space unset
+					td
+						display block
