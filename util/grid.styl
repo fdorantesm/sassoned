@@ -17,74 +17,93 @@
 		flex-wrap wrap
 		&.reverse
 			  flex-direction row-reverse
-	else
-		if $grid-system == 'inline' || $grid-system == 'wp'
-			display block
-		else
+	
+	else if $grid-system == 'fractions'
+		display block
+		letter-spacing -0.31em
+		*letter-spacing normal
+		word-spacing -0.43em
+	
+	else if $grid-system == 'float'
+		&:after
+		&:before
+			content ' '
 			display table
-			&:after, &:before
-				content ' '
-				display table
+			clear both
 				
 [class^="col-"]
 	box-sizing border-box
 	if $grid-system == 'flex'
 		flex 0 0 auto
 		&.reverse
-			  flex-direction column-reverse
-	else
-		if $grid-system == 'inline' || $grid-system == 'wp'
-			display inline-block
-			vertical-align top
-		else
-			float left
-
-		
+			  flex-direction column-reverse	
+	else if $grid-system == 'fractions' {
+		width 100%
+		display inline-block
+		vertical-align top
+		zoom 1
+		*display inline
+		letter-spacing normal
+		word-spacing normal
+	}
 	
+	else if $grid-system == 'float' {
+		float left
+	}
+
+unless $grid-system == 'flex'
+	[class*="-push-"]
+	[class*="-pull-"]
+		position relative
 
 if $responsive
 
 	grid(xs, $grid-system)
 	
-	.col-lg
-		flex-basis 100%
-		width 100%
+	if $grid-system == 'flex'
+		.col-lg
+			flex-basis 100%
+			width 100%
 
 	+xs()
 		.container
 			max-width 460px
 		
-		if isFlex()
+		if $grid-system == 'flex'
 			.col-xs, .col-md
 				flex-basis 100%
+				width 100%		
+			[class^="col-sm"]
+			[class^="col-md"]
+			[class^="col-lg"]
 				width 100%
-		
-		[class^="col-sm"]
-		[class^="col-md"]
-		[class^="col-lg"]
-			width 100%
-			if isFlex()
-				flex-basis auto
+				flex-basis auto	
+	+xs(true)
+		if $grid-system == 'float'
+			grid(xs, $grid-system)
+			
+	+sm(false, true)
+		if $grid-system == 'float'
+			grid(xs, $grid-system)
 
 	+sm(true, false)
 		
 		.container
 			width 90%
 		
-		if isFlex()
-			
+		if $grid-system == 'flex'
 			.col-xs
 			.col-sm
 				flex-basis 0
 				flex-grow 1
 
-		[class^="col-md"]
-		[class^="col-lg"]
-			width 100%
-			if isFlex()
+			[class^="col-md"]
+			[class^="col-lg"]
+				width 100%
 				flex-basis auto
 			
 		grid(sm, $grid-system)
+		
 
 +md(true, false)
 	
@@ -92,7 +111,7 @@ if $responsive
 		width 90%
 		max-width 1200px
 	
-	if isFlex()
+	if $grid-system == 'flex'
 		.col-xs
 		.col-md
 			flex-basis 0
@@ -101,7 +120,6 @@ if $responsive
 		.col-lg
 			flex-basis 100%
 			width 100%
-			
 
 	grid(md, $grid-system)
 	
@@ -112,8 +130,7 @@ if $responsive
 		width 90%
 		max-width 1600px
 	
-	if isFlex()	
-		
+	if $grid-system == 'flex'
 		.col-lg
 			flex-basis 0
 			flex-grow 1
