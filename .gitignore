@@ -1,5 +1,8 @@
 *.sublime-workspace
 *.sublime-project
-docs/*/*.pug
-docs/*/*.styl
-docs/*/*.coffee
+#docs/*/*.pug
+#docs/*/*.styl
+#docs/*/*.coffee
+src/util/*.sass
+src/*/*.css
+node_modules/*
