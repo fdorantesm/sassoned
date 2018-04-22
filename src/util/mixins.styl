@@ -11,7 +11,7 @@ class(prefix, attr, type, from=0, to=50, gap=5, important=false)
 			
 		else
 			if isDecimal(gap)
-				val = unit(percentage(value),'') % 100 == 0 ? value * 100 : value
+				val = value * 100
 			else
 				val = value
 			
