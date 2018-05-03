@@ -1,5 +1,5 @@
 # OOCSS
-Oriented Objects CSS
+Object Oriented Cascade Style Sheet
 
 ## How to use
 
