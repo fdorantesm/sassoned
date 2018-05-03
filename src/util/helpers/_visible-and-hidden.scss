@@ -1,0 +1,175 @@
+.visible,
+.visible-xs,
+.hidden-sm,
+.hidden-md,
+.hidden-lg,
+.hidden-xl,
+.hidden-sm-above,
+.hidden-md-above,
+.hidden-lg-above,
+.hidden-xl-above,
+.visible-sm-below,
+.visible-md-below,
+.visible-lg-below,
+{
+	@include show;
+}
+	
+.hidden,
+.hidden-xs,
+.visible-sm,
+.visible-md,
+.visible-lg,
+.visible-xl,
+.visible-sm-above,
+.visible-md-above,
+.visible-lg-above,
+.hidden-sm-below,
+.hidden-md-below,
+.hidden-lg-below,
+{
+	@include hide;
+}
+
+@include xs(){
+	.hidden-sm-below,
+	.hidden-md-below,
+	.hidden-lg-below,
+	.visible-sm-above,
+	.visible-md-above,
+	.visible-lg-above,
+	{
+		@include hide;
+	}
+	
+	.visible-xs,
+	.visible-sm-below,
+	.visible-md-below,
+	.visible-lg-below,
+	{
+		@include show;
+	}
+}
+
+@include sm(){
+	.hidden-sm,
+	.visible-xs,
+	.visible-md,
+	.visible-lg,
+	.visible-xl,
+	.visible-md-above,
+	.visible-lg-above,
+	.hidden-sm-above,
+	.hidden-md-below,
+	.hidden-lg-below,
+	{
+		@include hide;
+	}
+
+	.visible-sm,
+	.visible-sm-above,
+	.visible-md-below,
+	.visible-lg-below,
+	.hidden-xs,
+	.hidden-md,
+	.hidden-md-above,
+	.hidden-lg,
+	.hidden-lg-above,
+	.hidden-xl,
+	{
+		@include show;
+	}
+}
+@include md(){
+	.hidden-md,
+	.visible-xs,
+	.visible-sm,
+	.visible-sm-below,
+	.hidden-sm-above,
+	.hidden-md-above,
+	.hidden-md-below,
+	.hidden-lg-below,
+	{
+		@include hide;
+	}
+	
+	.visible-md,
+	.visible-md-above,
+	.visible-md-below,
+	.visible-sm-above,
+	.hidden-xs,
+	.hidden-sm,
+	.hidden-lg,
+	.hidden-xl,
+	.hidden-sm-below,
+	.hidden-lg-above,
+	{
+		@include show;
+	}
+}
+
+@include lg(){
+
+	.hidden-lg,
+	.hidden-md-above,
+	.hidden-sm-above,
+	.visible-sm-below,
+	.visible-md-below,
+	.hidden-lg-below,
+	.hidden-lg-above,
+	.visible-xs,
+	.visible-sm,
+	.visible-md,
+	.visible-xl
+	{
+		@include hide;
+	}
+	
+	.visible-lg,
+	.visible-lg-above,
+	.visible-lg-below,
+	.hidden-xl,
+	.hidden-md,
+	.hidden-md-below,
+	.hidden-md-above,
+	.hidden-sm-below,
+	.hidden-sm-above,
+	.hidden-xs,
+	.hidden-sm,
+	{
+		@include show;
+	}
+}
+
+@include xl(){
+	
+	.hidden-xl,
+	.hidden-sm-above,
+	.hidden-md-above,
+	.hidden-lg-above,
+	.visible-xs,
+	.visible-sm,
+	.visible-md,
+	.visible-lg,
+	.visible-sm-below,
+	.visible-md-below,
+	.visible-lg-below,
+	{
+		@include hide;
+	}
+	
+	.visible-xl,
+	.hidden-xs,
+	.hidden-sm,
+	.hidden-md,
+	.hidden-lg,
+	.visible-md-above,
+	.visible-sm-above,
+	.visible-lg-above,
+	.hidden-lg-below,
+	.hidden-md-below,
+	.hidden-sm-below,
+	{
+		@include show;
+	}
+}

@@ -1,0 +1,5 @@
+@each $i, $cursor in $cursors {
+	.cur#{$i} {
+		cursor: $cursor;
+	}
+}

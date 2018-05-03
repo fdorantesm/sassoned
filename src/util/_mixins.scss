@@ -1,0 +1,185 @@
+@import "variables";
+@import "functions";
+
+@mixin class($prefix, $attr, $type, $start: 0, $end: 50, $gap: 5, $important: false){
+	@for $i from ($start/$gap) through ($end/$gap){
+		$raw: $i * $gap;
+		$val: null;
+		
+		@if isDecimal($raw){
+			$val: $raw * 100;
+		}
+		@else{	
+			$val: if(isDecimal($gap), $raw * 100, $raw);
+		}
+
+		$value: unquote($raw + $type);
+		
+		.#{$prefix + $val}{
+			#{$attr}: if($important, $value !important, $value);
+		}	
+	}
+}
+
+@mixin media($size, $min: true, $max: true){
+	@if $max and $min {
+		@media only screen and (min-width: breakpoint($size, min)) and (max-width: breakpoint($size, max)){
+			@content;
+		}
+	}
+	@else{
+		@if $max {
+			@media only screen and (max-width: if(breakpoint($size, max) !=null, breakpoint($size, max), breakpoint($size, min) - 1)){
+				@content;
+			}
+		}
+
+		@if $min {
+			@media only screen and (min-width: if(breakpoint($size, min) != null, breakpoint($size, min), breakpoint($size, max) + 1)){
+				@content;
+			}	
+		}
+	}
+}
+
+@mixin hide(){
+	display: none;
+}
+
+@mixin show(){
+	display: initial;
+}
+
+@mixin grid($size, $type: 'flex', $columns: 12) {
+
+	@if $type == 'flex' {	
+		.col {	
+			-webkit-box-flex: 1;
+			-ms-flex-positive: 1;
+			flex-grow: 1;
+			-ms-flex-preferred-size: 0;
+			flex-basis: 0;
+			max-width: 100%;
+		}
+		
+		.start-#{$size} {	
+			-webkit-box-pack: start;
+			-ms-flex-pack: start;
+			justify-content: flex-start;
+			text-align: start;
+		}
+
+		.center-#{$size} {
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+			text-align: center;
+		}
+
+		.end-#{$size} {
+			-webkit-box-pack: end;
+			-ms-flex-pack: end;
+			justify-content: flex-end;
+			text-align: end;
+		}
+
+		.top-#{$size} {
+			-webkit-box-align: start;
+			-ms-flex-align: start;
+			align-items: flex-start;
+		}
+
+		.middle-#{$size} {
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+		}
+
+		.bottom-#{$size} {
+			-webkit-box-align: end;
+			-ms-flex-align: end;
+			align-items: flex-end;
+		}
+
+		.around-#{$size} {
+			-ms-flex-pack: distribute;
+			justify-content: space-around;
+		}
+		
+		.between-#{$size} {
+			-webkit-box-pack: justify;
+			-ms-flex-pack: justify;
+			justify-content: space-between;
+		}
+
+		.first-#{$size} {
+			-webkit-box-ordinal-group: 0;
+			-ms-flex-order: -1;
+			order: -1;
+		}
+
+		.last-#{$size} {
+			-webkit-box-ordinal-group: 2;
+			-ms-flex-order: 1;
+			order: 1;
+		}
+	}
+			
+	@if $type != 'fractions' {
+		@for $x from 1 through $columns {
+			$width: percentage($x/$columns);
+			.col-#{$size}-#{$x} {	
+				@if $type == 'flex' {	
+					-ms-flex-preferred-size: $width;
+					flex-basis: $width;
+					max-width: $width;
+				}
+				@else {
+					width: $width;
+				}
+			}
+		}
+	
+		@for $offset from 0 through $columns {
+			.col-#{$size}-offset-#{$offset} {
+				margin-left: percentage($offset/$columns);
+			}
+		}
+
+		@for $item from 0 through $columns {
+			.col-#{$size}-push-#{$item} {
+				left: percentage($item/$columns);
+			}
+			.col-#{$size}-pull-#{$item} {
+				right: percentage($item/$columns);
+			}
+		}
+	}
+
+	@else {
+		@for $x from 1 through $columns {
+			@for $y from 1 through $x {
+				@if $y!=$x {
+					$width: percentage($y/$x);
+					.col-#{$size}-#{$y + '-' + $x} {	
+						width: $width;
+						@for $k from 1 through $x {
+							@if $x!=$k {
+								$offset: percentage($k/$x);
+								&.col-#{$size}-offset-#{$k} {
+									margin-left: $offset;
+								}
+								&.col-#{$size}-pull-#{$k} {
+									right: $offset;
+								}
+								&.col-#{$size}-push-#{$k} {
+									left: $offset;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

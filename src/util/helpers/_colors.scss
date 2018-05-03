@@ -1,0 +1,5 @@
+@each $i, $color in $colors {
+	.c#{$i}{
+		color: $color;
+	}
+}

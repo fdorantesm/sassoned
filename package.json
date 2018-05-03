@@ -19,8 +19,12 @@
   "author": "fdorantesm",
   "license": "MIT",
   "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-remove-empty-lines": "^0.1.0",
     "gulp-rename": "^1.2.2",
-    "gulp-sourcemaps": "^2.6.4",
-    "gulp-stylus": "^2.7.0"
-  }
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4"
+  },
+  "dependencies": {}
 }

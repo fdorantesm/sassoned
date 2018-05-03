@@ -1,0 +1,49 @@
+.lsn {
+	list-style: none;
+}
+
+.list-reset {	
+	padding: 0;
+	margin: 0;
+	@extend .lsn;
+}
+
+@each $i, $size in $breakpoints {
+	@for $x from 1 through 4 {
+		.lc-#{$i}-#{$x} {
+			columns: $x;
+		}
+	}
+}
+		
+ul, ol {	
+	&.list-inline {
+		li {
+			display: inline-block;
+		}
+	}
+			
+	&.lsd {
+		list-style: decimal;
+	}
+	
+	&.lsdlz {
+		list-style: decimal-leading-zero;
+	}
+		
+	&.lsla {
+		list-style: lower-alpha;
+	}
+		
+	&.lslr {
+		list-style: lower-roman;
+	}
+	
+	&.lsua {
+		list-style: upper-alpha;
+	}
+	
+	&.lsur {
+		list-style: upper-roman;
+	}
+}

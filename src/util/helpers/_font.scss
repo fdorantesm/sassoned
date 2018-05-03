@@ -1,0 +1,5 @@
+@include class(fw, font-weight, '', 100, 900, 100);
+@include class(fsp, font-size, px, 8, 48, 2);
+@include class(fsp, font-size, px, 50, 100, 10);
+@include class(fse, font-size, em, 0.5, 3, 0.25);
+@include class(fsr, font-size, rem, 0.5, 3, 0.25);

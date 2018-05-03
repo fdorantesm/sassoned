@@ -1,0 +1,23 @@
+@if ($debug) {
+/*
+	$responsive: #{$responsive};
+	$grid-system: #{$grid-system};
+	$grid-columns: #{$grid-columns};
+
+	$breakpoints:
+		xs
+			max: #{breakpoint(xs, max)}
+		
+		sm
+			min: #{breakpoint(sm, min)}
+			max: #{breakpoint(sm, max)}
+		md
+			min: #{breakpoint(md, min)}
+			max: #{breakpoint(md, max)}
+		lg
+			min: #{breakpoint(lg, min)}
+			max: #{breakpoint(lg, max)}
+		xl
+			min: #{breakpoint(xl, min)}
+*/
+}

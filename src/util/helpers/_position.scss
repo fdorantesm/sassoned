@@ -1,0 +1,34 @@
+.pr { 
+	position: relative;
+}
+
+.ps {
+	position: static;
+}
+	
+.pa {
+	position: absolute;
+}
+	
+.pu {
+	position: unset;
+}
+	
+.pf {
+	position: fixed;
+}
+	
+.abs {
+	@extend .pa;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+}
+
+@include class(t, top, px, 0, 50, 5);
+@include class(l, left, px, 0, 50, 5);
+@include class(r, right, px, 0, 50, 5);
+@include class(b, bottom, px, 0, 50, 5);
