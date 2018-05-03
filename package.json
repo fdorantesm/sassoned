@@ -26,5 +26,7 @@
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4"
   },
-  "dependencies": {}
+  "dependencies": {
+    "hoek": "^4.2.1"
+  }
 }

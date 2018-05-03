@@ -1,22 +1,22 @@
 # OOCSS
 Oriented Objects CSS
 
-## Installation
+## How to use
 
-You need to include bootstrap.css in your document or styles file throug @import sentence.
+* @import css sentence
+* link stylesheet html tag
 
 ## Build
 
-Just compile bootstrap.styl file.
+Just compile style.scss file.
 
 ```
-stylus -c -u nib bootstrap.styl
+sass style.scss style.css
 ```
 
-## Classes
 
 ### Anchor
-*  Remove underline and outline
+*  Remove underline decoration and outline
 *  Add transition on hover
 
 ### Background
@@ -165,25 +165,23 @@ NOTE: It's just based on previous grid system, doesn't contains another elements
 | xs |  | 480px| xs() | .col-xs | 
 | sm | 481px | 960px | sm() | .col-sm |
 | md | 961px | 1280px | md() | .col-md |
-| lg | 1281px| | lg() | .col-lg |
+| lg | 1281px|  1600px | lg() | .col-lg |
+| xl | 1601px | | xl() | col-xl |
 
 Example:
 
 <pre>
-+xs()
-	//rules
-	
-+sm()
-	//rules
-	
-+md()
-	//rules
-	
-+lg()
-	//rules
+sm-up(){
+    // rules
+}
 </pre>
 
 ### Credits
-* Material palette color: Thanks to @danlevan https://github.com/danlevan/google-material-color
 * Flexboxgrid: Thanks to @kristoferjoseph https://github.com/kristoferjoseph/flexboxgrid
 * Bootstrap: Thanks to Twitter https://github.com/twbs/bootstrap
+* RicAg
+
+### Changelog
+* Rebuilt lib using sass with scss syntax
+* Removed color palette mixin
+* Added xl media size
