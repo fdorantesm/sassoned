@@ -1,0 +1,44 @@
+
+	@include xs {
+		@include responsive-helpers(xs);
+	}
+
+	@include sm {
+		@include responsive-helpers(sm);
+	}
+
+	@include sm-down {
+		@include responsive-helpers(sm-down);
+	}
+	
+	@include sm-up {
+		@include responsive-helpers(sm-up);
+	}
+
+	@include md {
+		@include responsive-helpers(md);
+	}
+
+	@include md-down {
+		@include responsive-helpers(md-down);
+	}
+	
+	@include md-up {
+		@include responsive-helpers(md-up);
+	}
+
+	@include lg {
+		@include responsive-helpers(lg);
+	}
+
+	@include lg-down {
+		@include responsive-helpers(lg-down);
+	}
+	
+	@include lg-up {
+		@include responsive-helpers(lg-up);
+	}
+
+	@include xl {
+		@include responsive-helpers(xl);
+	}

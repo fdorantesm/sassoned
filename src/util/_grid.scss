@@ -9,7 +9,6 @@
 }
 	
 .row {	
-	box-sizing: border-box;
 	@if $grid-system == 'flex' {	
 		display: flex;
 		flex: 0 1 auto;
@@ -18,50 +17,53 @@
 		&.reverse {
 			  flex-direction: row-reverse
 		}
+		&.column-reverse {
+			flex-direction: column-reverse;
+		}
 	}
 	
-	@else if $grid-system == 'fractions' {
-		display: block;
+	@else if $grid-system == 'fractions' or $grid-system == 'inline' {
 		letter-spacing: -0.31em;
 		*letter-spacing: normal;
 		word-spacing: -0.43em;
+
 	}
 	
-	@else if $grid-system == 'float' {	
+	@else if $grid-system == 'float' {
+		display: table;
 		&:after
 		&:before {
 			content: ' ';
-			display: table;
 			clear: both;
+			@extend .row;
 		}
 	}
 }
 				
-[class^="col-"] {	
-	box-sizing: border-box;
-	@if $grid-system == 'flex' {	
+[class*="col-"] {	
+	@if $grid-system == 'flex' {
 		flex: 0 0 auto;
-		&.reverse {
-			  flex-direction: column-reverse;
-		}
 	}
 	
-	@else if $grid-system == 'fractions' {
+	@else {
 		width: 100%;
-		display: inline-block;
-		vertical-align: top;
-		zoom: 1;
-		*display: inline;
-		letter-spacing: normal;
-		word-spacing: normal;
-	}
-	
-	@else if $grid-system == 'float' {
-		float: left;
+		@if $grid-system == 'fractions' or $grid-system == 'inline' {
+			display: inline-block;
+			vertical-align: top;
+			zoom: 1;
+			*display: inline;
+			letter-spacing: normal;
+			word-spacing: normal;
+		}
+		
+		@else if $grid-system == 'float' {
+			float: left;
+		}
+		
 	}
 }
 
-@if not $grid-system == 'flex' {
+@if $grid-system != 'flex' {
 	[class*="-push-"],
 	[class*="-pull-"],
 	{
@@ -71,39 +73,31 @@
 
 @if $responsive {
 
+	@include center-box(xs);
 	@include grid(xs, $grid-system);
 	
-	@if $grid-system == 'flex' {
-		.col-lg {
-			flex-basis: 100%;
-			width: 100%;
-		}
-	}
-
-	@include xs(){
+	@include xs() {
 		.container {
 			max-width: 460px;
 		}
 		
 		@if $grid-system == 'flex' {
-			.col-xs, .col-md {
+			.col-xs,
+			.col-sm,
+			.col-md,
+			.col-lg,
+			{
 				flex-basis: 100%;
 				width: 100%;
 			}
 
-			[class^="col-sm"],
-			[class^="col-md"],
-			[class^="col-lg"],
+			[class*="col-sm-"],
+			[class*="col-md-"],
+			[class*="col-lg-"],
 			{
 				width: 100%;
 				flex-basis: auto;
 			}
-		}
-	}
-	
-	@include xs() {
-		@if $grid-system == 'float' {
-			@include grid(xs, $grid-system);
 		}
 	}
 			
@@ -111,6 +105,8 @@
 		@if $grid-system == 'float' {
 			@include grid(xs, $grid-system);
 		}
+
+		@include center-box(sm, down);
 	}
 
 	@include sm-up() {	
@@ -133,7 +129,9 @@
 				flex-basis: auto;
 			}
 		}
-			
+
+
+		@include center-box(sm, up);		
 		@include grid(sm, $grid-system);
 	}
 }
@@ -158,8 +156,13 @@
 		}
 	}
 
+	@include center-box(md, up);
 	@include grid(md, $grid-system);
 	
+}
+
+@include md-down {
+	@include center-box(md, down);
 }
 	
 @include lg-up {
@@ -174,8 +177,13 @@
 			flex-grow: 1;
 		}
 	}		
-		
+
+	@include center-box(lg, up);
 	@include grid(lg, $grid-system);
+}
+
+@include lg-down {
+	@include center-box(lg, down);
 }
 
 @include xl {
@@ -191,5 +199,6 @@
 		}
 	}		
 		
+	@include center-box(lg);
 	@include grid(xl, $grid-system)	
 }

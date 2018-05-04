@@ -6,11 +6,28 @@ html {
 	min-height: 100%;
 }
 
-body.normalized {
-	margin: 0;
-	font-size: $font-size-base;
-	font-family: $font-family-base;
-	min-height: inherit;
+body {
+	&.normalized {
+		margin: 0;
+		font-size: $font-size-base;
+		font-family: $font-family-base;
+		min-height: inherit;
+	}
+
+	&.debug {
+		* {
+			border: 0.25px dashed #ccc;
+			&::before {
+				content: attr(class);
+				letter-spacing: normal;
+				display: table;
+				background: hsl(60, 100, 75);
+				width: 100%;
+				font-size: 0.75rem;
+				color: red;
+			}
+		}
+	}
 }
 
 .w100vw {

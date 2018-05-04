@@ -1,6 +1,6 @@
 $debug: true;
 $responsive: true;
-$grid-system: 'flex';
+$grid-system: 'inline'; // flex | float | inline | fractions
 $grid-columns: 12;
 
 $breakpoints: (

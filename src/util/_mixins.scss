@@ -42,12 +42,27 @@
 	}
 }
 
-@mixin hide(){
+@mixin hide() {
 	display: none;
 }
 
-@mixin show(){
+@mixin show() {
 	display: initial;
+}
+
+@mixin center-box($size, $side: null) {
+	.#{$size}#{if($side, '-' + $side, '')} {
+		&-text-center {
+			text-align: center;
+		}
+
+		&-center {
+			margin: {
+				left: auto;
+				right: auto;
+			}
+		}
+	}
 }
 
 @mixin grid($size, $type: 'flex', $columns: 12) {
@@ -180,6 +195,42 @@
 					}
 				}
 			}
+		}
+	}
+
+	@each $type in (right, center, left, justify) {
+		.#{$size}-#{$type} {
+			&-text {
+				text-align: $type;
+			}
+			@if $type!= justify {				
+				margin: {
+					left: auto;
+					right: auto;
+				}
+			}
+		}
+
+	}
+}
+
+@mixin responsive-helpers($prefix) {
+	@include class(#{$prefix}-m,  margin, px, 0, 50, 5);
+	@include class(#{$prefix}-mt, margin-top, px, 0, 50, 5);
+	@include class(#{$prefix}-ml, margin-left, px, 0, 50, 5);
+	@include class(#{$prefix}-mr, margin-right, px, 0, 50, 5);
+	@include class(#{$prefix}-mb, margin-bottom, px, 0, 50, 5);
+	@include class(#{$prefix}-p,  padding, px, 0, 50, 5);
+	@include class(#{$prefix}-pt, padding-top, px, 0, 50, 5);
+	@include class(#{$prefix}-pl, padding-left, px, 0, 50, 5);
+	@include class(#{$prefix}-pr, padding-right, px, 0, 50, 5);
+	@include class(#{$prefix}-pb, padding-bottom, px, 0, 50, 5);
+	@include class(#{$prefix}-fsp, font-size, px, 8, 48, 2);
+	@include class(#{$prefix}-fsp, font-size, px, 50, 100, 10);
+
+	@each $key, $val in (pr: relative, ps: static, pa: absolute, pu: unset, pf: fixed, psy: sticky) {
+		.#{$prefix}-#{$key} { 
+			position: $val;
 		}
 	}
 }
