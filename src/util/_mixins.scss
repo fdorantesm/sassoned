@@ -56,7 +56,7 @@
 			text-align: center;
 		}
 
-		&-center {
+		&-center-align {
 			margin: {
 				left: auto;
 				right: auto;
@@ -65,79 +65,64 @@
 	}
 }
 
-@mixin grid($size, $type: 'flex', $columns: 12) {
+@mixin grid($size, $type: 'flex', $columns: $grid-columns) {
 
 	@if $type == 'flex' {	
 		.col {	
-			-webkit-box-flex: 1;
-			-ms-flex-positive: 1;
 			flex-grow: 1;
-			-ms-flex-preferred-size: 0;
 			flex-basis: 0;
 			max-width: 100%;
 		}
-		
-		.start-#{$size} {	
-			-webkit-box-pack: start;
-			-ms-flex-pack: start;
-			justify-content: flex-start;
-			text-align: start;
+
+		.#{$size} {
+			&-start {
+				justify-content: flex-start;
+			}
+
+			&-center {
+				justify-content: center;
+			}
+
+			&-end {
+				justify-content: flex-end;
+			}
+
+			&-top {
+				align-items: flex-start;
+			}
+
+			&-middle {
+				align-items: center;
+			}
+
+			&-bottom {
+				align-items: flex-end;
+			}
+
+			&-around {
+				justify-content: space-around;
+			}
+
+			&-between {
+				justify-content: space-between;
+			}
+
+			&-1st {
+				order: -1;
+			}
+
+			&-2nd {
+				order: 2;
+			}
+
+			@for $i from 3 through $grid-columns {
+				&-#{$i + th} {
+					order: $i;
+				}
+			}
+
 		}
 
-		.center-#{$size} {
-			-webkit-box-pack: center;
-			-ms-flex-pack: center;
-			justify-content: center;
-			text-align: center;
-		}
-
-		.end-#{$size} {
-			-webkit-box-pack: end;
-			-ms-flex-pack: end;
-			justify-content: flex-end;
-			text-align: end;
-		}
-
-		.top-#{$size} {
-			-webkit-box-align: start;
-			-ms-flex-align: start;
-			align-items: flex-start;
-		}
-
-		.middle-#{$size} {
-			-webkit-box-align: center;
-			-ms-flex-align: center;
-			align-items: center;
-		}
-
-		.bottom-#{$size} {
-			-webkit-box-align: end;
-			-ms-flex-align: end;
-			align-items: flex-end;
-		}
-
-		.around-#{$size} {
-			-ms-flex-pack: distribute;
-			justify-content: space-around;
-		}
-		
-		.between-#{$size} {
-			-webkit-box-pack: justify;
-			-ms-flex-pack: justify;
-			justify-content: space-between;
-		}
-
-		.first-#{$size} {
-			-webkit-box-ordinal-group: 0;
-			-ms-flex-order: -1;
-			order: -1;
-		}
-
-		.last-#{$size} {
-			-webkit-box-ordinal-group: 2;
-			-ms-flex-order: 1;
-			order: 1;
-		}
 	}
 			
 	@if $type != 'fractions' {
@@ -145,7 +130,6 @@
 			$width: percentage($x/$columns);
 			.col-#{$size}-#{$x} {	
 				@if $type == 'flex' {	
-					-ms-flex-preferred-size: $width;
 					flex-basis: $width;
 					max-width: $width;
 				}

@@ -5,3 +5,21 @@
 @function breakpoint($size, $side){
 	@return map-get(map-get($breakpoints, $size), $side)
 }
+
+@function em($el, $context:$font-size-base) {
+	@if type_of($el) == number and unit($el) == 'px' {
+		@return ($el / $context) * 1em;
+  	}
+	@else {
+		@error 'Function em() requires a px unit as first argument / La función em() requiere una unidad de pixeles como primer argumento (el segundo es opcional)';
+	}
+}
+
+@function rem($el) {
+	@if type_of($el) == number and unit($el) == 'px' {
+		@return ($el / $font-size-base) * 1rem;
+	}
+	@else {
+		@error 'Function rem() requires a px unit as argument / La funcion rem() requiere una unidad de pixeles como argumento';
+	}
+}

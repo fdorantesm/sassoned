@@ -14,11 +14,21 @@
 		flex: 0 1 auto;
 		flex-direction: row;
 		flex-wrap: wrap;
+		
 		&.reverse {
 			  flex-direction: row-reverse
 		}
+		
 		&.column-reverse {
 			flex-direction: column-reverse;
+		}
+		
+		&.as-column {
+			flex-direction: column;
+		}
+
+		&.as-row {
+			flex-direction: row;
 		}
 	}
 	
@@ -103,7 +113,7 @@
 			
 	@include sm-down() {
 		@if $grid-system == 'float' {
-			@include grid(xs, $grid-system);
+			@include grid(sm, $grid-system);
 		}
 
 		@include center-box(sm, down);
@@ -121,9 +131,9 @@
 				flex-grow: 1;
 			}
 
-			[class^="col-md"],
-			[class^="col-lg"],
-			[class^="col-xl"],
+			[class*="col-md"],
+			[class*="col-lg"],
+			[class*="col-xl"],
 			{
 				width: 100%;
 				flex-basis: auto;
