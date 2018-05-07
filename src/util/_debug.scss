@@ -3,7 +3,6 @@
 	$responsive: #{$responsive};
 	$grid-system: #{$grid-system};
 	$grid-columns: #{$grid-columns};
-
 	$breakpoints:
 		xs
 			max: #{breakpoint(xs, max)}

@@ -67,7 +67,7 @@
 
 @mixin grid($size, $type: 'flex', $columns: $grid-columns) {
 
-	@if $type == 'flex' {	
+	@if isFlex() {	
 		.col {	
 			flex-grow: 1;
 			flex-basis: 0;
@@ -107,7 +107,7 @@
 				justify-content: space-between;
 			}
 
-			&-1st {
+			&-1st, &-first {
 				order: -1;
 			}
 
@@ -115,9 +115,20 @@
 				order: 2;
 			}
 
-			@for $i from 3 through $grid-columns {
-				&-#{$i + th} {
+			&-3rd {
+				order: 3;
+			}
+
+			@for $i from 4 through $grid-columns {
+				$nth: #{$i}th;
+				&-#{$nth} {
 					order: $i;
+				}
+
+				@if $i == $grid-columns {
+					&-last {
+						@extend .#{$size}-#{$nth};
+					}
 				}
 			}
 
@@ -129,7 +140,7 @@
 		@for $x from 1 through $columns {
 			$width: percentage($x/$columns);
 			.col-#{$size}-#{$x} {	
-				@if $type == 'flex' {	
+				@if isFlex() {	
 					flex-basis: $width;
 					max-width: $width;
 				}

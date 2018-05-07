@@ -73,13 +73,12 @@
 	}
 }
 
-@if $grid-system != 'flex' {
-	[class*="-push-"],
-	[class*="-pull-"],
-	{
-		position: relative;
-	}
+[class*="-push-"],
+[class*="-pull-"],
+{
+	position: relative;
 }
+
 
 @if $responsive {
 
