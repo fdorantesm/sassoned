@@ -7,15 +7,15 @@ var sourcemaps = require('gulp-sourcemaps')
 var autoprefixer = require('gulp-autoprefixer')
 var removeEmptyLines = require('gulp-remove-empty-lines')
 
+var vendors = { browsers: ['last 5 versions'] }
+
 gulp.task('compress', () => {
 	return gulp.src('./src/style.scss')
 		.pipe(sourcemaps.init())
-		.pipe(autoprefixer({
-            browsers: ['last 2 versions']
-        }))
         .pipe(sass({
         	outputStyle: 'compressed'
         }).on('error', sass.logError))
+		.pipe(autoprefixer(vendors))
 		.pipe(rename('style.min.css'))
 		.pipe(sourcemaps.write('.'))
 		.pipe(removeEmptyLines({
@@ -27,12 +27,10 @@ gulp.task('compress', () => {
 gulp.task('normal', () => {
 	return gulp.src('./src/style.scss')
 		.pipe(sourcemaps.init())
-		.pipe(autoprefixer({
-            browsers: ['last 2 versions']
-        }))
 		.pipe(sass({
         	outputStyle: 'expanded'
 		}).on('error', sass.logError))
+		.pipe(autoprefixer(vendors))
 		.pipe(sourcemaps.write('.'))
 		.pipe(removeEmptyLines())
 		.pipe(gulp.dest('./dist'))
