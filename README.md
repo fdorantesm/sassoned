@@ -3,7 +3,7 @@ Object Oriented Cascade Style Sheet
 
 ## How to use
 
-* @import css sentence
+* @import sentence
 * link stylesheet html tag
 
 ## Build
@@ -77,6 +77,12 @@ Font-size in px, em and rem
 * Float (based on twbs bootstrap)
 * Inline (same as bootstrap but using inline-block)
 * Wp (Using fractions like col-md-1-2 eq col-md-6 based on wp grid by Ricardo Aguirre)
+
+##### Each grid-system has
+* Nested columns
+* Offsets
+* Pull
+* Push
 
 NOTE: It's just based on previous grid system, doesn't contains another elements outside grid.
 
@@ -163,8 +169,8 @@ NOTE: It's just based on previous grid system, doesn't contains another elements
 |   Size   |   Min   |   Max   | Mixin | Prefix |
 | :-: | :-:| :-: | :-: | :-: |
 | xs |  | 480px| xs() | .col-xs | 
-| sm | 481px | 960px | sm() | .col-sm |
-| md | 961px | 1280px | md() | .col-md |
+| sm | 481px | 768px | sm() | .col-sm |
+| md | 769px | 1280px | md() | .col-md |
 | lg | 1281px|  1600px | lg() | .col-lg |
 | xl | 1601px | | xl() | col-xl |
 
@@ -175,6 +181,17 @@ sm-up(){
     // rules
 }
 </pre>
+
+### Media helpers
+
+This classes will be able to change property-value classes in each display resolution. Remember mobile first.
+
+##### {size}-{key}{val}
+
+* Margin
+* Padding
+* Font size (px, em, rem)
+* Position
 
 ### Credits
 * Flexboxgrid: Thanks to @kristoferjoseph https://github.com/kristoferjoseph/flexboxgrid
