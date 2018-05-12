@@ -53,8 +53,7 @@
 	.#{$size}#{if($side, '-' + $side, '')} {
 		&-center {
 			&-text {
-				text-align: center;
-				
+				text-align: center;	
 			}
 
 			&-align {
@@ -100,7 +99,7 @@
 			&-top {
 				align-items: flex-start;
 			}
-
+			
 			&-middle {
 				align-items: center;
 			}
