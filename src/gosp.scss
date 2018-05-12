@@ -1,10 +1,30 @@
-@import "util/variables";
+@import "util/config";
 @import "util/class-mapping";
 @import "util/functions";
 
+/*
+ *      ___          ___          ___          ___   
+ *     /\__\        /\  \        /\__\        /\  \  
+ *    /:/ _/_      /::\  \      /:/ _/_      /::\  \ 
+ *   /:/ /\  \    /:/\:\  \    /:/ /\  \    /:/\:\__\
+ *  /:/ /::\  \  /:/  \:\  \  /:/ /::\  \  /:/ /:/  /
+ * /:/__\/\:\__\/:/__/ \:\__\/:/_/:/\:\__\/:/_/:/  / 
+ * \:\  \ /:/  /\:\  \ /:/  /\:\/:/ /:/  /\:\/:/  /  
+ *  \:\  /:/  /  \:\  /:/  /  \::/ /:/  /  \::/__/   
+ *   \:\/:/  /    \:\/:/  /    \/_/:/  /    \:\  \   
+ *    \::/  /      \::/  /       /:/  /      \:\__\  
+ *     \/__/        \/__/        \/__/        \/__/  
+ * 
+ *
+ * @version: #{$gosp-version}
+ * @author: @fdorantesm
+ * @website: https://gosp.dorant.es
+ * @github: https://github.com/fdorantesm/gosp-css
+ *
+*/
+
 @import "util/media";
 @import "util/placeholders";
-@import "util/debug";
 @import "util/helpers/generals";
 @import "util/grid";
 @import "util/responsive-classes";

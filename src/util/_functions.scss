@@ -1,4 +1,4 @@
-@import "variables";
+@import "config";
 
 @function isDecimal($num) {
 	@return $num % 1 != 0;
@@ -8,7 +8,7 @@
 	@return map-get(map-get($gosp-breakpoints, $size), $side);
 }
 
-@function em($el, $context:$gosp-font-size-base) {
+@function em($el, $context: $gosp-font-size-base) {
 	@if type_of($el) == number and unit($el) == 'px' {
 		@return ($el / $context) * 1em;
   	}

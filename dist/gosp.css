@@ -1,21 +1,22 @@
 /*
-	$responsive: true;
-	$grid-system: flex;
-	$grid-columns: 12;
-	$breakpoints:
-		xs
-			max: em(480px)
-		sm
-			min: em(481px)
-			max: em(768px)
-		md
-			min: em(769px)
-			max: em(1280px)
-		lg
-			min: em(1281px)
-			max: em(1600px)
-		xl
-			min: em(1601px)
+ *      ___          ___          ___          ___   
+ *     /\__\        /\  \        /\__\        /\  \  
+ *    /:/ _/_      /::\  \      /:/ _/_      /::\  \ 
+ *   /:/ /\  \    /:/\:\  \    /:/ /\  \    /:/\:\__\
+ *  /:/ /::\  \  /:/  \:\  \  /:/ /::\  \  /:/ /:/  /
+ * /:/__\/\:\__\/:/__/ \:\__\/:/_/:/\:\__\/:/_/:/  / 
+ * \:\  \ /:/  /\:\  \ /:/  /\:\/:/ /:/  /\:\/:/  /  
+ *  \:\  /:/  /  \:\  /:/  /  \::/ /:/  /  \::/__/   
+ *   \:\/:/  /    \:\/:/  /    \/_/:/  /    \:\  \   
+ *    \::/  /      \::/  /       /:/  /      \:\__\  
+ *     \/__/        \/__/        \/__/        \/__/  
+ * 
+ *
+ * @version: 1.0.0
+ * @author: @fdorantesm
+ * @website: https://gosp.dorant.es
+ * @github: https://github.com/fdorantesm/gosp-css
+ *
 */
 *, :before, :after {
   -webkit-box-sizing: border-box;
@@ -10313,4 +10314,4 @@ h6 {
 .z1000 {
   z-index: 1000;
 }
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=gosp.css.map */

@@ -1,16 +1,16 @@
 'use strict'
 
-var gulp = require('gulp')
-var sass = require('gulp-sass')
-var rename = require('gulp-rename')
-var sourcemaps = require('gulp-sourcemaps')
-var autoprefixer = require('gulp-autoprefixer')
-var removeEmptyLines = require('gulp-remove-empty-lines')
+let gulp = require('gulp')
+let sass = require('gulp-sass')
+let rename = require('gulp-rename')
+let sourcemaps = require('gulp-sourcemaps')
+let autoprefixer = require('gulp-autoprefixer')
+let removeEmptyLines = require('gulp-remove-empty-lines')
 
-var vendors = { browsers: ['last 5 versions'] }
+let vendors = { browsers: ['last 5 versions'] }
 
 gulp.task('compress', () => {
-	return gulp.src('./src/style.scss')
+	return gulp.src('./src/gosp.scss')
 		.pipe(sourcemaps.init())
         .pipe(sass({
         	outputStyle: 'compressed'
@@ -25,7 +25,7 @@ gulp.task('compress', () => {
 });
 
 gulp.task('normal', () => {
-	return gulp.src('./src/style.scss')
+	return gulp.src('./src/gosp.scss')
 		.pipe(sourcemaps.init())
 		.pipe(sass({
         	outputStyle: 'expanded'
@@ -37,6 +37,6 @@ gulp.task('normal', () => {
 });
 
 
-gulp.task('default', () => {
+gulp.task('default', ['normal', 'compress'], () => {
 	gulp.watch('src/**/*.scss', ['normal', 'compress']);
 })
