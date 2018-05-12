@@ -1,5 +1,5 @@
-form.form {
-	.select {	
+form.gosp-form {
+	.gosp-select {	
 		display: inline-block;
 		position: relative;
 		select {
@@ -8,7 +8,7 @@ form.form {
 			outline: none;
 		}
 		&:after {
-			background: #FFF;
+			background: inherit;
 			box-sizing: border-box;
 			content: '\f107';
 			font-family: 'FontAwesome';

@@ -1,7 +1,1 @@
-.bsb {
-	box-sizing: border-box;
-}
-	
-.bscb {
-	box-sizing: content-box;
-}
+@include classmap(box-sizing, $gosp-box-sizing);

@@ -1,17 +1,2 @@
 @include class(o, opacity, '', 0, 1, 0.25);
-
-.vh {
-	visibility: hidden;
-}
-
-.vv {
-	visibility: visible;
-}
-
-.vc {
-	visibility: collapse;
-}
-
-.vu {
-	visibility: unset;
-}
+@include classmap(visibility, $gosp-visibility);

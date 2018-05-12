@@ -1,5 +1,5 @@
-@each $i, $color in $colors {
-	.c#{$i}{
+@each $i, $color in $gosp-colors {
+	.c#{$i} {
 		color: $color;
 	}
 }

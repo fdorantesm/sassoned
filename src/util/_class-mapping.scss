@@ -1,0 +1,237 @@
+$gosp-display: (
+	db: block, 
+	dfx: flex, 
+	di: inline, 
+	dib: inline-block, 
+	din: initial, 
+	dn: none,
+	dt: table, 
+	dtc: table-cell, 
+	dtr: table-row,
+);
+
+$gosp-decoration-style: (
+	da: dashed,
+	do: dotted,
+	s: solid,
+	w: wavy,
+);
+
+$gosp-sides: (
+	b: bottom,
+	l: left,
+	r: right,
+	t: top,
+);
+
+$gosp-cursors: (
+	curd: default,
+	curna: not-allowed,
+	curp: pointer,
+	curt: text, 
+	curw: wait,
+);
+
+$gosp-headings: (
+	1: $gosp-font-size-h1,
+	2: $gosp-font-size-h2,
+	3: $gosp-font-size-h3,
+	4: $gosp-font-size-h4,
+	5: $gosp-font-size-h5,
+	6: $gosp-font-size-h6,
+);
+
+$gosp-colors: (
+	0: #000,
+	3: #333,
+	6: #666,
+	9: #999,
+	A: #AAA,
+	C: #CCC,
+	E: #EEE,
+	F: #FFF,
+);
+
+$gosp-justify-content: (
+	 jcc: center,
+	 jcs: stretch,
+	 jcu: unset,
+	jcfe: flex-end,
+	jcfs: flex-start,
+	jcsa: space-around,
+	jcsb: space-between,
+);
+
+$gosp-align-items: (
+	aic: center,
+	aife: flex-end,
+	aifs: flex-start,
+	aiu: unset,
+);
+
+$gosp-flex-direction: (
+	 fdc: column,
+	 fdr: row,
+	fdcr: column-reverse,
+	fdrr: row-reverse,
+);
+
+$gosp-flex-wrap: (
+	fwnw: no-wrap,
+	fww: wrap,
+	fwwr: wrap-reverse,
+);
+
+$gosp-position: (
+	pa: absolute,
+	pf: fixed,
+	pr: relative,
+	ps: static,
+	psy: sticky,
+	pu: unset,
+);
+
+$gosp-float: (
+	fl: left,
+	fn: none,
+	fr: right,
+	fu: unset,
+);
+
+$gosp-text-align: (
+	tac: center,
+	taj: justify,
+	tal: left, 
+	tar: right,
+);
+
+$gosp-text-transform: (
+	ttc: capitalize,
+	ttl: lowercase,
+	ttn: none,
+	ttu: uppercase,
+);
+
+$gosp-font-style: (
+	i: italic,
+	o: oblique,
+);
+
+$gosp-font-weight: (
+	b: bold,
+	l: lighter,
+	n: normal,
+);
+
+$gosp-text-decoration: (
+	tdlt: line-through,
+	tdo: overline,
+	tdou: underline overline,
+	tdu: underline,
+	tduo: underline overline,
+	tduos: underline overline line-through,
+	tduso: underline overline line-through,
+	tdous: underline overline line-through,
+	tdosu: underline overline line-through,
+	tdsou: underline overline line-through,
+	tdsuo: underline overline line-through,
+);
+
+$gosp-vertical-align: (
+	vab: bottom,
+	vabl: baseline,
+	vainh: inherit,
+	vam: middle,
+	vasub: sub,
+	vasup: super,
+	vat: top,
+	vatb: text-bottom,
+	vatt: text-top,
+);
+
+$gosp-text-direction: (
+	tdi: initial,
+	tdl: ltr,
+	tdr: rtl,
+);
+
+$gosp-margin: (
+	m: margin,
+	mb: margin-bottom,
+	ml: margin-left,
+	mr: margin-right,
+	mt: margin-top,
+);
+
+$gosp-padding: (
+	p: padding,
+	pb: padding-bottom,
+	pl: padding-left,
+	pr: padding-right,
+	pt: padding-top,
+);
+
+$gosp-z-indexes: (-1, 1, 10, 100, 1000);
+
+$gosp-background-position: (
+	bpbc: center bottom,
+	bpbl: left bottom,
+	bpbr: right bottom,
+	bpcb: center bottom,
+	bpcc: center center,
+	bpcl: left center,
+	bpcr: right center,
+	bpct: center top,
+	bplb: left bottom,
+	bplc: left center,
+	bplt: left top,
+	bprb: right bottom,
+	bprc: right center,
+	bprt: right top,
+	bptc: center top,
+	bptl: left top,
+	bptr: right top,
+);
+
+$gosp-background-size: (
+	bscc: contain,
+	bscv: cover,
+	bsx: 100% 100%,
+);
+
+$gosp-background-repeat: (
+	brnr: no-repeat,
+	brr: repeat,
+	brrx: repeat-x,
+	brry: repeat-y,
+);
+
+$gosp-box-sizing: (
+	bsb: border-box,
+	bsc: content-box,
+);
+
+$gosp-height: (
+	   hin: inherit,
+	  h25p: 25%,
+	  h50p: 50%,
+	  h75p: 75%,
+	 h100p: 100%,
+	h100vh: 100vh,
+);
+
+$gosp-list-style: (
+	lsd: decimal,
+	lsdlz: decimal-leading-zero,
+	lsla: lower-alpha,
+	lslr: lower-roman,
+	lsua: upper-alpha,
+	lsur: upper-roman,
+);
+
+$gosp-visibility: (
+	vc: collapse,
+	vh: hidden,
+	vu: unset,
+	vv: visible,
+);

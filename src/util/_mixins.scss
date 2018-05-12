@@ -1,7 +1,6 @@
-@import "variables";
 @import "functions";
 
-@mixin class($prefix, $attr, $type, $start: 0, $end: 50, $gap: 5, $important: false){
+@mixin class($prefix, $attr, $type, $start: 0, $end: 50, $gap: 5, $important: false) {
 	@for $i from ($start/$gap) through ($end/$gap){
 		$raw: $i * $gap;
 		$val: null;
@@ -21,21 +20,21 @@
 	}
 }
 
-@mixin media($size, $min: true, $max: true){
+@mixin media($size, $min: true, $max: true) {
 	@if $max and $min {
-		@media only screen and (min-width: breakpoint($size, min)) and (max-width: breakpoint($size, max)){
+		@media only screen and (min-width: breakpoint($size, min)) and (max-width: breakpoint($size, max)) {
 			@content;
 		}
 	}
 	@else{
 		@if $max {
-			@media only screen and (max-width: if(breakpoint($size, max) !=null, breakpoint($size, max), breakpoint($size, min) - 1)){
+			@media only screen and (max-width: if(breakpoint($size, max) !=null, breakpoint($size, max), breakpoint($size, min) - 1)) {
 				@content;
 			}
 		}
 
 		@if $min {
-			@media only screen and (min-width: if(breakpoint($size, min) != null, breakpoint($size, min), breakpoint($size, max) + 1)){
+			@media only screen and (min-width: if(breakpoint($size, min) != null, breakpoint($size, min), breakpoint($size, max) + 1)) {
 				@content;
 			}	
 		}
@@ -52,20 +51,23 @@
 
 @mixin center-box($size, $side: null) {
 	.#{$size}#{if($side, '-' + $side, '')} {
-		&-text-center {
-			text-align: center;
-		}
+		&-center {
+			&-text {
+				text-align: center;
+				
+			}
 
-		&-center-align {
-			margin: {
-				left: auto;
-				right: auto;
+			&-align {
+				margin: {
+					left: auto;
+					right: auto;
+				}
 			}
 		}
 	}
 }
 
-@mixin grid($size, $type: 'flex', $columns: $grid-columns) {
+@mixin grid($size, $type: 'flex', $columns: $gosp-grid-columns) {
 
 	@if isFlex() {	
 		.col {	
@@ -87,6 +89,14 @@
 				justify-content: flex-end;
 			}
 
+			&-around {
+				justify-content: space-around;
+			}
+
+			&-between {
+				justify-content: space-between;
+			}
+			
 			&-top {
 				align-items: flex-start;
 			}
@@ -97,14 +107,6 @@
 
 			&-bottom {
 				align-items: flex-end;
-			}
-
-			&-around {
-				justify-content: space-around;
-			}
-
-			&-between {
-				justify-content: space-between;
 			}
 
 			&-1st, &-first {
@@ -119,13 +121,13 @@
 				order: 3;
 			}
 
-			@for $i from 4 through $grid-columns {
+			@for $i from 4 through $gosp-grid-columns {
 				$nth: #{$i}th;
 				&-#{$nth} {
 					order: $i;
 				}
 
-				@if $i == $grid-columns {
+				@if $i == $gosp-grid-columns {
 					&-last {
 						@extend .#{$size}-#{$nth};
 					}
@@ -193,39 +195,39 @@
 		}
 	}
 
-	@each $type in (right, center, left, justify) {
-		.#{$size}-#{$type} {
-			&-text {
-				text-align: $type;
-			}
-			@if $type!= justify {				
-				margin: {
-					left: auto;
-					right: auto;
-				}
-			}
-		}
-
-	}
+	@include classmap(text-align, $gosp-text-align, $size);
 }
 
-@mixin responsive-helpers($prefix) {
-	@include class(#{$prefix}-m,  margin, px, 0, 50, 5);
-	@include class(#{$prefix}-mt, margin-top, px, 0, 50, 5);
-	@include class(#{$prefix}-ml, margin-left, px, 0, 50, 5);
-	@include class(#{$prefix}-mr, margin-right, px, 0, 50, 5);
-	@include class(#{$prefix}-mb, margin-bottom, px, 0, 50, 5);
-	@include class(#{$prefix}-p,  padding, px, 0, 50, 5);
-	@include class(#{$prefix}-pt, padding-top, px, 0, 50, 5);
-	@include class(#{$prefix}-pl, padding-left, px, 0, 50, 5);
-	@include class(#{$prefix}-pr, padding-right, px, 0, 50, 5);
-	@include class(#{$prefix}-pb, padding-bottom, px, 0, 50, 5);
+
+@mixin responsive-helpers($prefix: null) {
+	@each $key, $val in $gosp-margin {
+		@include class(#{$prefix + '-' + $key},  $val, px, 0, 50, 5);
+	}
+	
+	@each $key, $val in $gosp-padding {
+		@include class(#{$prefix + '-' + $key},  $val, px, 0, 50, 5);
+	}
+	
 	@include class(#{$prefix}-fsp, font-size, px, 8, 48, 2);
 	@include class(#{$prefix}-fsp, font-size, px, 50, 100, 10);
 
-	@each $key, $val in (pr: relative, ps: static, pa: absolute, pu: unset, pf: fixed, psy: sticky) {
-		.#{$prefix}-#{$key} { 
-			position: $val;
+	@include class(#{$prefix}-h, height, px, 0, 50, 10);
+	@include class(#{$prefix}-h, height, px, 100, 300, 50);
+	
+	@include classmap(align-items, $gosp-align-items, $prefix);
+	@include classmap(display, $gosp-display, $prefix);
+	@include classmap(flex-direction, $gosp-flex-direction, $prefix);
+	@include classmap(flex-wrap, $gosp-flex-wrap, $prefix);
+	@include classmap(float, $gosp-float, $prefix);
+	@include classmap(justify-content, $gosp-justify-content, $prefix);
+	@include classmap(position, $gosp-position, $prefix);
+
+}
+
+@mixin classmap($prop, $map, $prefix: null) {
+	@each $key, $val in $map {
+		.#{if($prefix, $prefix + '-' + $key, $key)} {
+			#{$prop}: $val;
 		}
 	}
 }

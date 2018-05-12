@@ -1,7 +1,4 @@
-
-	@include xs {
-		@include responsive-helpers(xs);
-	}
+	@include responsive-helpers(xs);
 
 	@include sm {
 		@include responsive-helpers(sm);

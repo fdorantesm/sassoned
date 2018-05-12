@@ -31,7 +31,7 @@
 	@include hide;
 }
 
-@include xs(){
+@include xs {
 	.hidden-sm-down,
 	.hidden-md-down,
 	.hidden-lg-down,
@@ -51,7 +51,7 @@
 	}
 }
 
-@include sm(){
+@include sm {
 	.hidden-sm,
 	.visible-xs,
 	.visible-md,
@@ -80,7 +80,7 @@
 		@include show;
 	}
 }
-@include md(){
+@include md {
 	.hidden-md,
 	.visible-xs,
 	.visible-sm,
@@ -108,7 +108,7 @@
 	}
 }
 
-@include lg(){
+@include lg {
 
 	.hidden-lg,
 	.hidden-md-up,
@@ -141,7 +141,7 @@
 	}
 }
 
-@include xl(){
+@include xl {
 	
 	.hidden-xl,
 	.hidden-sm-up,

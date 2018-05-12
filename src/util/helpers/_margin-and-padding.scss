@@ -5,15 +5,11 @@
 .m0a {
 	margin: 0 auto;
 }
-	
-@include class(m,  margin, px, 0, 50, 5);
-@include class(mt, margin-top, px, 0, 50, 5);
-@include class(ml, margin-left, px, 0, 50, 5);
-@include class(mr, margin-right, px, 0, 50, 5);
-@include class(mb, margin-bottom, px, 0, 50, 5);
 
-@include class(p,  padding, px, 0, 50, 5);
-@include class(pt, padding-top, px, 0, 50, 5);
-@include class(pl, padding-left, px, 0, 50, 5);
-@include class(pr, padding-right, px, 0, 50, 5);
-@include class(pb, padding-bottom, px, 0, 50, 5);
+@each $key, $val in $gosp-margin {
+	@include class($key,  $val, px, 0, 50, 5);
+}
+
+@each $key, $val in $gosp-padding {
+	@include class($key,  $val, px, 0, 50, 5);
+}

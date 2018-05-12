@@ -1,15 +1,1 @@
-.vam {
-	vertical-align: middle;
-}
-
-.vat {
-	vertical-align: top;
-}
-
-.vab {
-	vertical-align: bottom;
-}
-
-.vas {
-	vertical-align: sub;
-}
+@include classmap(vertical-align, $gosp-vertical-align);

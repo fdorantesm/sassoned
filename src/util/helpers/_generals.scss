@@ -9,8 +9,8 @@ html {
 body {
 	&.normalized {
 		margin: 0;
-		font-size: $font-size-base;
-		font-family: $font-family-base;
+		font-size: $gosp-font-size-base;
+		font-family: $gosp-font-family-base;
 		min-height: inherit;
 	}
 

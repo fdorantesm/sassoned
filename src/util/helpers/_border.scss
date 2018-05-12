@@ -6,14 +6,14 @@
 	border-style: none;
 }
 
-@each $i, $style in $borders {
+@each $i, $style in $gosp-decoration-style {
 	.bs#{$i} {
 		border-style: $style;
 	}
 }
 	
-@each $i, $side in $sides{
-	@each $j, $style in $borders {
+@each $i, $side in $gosp-sides {
+	@each $j, $style in $gosp-decoration-style {
 		.b#{$i + 's' + $j} {
 			border-#{$side}-style: $style;
 		}
@@ -47,7 +47,7 @@
 	}
 }
 
-@each $i, $color in $colors {
+@each $i, $color in $gosp-colors {
 	.bc#{$i} {
 		border-color: $color;
 	}

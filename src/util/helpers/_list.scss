@@ -8,14 +8,16 @@
 	@extend .lsn;
 }
 
-@each $i, $size in $breakpoints {
-	@for $x from 1 through 4 {
+@each $i, $size in $gosp-breakpoints {
+	@for $x from 1 through ($gosp-grid-columns / 3) {
 		.lc-#{$i}-#{$x} {
 			columns: $x;
 		}
 	}
 }
-		
+
+
+
 ul, ol {	
 	&.list-inline {
 		li {
@@ -23,27 +25,9 @@ ul, ol {
 		}
 	}
 			
-	&.lsd {
-		list-style: decimal;
-	}
-	
-	&.lsdlz {
-		list-style: decimal-leading-zero;
-	}
-		
-	&.lsla {
-		list-style: lower-alpha;
-	}
-		
-	&.lslr {
-		list-style: lower-roman;
-	}
-	
-	&.lsua {
-		list-style: upper-alpha;
-	}
-	
-	&.lsur {
-		list-style: upper-roman;
+	@each $key, $val in $gosp-list-style {
+		&.#{$key} {
+			list-style: $val;
+		}
 	}
 }

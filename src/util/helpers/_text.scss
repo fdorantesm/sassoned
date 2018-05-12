@@ -1,114 +1,27 @@
-.ttu {
-	text-transform: uppercase;
-}
+@include classmap(text-transform, $gosp-text-transform);
+@include classmap(text-align, $gosp-text-align);
+@include classmap(font-style, $gosp-font-style);
+@include classmap(font-weight, $gosp-font-weight);
+@include classmap(text-decoration, $gosp-text-decoration);
+@include classmap(text-direction, $gosp-text-direction);
 
-.ttl {
-	text-transform: lowecase;
-}
-
-.tac {
-	text-align: center;
-}
-
-.taj {
-	text-align: justify;
-}
-
-.tar {
-	text-align: right;
-}
-
-.tal {
-	text-align: left;
-}
-
-.i, i {
-	font-style: italic;
-}
-
-.o {
-	font-style: oblique;
-}
-
-.n {
-	font-weight: normal;
-}
-
-.b, b, em {
-	font-weight: bold;
-}
-
-.tdu, u {
-	text-decoration: underline;
-}
-
-.tdo {
-	text-decoration: overline;
-}
-
-.tdlt, del, s {
-	text-decoration: line-through;
-}
-
-.tduo, .tdou {
-	text-decoration: underline overline;
-}
-
-.tduos, .tduso .tdous, .tdosu, .tdsou, .tdsuo {
-	text-decoration: underline overline line-through;
-}
-
-.tdss {
-	text-decoration-style: solid;
-}
-	
-.tdsdo {
-	text-decoration-style: dotted;
-}
-
-.tdsda {
-	text-decoration-style: dashed;
-}
-
-.tdsw {
-	text-decoration-style: wavy;
+@each $key, $val in $gosp-decoration-style {
+	.tds#{$key} {
+		text-decoration-style: $val;
+	}
 }
 	
 p.paragraph-reset {
-	margin: 0;
+	@extend .m0;
 }
 
 h1,h2,h3,h4,h5,h6 {	
-	line-height: $headings-line-height;
-	font-weight: $headings-font-weight;
+	line-height: $gosp-headings-line-height;
+	font-weight: $gosp-headings-font-weight;
 }
 
-@each $i, $h in $headings {
+@each $i, $h in $gosp-headings {
 	h#{$i} {
 		font-size: $h;
-	}
-}
-
-@include xs() {
-	.xs-text-center {
-		text-align: center;
-	}
-}
-
-@include sm() {
-	.sm-text-center {
-		text-align: center;
-	}
-}
-	
-@include md() {
-	.md-text-center {
-		text-align: center;
-	}
-}
-
-@include lg() {
-	.lg-text-center {
-		text-align: center;
 	}
 }

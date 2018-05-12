@@ -1,5 +1,1 @@
-@each $i, $cursor in $cursors {
-	.cur#{$i} {
-		cursor: $cursor;
-	}
-}
+@include classmap(cursor, $gosp-cursors);

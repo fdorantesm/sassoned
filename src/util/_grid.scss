@@ -1,3 +1,5 @@
+@import "mixins";
+
 .container,
 .container-fluid {	
 	margin-right: auto;
@@ -9,17 +11,17 @@
 }
 	
 .row {	
-	@if $grid-system == 'flex' {	
+	@if isFlex() {
 		display: flex;
 		flex: 0 1 auto;
 		flex-direction: row;
 		flex-wrap: wrap;
 		
-		&.reverse {
+		&.as-reverse {
 			  flex-direction: row-reverse
 		}
 		
-		&.column-reverse {
+		&.as-column-reverse {
 			flex-direction: column-reverse;
 		}
 		
@@ -32,14 +34,14 @@
 		}
 	}
 	
-	@else if $grid-system == 'fractions' or $grid-system == 'inline' {
+	@else if $gosp-grid-system == 'fractions' or $gosp-grid-system == 'inline' {
 		letter-spacing: -0.31em;
 		*letter-spacing: normal;
 		word-spacing: -0.43em;
 
 	}
 	
-	@else if $grid-system == 'float' {
+	@else if $gosp-grid-system == 'float' {
 		display: table;
 		&:after
 		&:before {
@@ -51,13 +53,13 @@
 }
 				
 [class*="col-"] {	
-	@if $grid-system == 'flex' {
+	@if isFlex() {
 		flex: 0 0 auto;
 	}
 	
 	@else {
 		width: 100%;
-		@if $grid-system == 'fractions' or $grid-system == 'inline' {
+		@if $gosp-grid-system == 'fractions' or $gosp-grid-system == 'inline' {
 			display: inline-block;
 			vertical-align: top;
 			zoom: 1;
@@ -66,7 +68,7 @@
 			word-spacing: normal;
 		}
 		
-		@else if $grid-system == 'float' {
+		@else if $gosp-grid-system == 'float' {
 			float: left;
 		}
 		
@@ -80,17 +82,17 @@
 }
 
 
-@if $responsive {
+@if $gosp-responsive {
 
 	@include center-box(xs);
-	@include grid(xs, $grid-system);
+	@include grid(xs, $gosp-grid-system);
 	
-	@include xs() {
+	@include xs {
 		.container {
 			max-width: 460px;
 		}
 		
-		@if $grid-system == 'flex' {
+		@if isFlex() {
 			.col-xs,
 			.col-sm,
 			.col-md,
@@ -110,22 +112,22 @@
 		}
 	}
 			
-	@include sm-down() {
-		@if $grid-system == 'float' {
-			@include grid(sm, $grid-system);
+	@include sm-down {
+		@if $gosp-grid-system == 'float' {
+			@include grid(sm, $gosp-grid-system);
 		}
 
 		@include center-box(sm, down);
 	}
 
-	@include sm-up() {	
+	@include sm-up {	
 		.container {
 			width: 90%;
 		}
 		
-		@if $grid-system == 'flex' {	
+		@if isFlex() {	
 			.col-xs,
-			.col-sm{
+			.col-sm {
 				flex-basis: 0;
 				flex-grow: 1;
 			}
@@ -141,7 +143,7 @@
 
 
 		@include center-box(sm, up);		
-		@include grid(sm, $grid-system);
+		@include grid(sm, $gosp-grid-system);
 	}
 }
 
@@ -151,22 +153,22 @@
 		max-width: 1200px;
 	}
 	
-	@if $grid-system == 'flex' {	
+	@if isFlex() {	
 		.col-xs
 		.col-md,
-		.col-lg{
+		.col-lg {
 			flex-basis: 0;
 			flex-grow: 1;
 		}
 		
-		.col-xl{
+		.col-xl {
 			flex-basis: 100%;
 			width: 100%;
 		}
 	}
 
 	@include center-box(md, up);
-	@include grid(md, $grid-system);
+	@include grid(md, $gosp-grid-system);
 	
 }
 
@@ -180,7 +182,7 @@
 		max-width: 1600px;
 	}
 	
-	@if $grid-system == 'flex' {
+	@if isFlex() {
 		.col-lg {
 			flex-basis: 0;
 			flex-grow: 1;
@@ -188,7 +190,7 @@
 	}		
 
 	@include center-box(lg, up);
-	@include grid(lg, $grid-system);
+	@include grid(lg, $gosp-grid-system);
 }
 
 @include lg-down {
@@ -201,7 +203,7 @@
 		max-width: 1920px;
 	}
 	
-	@if $grid-system == 'flex' {
+	@if isFlex() {
 		.col-xl {
 			flex-basis: 0;
 			flex-grow: 1;
@@ -209,5 +211,5 @@
 	}		
 		
 	@include center-box(lg);
-	@include grid(xl, $grid-system)	
+	@include grid(xl, $gosp-grid-system);
 }

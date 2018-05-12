@@ -1,15 +1,1 @@
-.fr {
-	float: right;
-}
-
-.fl {
-	float: left;
-}
-
-.fn {
-	float: none;
-}
-	
-.fu {
-	float: unset;
-}
+@include classmap(float, $gosp-float);

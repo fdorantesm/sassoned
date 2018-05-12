@@ -1,4 +1,4 @@
-@each $z in (-1, 1, 10, 100, 1000) {
+@each $z in $gosp-z-indexes {
 	.z#{$z}{
 		z-index: $z;
 	}

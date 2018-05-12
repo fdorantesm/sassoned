@@ -1,12 +1,14 @@
-@function isDecimal($num){
-	@return $num % 1 != 0
+@import "variables";
+
+@function isDecimal($num) {
+	@return $num % 1 != 0;
 }
 
-@function breakpoint($size, $side){
-	@return map-get(map-get($breakpoints, $size), $side)
+@function breakpoint($size, $side) {
+	@return map-get(map-get($gosp-breakpoints, $size), $side);
 }
 
-@function em($el, $context:$font-size-base) {
+@function em($el, $context:$gosp-font-size-base) {
 	@if type_of($el) == number and unit($el) == 'px' {
 		@return ($el / $context) * 1em;
   	}
@@ -25,5 +27,5 @@
 }
 
 @function isFlex() {
-	@return $grid-system == flex
+	@return $gosp-grid-system == flex;
 }

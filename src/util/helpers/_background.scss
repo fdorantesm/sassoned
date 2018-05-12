@@ -1,4 +1,4 @@
-@each $i, $color in $colors{
+@each $i, $color in $gosp-colors {
 	.bc#{$i} {
 		background-color: $color;
 	}
@@ -16,66 +16,6 @@
 	background-attachment: fixed;
 }
 
-.bpcb, .bnbc {
-	background-position: center bottom;
-}
-
-.bpcc {
-	background-position: center center;
-}
-
-.bpct, .bptc {
-	background-position: center top;
-}
-
-.bplb, .bpbl {
-	background-position: left bottom;
-}
-
-.bplc, .bpcl {
-	background-position: left center;
-}
-
-.bplt,.bptl {
-	background-position: left top;
-}
-
-.bprb, .bpbr {
-	background-position: right botton;
-}
-
-.bprc, .bpcr {
-	background-position: right center;
-}
-
-.bprt, .bptr {
-	background-position: right top;
-}
-
-.brnr {
-	background-repeat: no-repeat;
-}
-
-.brr {
-	background-repeat: repeat;
-}
-
-.brrx {
-	background-repeat: repeat-x;
-}
-
-.brry {
-	background-repeat: repeat-y;
-}
-
-.bscc {
-	background-size: contain;
-}
-
-.bscv {
-	background-size: cover;
-}
-
-.bsx {
-	background-size: 100% 100%;
-}
+@include classmap(background-position, $gosp-background-position);
+@include classmap(background-repeat, $gosp-background-repeat);
+@include classmap(background-size, $gosp-background-size);
