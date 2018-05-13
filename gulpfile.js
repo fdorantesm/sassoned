@@ -16,7 +16,7 @@ gulp.task('compress', () => {
         	outputStyle: 'compressed'
         }).on('error', sass.logError))
 		.pipe(autoprefixer(vendors))
-		.pipe(rename('style.min.css'))
+		.pipe(rename('gosp.min.css'))
 		.pipe(sourcemaps.write('.'))
 		.pipe(removeEmptyLines({
 			removeComments: true
