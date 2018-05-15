@@ -1,0 +1,28 @@
+include ../../inc/mixins
+
+article#color
+	header
+		h3.fw300.fsp26 Color
+		p These classes has some color properties
+	section.p10
+		article
+			.pt10.pb10
+				span.cF.bc0 This text has color #FFF with .cF class
+		article
+			code.html.mr0.ml0(oo-snippet)
+				pre
+					+scape()
+						span.cF.bc0 This text has color #FFF with .cF class
+		article
+			table.purple.fw.table-responsive.table-striped
+				thead
+					tr
+						th Class
+						th Property
+						th Value
+				tbody
+					each color, key in {0:"#000", 3:"#333", 6:"#666", 9:"#999", A:"#AAA", C:"#CCC", E:"#EEE", F:"#FFF"}
+						tr
+							td .c#{key}
+							td color
+							td= color

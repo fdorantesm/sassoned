@@ -1,0 +1,93 @@
+article#flex
+	header
+		h3.fw300.fsp26 Flex
+	section.p10
+		table.purple.fw.table-striped.table-responsive
+			thead
+				tr
+					th Class
+					th Property
+					th Value
+			tbody
+				tr
+					td .jcc
+					td justify-content
+					td center
+				tr
+					td .jcfs
+					td justify-content
+					td flex-start
+				tr
+					td .jcfe
+					td justify-content
+					td flex-end
+				tr
+					td .jcsa
+					td justify-content
+					td space-around
+				tr
+					td .jcsb
+					td justify-content
+					td space-between
+				tr
+					td .jcs
+					td justify-content
+					td stretch
+				tr
+					td .jcu
+					td justify-content
+					td unset
+				tr
+					td .aic
+					td align-items
+					td center
+				tr
+					td .aifs
+					td align-items
+					td flex-start
+				tr
+					td .aife
+					td align-items
+					td flex-end
+				tr
+					td .aiu
+					td align-items
+					td unset
+				tr
+					td .fdr
+					td flex-direction
+					td row
+				tr
+					td .fdrr
+					td flex-direction
+					td row-reverse
+				tr
+					td .fdc
+					td flex-direction
+					td column
+				tr
+					td .fdcr
+					td flex-direction
+					td column-reverse
+				tr
+					td .fww
+					td flex-wrap
+					td wrap
+				tr
+					td .fwwr
+					td flex-wrap
+					td wrap-reverse
+				tr
+					td .fwnw
+					td flex-wrap
+					td nowrap
+				each i in [0,1,2,3,4,5,6]
+					tr
+						td .fg#{i}
+						td flex-grow
+						td= i
+				each i in [0,1,2,3,4,5,6]
+					tr
+						td .fsh#{i}
+						td flex-shrink
+						td= i

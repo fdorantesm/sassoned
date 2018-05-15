@@ -1,0 +1,6 @@
+mixin scape()
+	- var oldBuf = pug_html;
+	- pug_html = '';
+	block
+	- pattern = pug_html.match(/\s*\n[\t\s]*/)
+	- pug_html = oldBuf + pug.escape(pug_html).replace(new RegExp(pattern, "g"),'\n');

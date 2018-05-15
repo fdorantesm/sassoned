@@ -1,0 +1,123 @@
+include ../../inc/mixins
+
+article#margin-padding
+	header
+		h3.fw300.fsp26 Margin and padding
+		p This classes allows add margin or padding, exists 5 ways: left, top, right, bottom and its shorthand
+	section.p10
+		article
+			table.fw.table-striped.table-responsive
+				thead
+					tr
+						th Class
+						th Property
+						th Value
+				tbody
+					tr
+						td .ma
+						td margin
+						td auto
+					tr
+						td .m0a
+						td margin
+						td 0 auto
+					- var i = 0;
+					while i <= 50
+						tr
+							td .m#{i}
+							td margin
+							td #{i}px
+
+						- i+=5
+
+					- var i = 0;
+					while i <= 50
+						tr
+							td .mt#{i}
+							td margin-top
+							td #{i}px
+
+						- i+=5
+
+					- var i = 0;
+					while i <= 50
+						tr
+							td .mr#{i}
+							td margin-right
+							td #{i}px
+
+						- i+=5
+
+					- var i = 0;
+					while i <= 50
+						tr
+							td .ml#{i}
+							td margin-left
+							td #{i}px
+
+						- i+=5
+
+					- var i = 0;
+					while i <= 50
+						tr
+							td .mb#{i}
+							td margin-bottom
+							td #{i}px
+
+						- i+=5
+
+					- var i = 0;
+					while i <= 50
+						tr
+							td .p#{i}
+							td padding
+							td #{i}px
+
+						- i+=5
+
+					- var i = 0;
+					while i <= 50
+						tr
+							td .pt#{i}
+							td padding-top
+							td #{i}px
+
+						- i+=5
+
+					- var i = 0;
+					while i <= 50
+						tr
+							td .pr#{i}
+							td padding-right
+							td #{i}px
+
+						- i+=5
+
+					- var i = 0;
+					while i <= 50
+						tr
+							td .pl#{i}
+							td padding-left
+							td #{i}px
+
+						- i+=5
+
+					- var i = 0;
+					while i <= 50
+						tr
+							td .pb#{i}
+							td padding-bottom
+							td #{i}px
+
+						- i+=5
+		article
+			.row.bcp.mt20.mb20
+				.col
+					div.p10.bc3.cF This parragraph has padding 10px
+				.col
+					div.m10.bc3.cF And this one has margin 10px
+			code.html.ml0.mr0(oo-snippet)
+				pre
+					+scape()
+						div.p10 This parragraph has padding 10px
+						div.m10 And this one has margin 10px

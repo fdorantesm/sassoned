@@ -1,0 +1,315 @@
+
+<section class="grid">
+  <article id="grid-flex">
+    <header class="p10">
+      <h2 class="fsp34">Flexbox Grid</h2>
+      <p>Grid system using flex properties</p>
+    </header>
+    <section>
+      <article>
+        <header>
+          <h3 class="fw300 fsp26">Flex Columns</h3>
+          <p>The columns will divide the space available between them</p>
+        </header>
+        <section>
+          <article>
+            <div class="row example">
+              <div class="col tac fsp8 col-sm">
+                <div></div>
+              </div>
+            </div>
+            <div class="row example">
+              <div class="col tac fsp8 col-sm">
+                <div></div>
+              </div>
+              <div class="col tac fsp8 col-sm">
+                <div></div>
+              </div>
+              <div class="col tac fsp8 col-sm">
+                <div></div>
+              </div>
+            </div>
+            <div class="row example">
+              <div class="col tac fsp8 col-sm">
+                <div></div>
+              </div>
+              <div class="col tac fsp8 col-sm">
+                <div></div>
+              </div>
+              <div class="col tac fsp8 col-sm">
+                <div></div>
+              </div>
+              <div class="col tac fsp8 col-sm">
+                <div></div>
+              </div>
+              <div class="col tac fsp8 col-sm">
+                <div></div>
+              </div>
+            </div>
+            <div class="row example">
+              <div class="col tac fsp8 col-sm">
+                <div></div>
+              </div>
+              <div class="col tac fsp8 col-sm">
+                <div></div>
+              </div>
+              <div class="col tac fsp8 col-sm">
+                <div></div>
+              </div>
+              <div class="col tac fsp8 col-sm">
+                <div></div>
+              </div>
+              <div class="col tac fsp8 col-sm">
+                <div></div>
+              </div>
+              <div class="col tac fsp8 col-sm">
+                <div></div>
+              </div>
+              <div class="col tac fsp8 col-sm">
+                <div></div>
+              </div>
+            </div>
+          </article>
+          <article><code class="html" oo-snippet="oo-snippet">
+              <pre>
+&lt;!-- The columns will divide the space available between them--&gt;
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;col&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;col&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;col&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;col&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;col&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;col&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;col&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;col&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;col&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;col&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;col&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;col&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</pre></code></article>
+        </section>
+      </article>
+    </section>
+    <section>
+      <article>
+        <header>
+          <h3 class="fw300 fsp26">Flex stack column</h3>
+          <p>These column will not be flexible and they will be stacked under its resolution size</p>
+        </header>
+      </article>
+      <section>
+        <article>
+          <div class="row example">
+            <div class="col-md"> 
+              <div class="tac">Full width under md</div>
+            </div>
+            <div class="col-md"> 
+              <div class="tac">Full width under md</div>
+            </div>
+            <div class="col-md"> 
+              <div class="tac">Full width under md</div>
+            </div>
+          </div><code class="html" oo-snippet="oo-snippet">
+            <pre>
+&lt;!-- These column will not be flexible and they will be stacked under its resolution size--&gt;
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-md&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;col-md&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;col-md&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</pre></code>
+        </article>
+      </section>
+    </section>
+    <section>
+      <article>
+        <header>
+          <h3 class="fw300 fsp26">Content width column</h3>
+        </header>
+      </article>
+      <section>
+        <articld>
+          <div class="row example">
+            <div class="col-auto tac">
+              <div>lorem ipsum</div>
+            </div>
+            <div class="col-auto tac">
+              <div>hello world</div>
+            </div>
+            <div class="col-auto tac">
+              <div>hi</div>
+            </div>
+            <div class="col-auto tac">
+              <div>hi there</div>
+            </div>
+          </div><code class="html" oo-snippet="oo-snippet">
+            <pre>
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-auto&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;col-auto&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;col-auto&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;col-auto&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</pre></code>
+        </articld>
+      </section>
+    </section>
+    <section>
+      <article>
+        <header>
+          <h3 class="fw300 fsp26">12 Columns based</h3>
+        </header>
+      </article>
+      <section>
+        <article>
+          <div class="row example">
+            <div class="col-md-4 col-xs">
+              <div class="tac">col-md-4</div>
+            </div>
+            <div class="col-md-4 col-xs">
+              <div class="tac">col-md-4</div>
+            </div>
+            <div class="col-md-4 col-xs">
+              <div class="tac">col-md-4</div>
+            </div>
+          </div>
+          <div class="row example">
+            <div class="col-md-8 col-xs">
+              <div class="tac">col-md-8</div>
+            </div>
+            <div class="col-md-4 col-xs">
+              <div class="tac">col-md-4</div>
+            </div>
+          </div>
+          <div class="row example">
+            <div class="col-md-7 col-xd">
+              <div class="tac">col-md-7</div>
+            </div>
+            <div class="col-md-5 col-xs">
+              <div class="tac">col-md-5</div>
+            </div>
+          </div><code class="html" oo-snippet="oo-snippet">
+            <pre>
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-md-4 col-xs&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;col-md-4 col-xs&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;col-md-4 col-xs&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-md-8 col-xs&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;col-md-4 col-xs&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-md-7 col-xs&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;col-md-5 col-xs&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</pre></code>
+        </article>
+      </section>
+      <section></section>
+      <article>
+        <header>
+          <h3 class="fw300 fsp26">Mobile and desktop resize</h3>
+          <p>You can use size prefix to resize columns in each resolution size</p>
+        </header>
+        <sectiod>
+          <div class="row example">
+            <div class="col-lg-4 col-xs-6">
+              <div class="tac">col-lg-4 col-xs-6</div>
+            </div>
+            <div class="col-lg-4 col-xs-6">
+              <div class="tac">col-lg-4 col-xs-6</div>
+            </div>
+            <div class="col-lg-4 col-xs-6">
+              <div class="tac">col-lg-4 col-xs-6</div>
+            </div>
+            <div class="col-lg-4 col-xs-6">
+              <div class="tac">col-lg-4 col-xs-6</div>
+            </div>
+            <div class="col-lg-4 col-xs-6">
+              <div class="tac">col-lg-4 col-xs-6</div>
+            </div>
+            <div class="col-lg-4 col-xs-6">
+              <div class="tac">col-lg-4 col-xs-6</div>
+            </div>
+          </div><code class="html" oo-snippet="oo-snippet">
+            <pre>
+&lt;div class=&quot;row&quot;&gt;
+  &lt;!-- col-sm-6 and col-lg-4 are implicit--&gt;
+  &lt;div class=&quot;col-md-4 col-xs-6&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;col-md-4 col-xs-6&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;col-md-4 col-xs-6&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;col-md-4 col-xs-6&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;col-md-4 col-xs-6&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;col-md-4 col-xs-6&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</pre></code>
+        </sectiod>
+      </article>
+    </section>
+    <section>
+      <article>
+        <header>
+          <h3 class="fw300 fsp26">Mobile, tablet and desktop resize</h3>
+          <p>If you use only a prefix the column will have the same width until the next bigger resolution prefix used</p>
+        </header>
+        <sectiod>
+          <div class="row example">
+            <div class="col-xs-12 col-md-3 col-sm-6">
+              <div class="tac">col-xs-12 col-md-3 col-sm-6</div>
+            </div>
+            <div class="col-xs-12 col-md-3 col-sm-6">
+              <div class="tac">col-xs-12 col-md-3 col-sm-6</div>
+            </div>
+            <div class="col-xs-12 col-md-3 col-sm-6">
+              <div class="tac">col-xs-12 col-md-3 col-sm-6</div>
+            </div>
+            <div class="col-xs-12 col-md-3 col-sm-6">
+              <div class="tac">col-xs-12 col-md-3 col-sm-6</div>
+            </div>
+          </div><code class="html" oo-snippet="oo-snippet">
+            <pre>
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-xs-12 col-md-3 col-sm-6&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;col-xs-12 col-md-3 col-sm-6&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;col-xs-12 col-md-3 col-sm-6&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;col-xs-12 col-md-3 col-sm-6&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</pre></code>
+        </sectiod>
+        <section>
+          <div class="row example">
+            <div class="col-md-9 col-sm-10 col-xs-12">
+              <div class="tac"> 
+                <div>col-md-9 </div>
+                <div>col-sm-10</div>
+                <div>col-xs-12</div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-2 col-xs-1d">
+              <div class="tac"> 
+                <div>col-md-3</div>
+                <div>col-sm-2</div>
+                <div>col-xs-12</div>
+              </div>
+            </div>
+          </div><code class="html" oo-snippet="oo-snippet">
+            <pre>
+&lt;!-- col-lg is implict with col-md--&gt;
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-md-9 col-sm-10 col-xs-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;col-md-3 col-sm-2 col-xs-12&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</pre></code>
+        </section>
+      </article>
+    </section>
+  </article>
+  <div class="pr10 pl10">
+    <p><b>Note</b>: Columns don't have side padding, the box color were made with an inner div.</p>
+  </div>
+</section>

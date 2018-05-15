@@ -1,0 +1,26 @@
+article#height
+	header
+		h3.fw300.fsp26 Height
+	section.p10
+		table.fw.table-striped.table-responsive
+			thead
+				tr
+					th Class
+					th Property
+					th Height
+			tbody
+				each i in [0,1,2,3,4,5,6,7,8,9]
+					tr
+						td #{'.h' + i*5}
+						td height
+						td #{i*5 + 'px'}
+				each i in [5,6,7,8,9]
+					tr
+						td #{'.h' + i*10}
+						td height
+						td #{i*10 + 'px'}
+				each i in [1,2,3,4,5]
+					tr
+						td #{'.h' + i*100}
+						td height
+						td #{i*100 + 'px'}

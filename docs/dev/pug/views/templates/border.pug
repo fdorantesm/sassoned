@@ -1,0 +1,107 @@
+include ../../inc/mixins
+
+article#border
+	.p10
+		h3.fw300.fsp26 Border
+	.p10
+		table.table-responsive.table-striped.fw.purple
+			thead
+				tr
+					th Class
+					th.tal Property
+					th.tal Value
+			tbody
+				tr
+					td .bn
+					td.tal border
+					td.tal none
+				tr
+					td .bsn
+					td.tal border-style
+					td.tal none
+				tr
+					td .bss
+					td.tal border-style
+					td.tal solid
+				tr
+					td .bsw
+					td.tal border-style
+					td.tal wavy
+				tr
+					td .bsda
+					td.tal border-style
+					td.tal dashed
+				tr
+					td .bsdo
+					td.tal border-style
+					td.tal dotted
+				tr
+					td .btss
+					td.tal border-top-style
+					td.tal solid
+				tr
+					td .btsw
+					td.tal border-top-style
+					td.tal wavy
+				tr
+					td .btsda
+					td.tal border-top-style
+					td.tal dashed
+				tr
+					td .btsdo
+					td.tal border-top-style
+					td.tal dotted
+				tr
+					td .blss
+					td.tal border-left-style
+					td.tal solid
+				tr
+					td .blsw
+					td.tal border-left-style
+					td.tal wavy
+				tr
+					td .blsda
+					td.tal border-left-style
+					td.tal dashed
+				tr
+					td .blsdo
+					td.tal border-left-style
+					td.tal dotted
+				tr
+					td .brss
+					td.tal border-right-style
+					td.tal solid
+				tr
+					td .brsw
+					td.tal border-right-style
+					td.tal wavy
+				tr
+					td .brsda
+					td.tal border-right-style
+					td.tal dashed
+				tr
+					td .brsdo
+					td.tal border-right-style
+					td.tal dotted
+				tr
+					td .bbss
+					td.tal border-bottom-style
+					td.tal solid
+				tr
+					td .bbsw
+					td.tal border-bottom-style
+					td.tal wavy
+				tr
+					td .bbsda
+					td.tal border-bottom-style
+					td.tal dashed
+				tr
+					td .bbsdo
+					td.tal border-bottom-style
+					td.tal dotted
+				each value, key in {"br":"border-radius", "bw":"border-width", "btw":"border-top-width", "blw":"border-left-width", "brw":"border-right-width", "brw":"border-bottom-width"}
+					each i in [1,2,3,4,5,6,7,8,9,10]
+						tr
+							td .#{key}
+							td.tal #{value}
+							td.tal #{i}px

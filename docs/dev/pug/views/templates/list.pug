@@ -1,0 +1,108 @@
+include ../../inc/mixins
+
+article#list
+	header
+		h3.fw300.fsp26 List
+	section.p10
+		article
+			table.fw.table-striped.table-responsive
+				thead
+					tr
+						th Class
+						th Property
+						th Value
+				tbody
+					tr
+						td .lsn
+						td list-style
+						td none
+					tr
+						td .lsd
+						td list-style
+						td decimal
+					tr
+						td .lsdlz
+						td list-style
+						td decimal-leading-zero
+					tr
+						td .lsla
+						td list-style
+						td lower-alpha
+					tr
+						td .lslr
+						td list-style
+						td lower-roman
+					tr
+						td .lsua
+						td list-style
+						td upper-alpha
+					tr
+						td .lsur
+						td list-style
+						td upper-roman
+					each i in [1,2,3,4]
+						tr
+							td .list-col-#{i}
+							td columns
+							td= i
+		article
+			h4.fw300 Aux classes
+			code.stylus.mr0.ml0(oo-snippet)
+				pre.
+					.list-reset
+						padding 0
+						margin 0
+						@extends .lsn
+
+					.list-inline li
+						display inline-block
+
+		article
+			h4.fw300 List inline
+			ul.list-inline
+				li item
+				li item
+				li item
+				li item
+			code.html.ml0.mr0(oo-snippet)
+				pre
+					+scape()
+						ul.list-inline
+							li item
+							li item
+							li item
+							li item
+
+		article
+			h4.fw300 List without browser styles
+			ul.list-reset
+				li item
+				li item
+				li item
+				li item
+				li item
+			code.html.mr0.ml0(oo-snippet)
+				pre
+					+scape()
+						ul.list-reset
+							li item
+							li item
+							li item
+							li item
+							li item
+		article
+			h4.fw300 Both classes
+			ul.list-reset.list-inline
+				li item
+				li item
+				li item
+				li item
+			code.html.ml0.mr0(oo-snippet)
+				pre
+					+scape()
+						ul.list-reset.list-inline
+							li item
+							li item
+							li item
+							li item
+							li item
