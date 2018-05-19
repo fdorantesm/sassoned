@@ -230,3 +230,9 @@
 		}
 	}
 }
+
+@mixin list-columns($columns, $prefix: null) {
+	.list-columns-#{if($prefix, $prefix + '-', '') + $columns} {
+		columns: $columns;
+	}
+}

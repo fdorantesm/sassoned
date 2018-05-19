@@ -8,14 +8,69 @@
 	@extend .lsn;
 }
 
-@each $i, $size in $gosp-breakpoints {
-	@for $x from 1 through ($gosp-grid-columns / 3) {
-		.lc-#{$i}-#{$x} {
-			columns: $x;
-		}
+@for $x from 1 through ($gosp-grid-columns / 2) {
+	@include list-columns($x);
+}
+
+@include sm {
+	@for $x from 1 through ($gosp-grid-columns / 2) {
+		@include list-columns($x, sm);
 	}
 }
 
+@include sm-up {
+	@for $x from 1 through ($gosp-grid-columns / 2) {
+		@include list-columns($x, sm-up);
+	}
+}
+
+@include sm-down {
+	@for $x from 1 through ($gosp-grid-columns / 2) {
+		@include list-columns($x, sm-down);
+	}
+}
+
+@include md {
+	@for $x from 1 through ($gosp-grid-columns / 2) {
+		@include list-columns($x, md);
+	}
+}
+
+@include md-up {
+	@for $x from 1 through ($gosp-grid-columns / 2) {
+		@include list-columns($x, md-up);
+	}
+}
+
+@include md-down {
+	@for $x from 1 through ($gosp-grid-columns / 2) {
+		@include list-columns($x, md-down);
+	}
+}
+
+@include lg {
+	@for $x from 1 through ($gosp-grid-columns / 2) {
+		@include list-columns($x, lg);
+	}
+}
+
+@include lg-up {
+	@for $x from 1 through ($gosp-grid-columns / 2) {
+		@include list-columns($x, lg-up);
+	}
+}
+
+@include lg-down {
+	@for $x from 1 through ($gosp-grid-columns / 2) {
+		@include list-columns($x, lg-down);
+	}
+}
+
+@include xl {
+	@for $x from 1 through ($gosp-grid-columns / 2) {
+		@include list-columns($x, xl);
+	}
+}
 
 
 ul, ol {	

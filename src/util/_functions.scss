@@ -29,3 +29,7 @@
 @function isFlex() {
 	@return $gosp-grid-system == flex;
 }
+
+@function in($list, $element) {
+	@return map-has-key($list, $element);
+}

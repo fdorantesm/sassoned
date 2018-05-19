@@ -1,41 +1,43 @@
-	@include responsive-helpers(xs);
+@import "mixins";
 
-	@include sm {
-		@include responsive-helpers(sm);
-	}
+@include responsive-helpers(xs);
 
-	@include sm-down {
-		@include responsive-helpers(sm-down);
-	}
-	
-	@include sm-up {
-		@include responsive-helpers(sm-up);
-	}
+@include sm {
+	@include responsive-helpers(sm);
+}
 
-	@include md {
-		@include responsive-helpers(md);
-	}
+@include sm-down {
+	@include responsive-helpers(sm-down);
+}
 
-	@include md-down {
-		@include responsive-helpers(md-down);
-	}
-	
-	@include md-up {
-		@include responsive-helpers(md-up);
-	}
+@include sm-up {
+	@include responsive-helpers(sm-up);
+}
 
-	@include lg {
-		@include responsive-helpers(lg);
-	}
+@include md {
+	@include responsive-helpers(md);
+}
 
-	@include lg-down {
-		@include responsive-helpers(lg-down);
-	}
-	
-	@include lg-up {
-		@include responsive-helpers(lg-up);
-	}
+@include md-down {
+	@include responsive-helpers(md-down);
+}
 
-	@include xl {
-		@include responsive-helpers(xl);
-	}
+@include md-up {
+	@include responsive-helpers(md-up);
+}
+
+@include lg {
+	@include responsive-helpers(lg);
+}
+
+@include lg-down {
+	@include responsive-helpers(lg-down);
+}
+
+@include lg-up {
+	@include responsive-helpers(lg-up);
+}
+
+@include xl {
+	@include responsive-helpers(xl);
+}
