@@ -1,0 +1,29 @@
+include ../../inc/mixins
+
+article#background
+	header
+		h3.fw300.fsp26 Background
+		p Theses styles has some background properties as colors, attachment or size
+	section
+		article.p10
+			.pt10.pb10
+				span.bcE This text has background #EEE and its div is using the class bcE
+	
+		code.html
+			pre
+				+scape()
+					span.bcE This text has background #EEE and its span is using the class bcE
+	section.p10
+		article
+			table.purple.fw.table-responsive.table-striped
+				thead
+					tr
+						th Class
+						th Property
+						th Value
+				tbody
+					each color, key in {0:"#000", 3:"#333", 6:"#666", 9:"#999", A:"#AAA", C:"#CCC", E:"#EEE", F:"#FFF"}
+						tr
+							td .bc#{key}
+							td background-color
+							td= color

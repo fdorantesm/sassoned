@@ -1,0 +1,38 @@
+article#font
+	header
+		h3.fw300.fsp26 Font
+	section.p10
+		table.fw.table-striped.table-responsive
+			thead
+				tr
+					th Class
+					th Property
+					th Value
+			tbody
+				each i in [100,200,300,400,500,600,700,800,900]
+					tr
+						td #{'.fw' + i}
+						td font-weight
+						td= i
+				- var x = 8
+				while x <= 48
+					tr
+						td #{'.fsp' + x}
+						td font-size
+						td #{x + 'px'}
+					- x+= 2
+				- var x = 50
+				while x <= 100
+					tr
+						td #{'.fsp' + x}
+						td font-size
+						td #{x + 'px'}
+					- x+= 10
+				each type, key in {e:'em', r:'rem'}
+					- var x = 0.5
+					while x <= 3
+						tr
+							td #{'.fs' + key + (x*100)}
+							td font-size
+							td #{x + type}
+						- x+= 0.5

@@ -1,0 +1,16 @@
+article#display
+	header
+		h3.fw300.fsp26 Display
+	section.p10
+		table.purple.fw.table-striped.table-responsive
+			thead
+				tr
+					th Class
+					th Property
+					th Value
+			tbody
+				each clase, key in {db:"block", di: "inline", dib: "inline-block", dt: "table", dtc: "table-cell", dtr: "table-row", dtrg: "table-row-group", dfx: "flex", dn: "none"}
+					tr
+						td .#{key}
+						td display
+						td= clase

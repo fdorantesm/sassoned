@@ -1,0 +1,19 @@
+include ../../inc/mixins
+
+article#cursor
+	header
+		h3.fw300.fsp26 Cursor
+		p These are 5 classes with the most used cursors
+	section.p10
+		table.purple.fw.table-striped.table-responsive
+			thead
+				tr
+					th Class
+					th Property
+					th Value
+			tbody
+				each tipo, key in {d:"default", p:"pointer", t:"text", w:"wait", na:"not-allowed"}
+					tr
+						td .cur#{key}
+						td cursor
+						td= tipo

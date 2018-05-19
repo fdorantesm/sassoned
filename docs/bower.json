@@ -1,0 +1,24 @@
+{
+  "name": "oocss-docs",
+  "description": "A OOCSS framework",
+  "main": "gulpfile.js",
+  "authors": [
+    "fdorantesm"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "css",
+    "ocss",
+    "helpers",
+    "framework"
+  ],
+  "homepage": "http://oocss.dorant.es",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

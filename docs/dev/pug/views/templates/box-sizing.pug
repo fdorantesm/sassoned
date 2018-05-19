@@ -1,0 +1,20 @@
+include ../../inc/mixins
+
+article#box-sizing
+	.p10
+		h3.fw300.fsp26 Box sizing
+		table.table-responsive.fw.purple.table-striped
+			thead
+				tr
+					th Class
+					th.tal Value
+					th.tal Description
+			tbody
+				tr
+					td .bsb
+					td.tal border-box
+					td.tal The width and height properties (and min/max properties) includes content, padding and border.
+				tr
+					td .bsc
+					td.tal content-box
+					td.tal The width and height properties (and min/max properties) includes only the content. Border and padding are not included.

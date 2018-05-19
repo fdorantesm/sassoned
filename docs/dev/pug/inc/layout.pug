@@ -1,0 +1,58 @@
+include ../inc/mixins
+
+doctype
+html(ng-app="oocss")
+	head
+		link(rel="stylesheet" href="https://rawgit.com/fdorantesm/gosp.css/master/dist/gosp.min.css")
+		block css
+		link(rel="stylesheet" href="./assets/css/style.css")
+		link(rel="stylesheet" href="./assets/js/highlight/monokai-sublime.css")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		meta(charset="UTF-8")
+		meta(name="keyword" content="css framework,flexbox,bootstrap,stylesheet,stylus")
+		meta(name="description" content="OOCSS is light powerful framework to make front-end easiest made with stylus")
+		//- base(href="https://fdorantes.github.io/oocss-docs/")
+		//- base(href="{{baseUrl}}/oocss-docs")
+		title GOSP.CSS | A light powerful library to make front-end faster & easiest
+	body
+		main(ng-controller="mainCtrl")
+			block main
+			.container
+				.row
+					.col-md-3.col-lg-3.hidden-sm-below
+						aside
+							ul.lsn.list-reset
+								li: a(href="#!/background") Background
+								li: a(href="#!/border") Border
+								li: a(href="#!/box-sizing") Box sizing
+								li: a(href="#!/color") Color
+								li: a(href="#!/cursor") Cursor
+								li: a(href="#!/display") Display
+								li: a(href="#!/float") Float
+								li: a(href="#!/flex") Flex
+								li: a(href="#!/font") Font
+								li
+									a(href="#!/grid") Grid
+									ul.lsn
+										li: a(href="#!/grid-flex") Flex
+										li: a(href="#!/grid-float") Float
+										li: a(href="#!/grid-fractions") Inline block
+								li: a(href="#!/height") Height
+								li: a(href="#!/list") List
+								li: a(href="#!/margin-and-padding") Margin & Padding
+								li: a(href="#!/opacity-and-visibility") Opacity & Visibility
+								li: a(href="#!/position") Position
+								li: a(href="#!/text") Text
+								li: a(href="#!/visible-and-hidden") Visible & Hidden
+					.col-md-9.col-lg-9
+						#main-content(ng-view)
+		script(src="./assets/js/highlight/highlight.pack.js")
+		script(src="./assets/libs/angular/angular.min.js")
+		script(src="./assets/js/modules/angular-route.min.js")
+		script(src="./assets/js/modules/angular-css.min.js")
+		script(src="./assets/js/jquery-3.3.1.min.js")
+		script(src="./assets/js/scripts.js")
+		script(src="./assets/js/app.js")
+		script(src="./assets/js/config.js")
+		script(src="./assets/js/directives.js")
+		script(src="./assets/js/controllers.js")
