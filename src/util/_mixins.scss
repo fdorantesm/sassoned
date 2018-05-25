@@ -52,10 +52,6 @@
 @mixin center-box($size, $side: null) {
 	.#{$size}#{if($side, '-' + $side, '')} {
 		&-center {
-			&-text {
-				text-align: center;	
-			}
-
 			&-align {
 				margin: {
 					left: auto;
@@ -66,7 +62,7 @@
 	}
 }
 
-@mixin grid($size, $type: 'flex', $columns: $gosp-grid-columns) {
+@mixin grid($size, $type: 'flex', $columns: $gosp-grid-columns, $fractionary: $gosp-grid-fractionary) {
 
 	@if isFlex() {	
 		.col {	
@@ -108,40 +104,43 @@
 				align-items: flex-end;
 			}
 
-			&-1st, &-first {
-				order: -1;
-			}
-
-			&-2nd {
-				order: 2;
-			}
-
-			&-3rd {
-				order: 3;
-			}
-
-			@for $i from 4 through $gosp-grid-columns {
-				$nth: #{$i}th;
-				&-#{$nth} {
-					order: $i;
+			@if not $gosp-grid-fractionary {
+				&-1st, &-first {
+					order: -1;
 				}
 
-				@if $i == $gosp-grid-columns {
-					&-last {
-						@extend .#{$size}-#{$nth};
+				&-2nd {
+					order: 2;
+				}
+
+				&-3rd {
+					order: 3;
+				}
+
+				@for $i from 4 through $gosp-grid-columns {
+					$nth: #{$i}th;
+					&-#{$nth} {
+						order: $i;
+					}
+
+					@if $i == $gosp-grid-columns {
+						&-last {
+							@extend .#{$size}-#{$nth};
+						}
 					}
 				}
 			}
-
 		}
 
 	}
 			
-	@if $type != 'fractions' {
-		@for $x from 1 through $columns {
+	
+	@for $x from 1 through $columns {
+		//based on columns
+		@if not $gosp-grid-fractionary {
 			$width: percentage($x/$columns);
-			.col-#{$size}-#{$x} {	
-				@if isFlex() {	
+			.col-#{$size}-#{$x} {
+				@if isFlex() {
 					flex-basis: $width;
 					max-width: $width;
 				}
@@ -150,13 +149,53 @@
 				}
 			}
 		}
-	
-		@for $offset from 0 through $columns {
-			.col-#{$size}-offset-#{$offset} {
-				margin-left: percentage($offset/$columns);
+
+		//fractions columns
+		@else {
+			@for $y from 1 through $x {
+				@if $y!=$x {
+					$width: percentage($y/$x);
+					.col-#{$size}-#{$y + '-' + $x} {
+						width: $width;
+						@if not isFlex() {
+							@for $j from 0 to $x {
+								$width: percentage($j/$x);								
+								&.col-#{$size}-pull-#{$j} {
+									right: $width;
+								}
+								&.col-#{$size}-push-#{$j} {
+									left: $width;
+								}
+
+								&.col-#{$size}-offset-#{$j} {
+									margin-left: $width;
+								}
+							}
+							
+
+						}
+						
+						@if isFlex() {
+							@for $k from 1 through $x {
+								$sufix: if($k == 1, 'st', if($k == 2, 'nd', if($k == 3, 'rd', 'th')));
+								&.#{$size}-#{$k + $sufix} {
+									order: $k;
+								}
+							}
+						}						
+					}
+				}
 			}
 		}
+	}
 
+	@for $offset from 0 through $columns {
+		.col-#{$size}-offset-#{$offset} {
+			margin-left: percentage($offset/$columns);
+		}
+	}
+	
+	@if not isFlex() and not $gosp-grid-fractionary {
 		@for $item from 0 through $columns {
 			.col-#{$size}-push-#{$item} {
 				left: percentage($item/$columns);
@@ -165,33 +204,7 @@
 				right: percentage($item/$columns);
 			}
 		}
-	}
-
-	@else {
-		@for $x from 1 through $columns {
-			@for $y from 1 through $x {
-				@if $y!=$x {
-					$width: percentage($y/$x);
-					.col-#{$size}-#{$y + '-' + $x} {	
-						width: $width;
-						@for $k from 1 through $x {
-							@if $x!=$k {
-								$offset: percentage($k/$x);
-								&.col-#{$size}-offset-#{$k} {
-									margin-left: $offset;
-								}
-								&.col-#{$size}-pull-#{$k} {
-									right: $offset;
-								}
-								&.col-#{$size}-push-#{$k} {
-									left: $offset;
-								}
-							}
-						}
-					}
-				}
-			}
-		}
+		
 	}
 
 	@include classmap(text-align, $gosp-text-align, $size);

@@ -1,14 +1,34 @@
-$gosp-version: "1.0.0";
+$gosp-version: "1.0.2";
 $gosp-responsive: true;
-$gosp-grid-system: 'flex'; // flex | float | inline | fractions
+$gosp-grid-type: 'flex'; // flex | float | inline
 $gosp-grid-columns: 12;
+$gosp-grid-fractionary: false;
+$gosp-grid-column-gutter: 0px;
 
 $gosp-breakpoints: (
-	xs: (max: em(480px)),
-	sm: (min: em(481px), max: em(768px)),
-	md: (min: em(769px), max: em(1280px)),
-	lg: (min: em(1281px), max: em(1600px)),
-	xl: (min: em(1601px))
+	xs: (
+		prefix: 'col-xs',
+		max: em(480px)
+	),
+	sm: (
+		prefix: 'col-sm',
+		min: em(481px), 
+		max: em(768px)
+	),
+	md: (
+		prefix: 'col-md',
+		min: em(769px), 
+		max: em(1280px)
+	),
+	lg: (
+		prefix: 'col-lg',
+		min: em(1281px), 
+		max: em(1600px)
+	),
+	xl: (
+		prefix: 'col-xl',
+		min: em(1601px)
+	)
 );
 
 $gosp-font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;

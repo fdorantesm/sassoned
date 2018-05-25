@@ -69,6 +69,23 @@ $gosp-align-items: (
 	aiu: unset,
 );
 
+$gosp-justify-self: (
+	 jsc: center,
+	 jss: stretch,
+	 jsu: unset,
+	jsfe: flex-end,
+	jsfs: flex-start,
+	jssa: space-around,
+	jssb: space-between,
+);
+
+$gosp-align-self: (
+	asc: center,
+	asfe: flex-end,
+	asfs: flex-start,
+	asu: unset,
+);
+
 $gosp-flex-direction: (
 	 fdc: column,
 	 fdr: row,

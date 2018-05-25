@@ -1,43 +1,87 @@
 @import "mixins";
 
 @include responsive-helpers(xs);
+@include center-box(xs);
+@include classmap(text-align, $gosp-text-align, xs);
+@include classmap(justify-content, $gosp-justify-content, xs);
+@include classmap(align-items, $gosp-align-items, xs);
 
 @include sm {
 	@include responsive-helpers(sm);
+	@include center-box(sm);
+	@include classmap(text-align, $gosp-text-align, sm);
+	@include classmap(justify-content, $gosp-justify-content, sm);
+	@include classmap(align-items, $gosp-align-items, sm);
 }
 
 @include sm-down {
 	@include responsive-helpers(sm-down);
+	@include center-box(sm, down);
+	@include classmap(text-align, $gosp-text-align, sm-down);
+	@include classmap(justify-content, $gosp-justify-content, sm-down);
+	@include classmap(align-items, $gosp-align-items, sm-down);
 }
 
 @include sm-up {
 	@include responsive-helpers(sm-up);
+	@include center-box(sm, up);
+	@include classmap(text-align, $gosp-text-align, sm-up);
+	@include classmap(justify-content, $gosp-justify-content, sm-up);
+	@include classmap(align-items, $gosp-align-items, sm-up);
 }
 
 @include md {
 	@include responsive-helpers(md);
+	@include center-box(md);
+	@include classmap(text-align, $gosp-text-align, md);
+	@include classmap(justify-content, $gosp-justify-content, md);
+	@include classmap(align-items, $gosp-align-items, md);
 }
 
 @include md-down {
 	@include responsive-helpers(md-down);
+	@include center-box(md, down);
+	@include classmap(text-align, $gosp-text-align, md-down);
+	@include classmap(justify-content, $gosp-justify-content, md-down);
+	@include classmap(align-items, $gosp-align-items, md-down);
 }
 
 @include md-up {
 	@include responsive-helpers(md-up);
+	@include center-box(md, up);
+	@include classmap(text-align, $gosp-text-align, md-up);
+	@include classmap(justify-content, $gosp-justify-content, md-up);
+	@include classmap(align-items, $gosp-align-items, md-up);
 }
 
 @include lg {
 	@include responsive-helpers(lg);
+	@include center-box(lg);
+	@include classmap(text-align, $gosp-text-align, lg);
+	@include classmap(justify-content, $gosp-justify-content, lg);
+	@include classmap(align-items, $gosp-align-items, lg);
 }
 
 @include lg-down {
 	@include responsive-helpers(lg-down);
+	@include center-box(lg, down);
+	@include classmap(text-align, $gosp-text-align, lg-down);
+	@include classmap(justify-content, $gosp-justify-content, lg-down);
+	@include classmap(align-items, $gosp-align-items, lg-down);
 }
 
 @include lg-up {
 	@include responsive-helpers(lg-up);
+	@include center-box(lg, up);
+	@include classmap(text-align, $gosp-text-align, lg-up);
+	@include classmap(justify-content, $gosp-justify-content, lg-up);
+	@include classmap(align-items, $gosp-align-items, lg-up);
 }
 
 @include xl {
 	@include responsive-helpers(xl);
+	@include center-box(xl);
+	@include classmap(text-align, $gosp-text-align, xl);
+	@include classmap(justify-content, $gosp-justify-content, xl);
+	@include classmap(align-items, $gosp-align-items, xl);
 }

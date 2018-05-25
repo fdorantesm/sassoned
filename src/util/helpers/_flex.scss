@@ -1,5 +1,7 @@
 @include classmap(flex-direction, $gosp-flex-direction);
 @include classmap(justify-content, $gosp-justify-content);
+@include classmap(align-self, $gosp-align-self);
+@include classmap(justify-self, $gosp-justify-self);
 @include classmap(align-items, $gosp-align-items);
 @include classmap(flex-wrap, $gosp-flex-wrap);
 @include class(fg, flex-grow, '', 0, $gosp-grid-columns / 2, 1);

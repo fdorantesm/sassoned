@@ -8,6 +8,10 @@
 	@return map-get(map-get($gosp-breakpoints, $size), $side);
 }
 
+@function columnPrefix($size) {
+	@return map-get(map-get($gosp-breakpoints, $size), prefix);
+}
+
 @function em($el, $context: $gosp-font-size-base) {
 	@if type_of($el) == number and unit($el) == 'px' {
 		@return ($el / $context) * 1em;
@@ -27,7 +31,7 @@
 }
 
 @function isFlex() {
-	@return $gosp-grid-system == flex;
+	@return $gosp-grid-type == flex;
 }
 
 @function in($list, $element) {
