@@ -1,7 +1,7 @@
 {
-  "name": "oocss",
-  "version": "1.0.0",
-  "description": "A oocss framework",
+  "name": "gosp.css",
+  "version": "1.0.3",
+  "description": "A light weight powerful css library to make front-end fast",
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp",
@@ -9,12 +9,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com//fdorantesm/oocss.git"
+    "url": "https://github.com//fdorantesm/gosp.css.git"
   },
   "keywords": [
     "css",
     "object",
-    "oriented"
+    "oriented",
+    "grid"
   ],
   "author": "fdorantesm",
   "license": "MIT",

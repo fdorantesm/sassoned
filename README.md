@@ -1,19 +1,40 @@
-# OOCSS
-Object Oriented Cascade Style Sheet
+# GOSP.CSS
+Garlic, onion, salt and pepper...
 
 ## How to use
 
-* @import sentence
-* link stylesheet html tag
+Within sass project
+```
+@import "gosp.css/src/gosp.scss";
+```
+
+CSS file
+```
+@import "gosp.css/dist/gosp.min.css";
+```
+
+HTML Link Tag
+```
+<link rel="stylesheet" href="gosp.css/src/gosp.scss" />;
+```
+
+npm
+```
+npm i gosp.css --save
+```
 
 ## Build
 
-Just compile style.scss file.
+Just compile gosp.scss file.
 
 ```
-sass style.scss style.css
+gulp default
 ```
 
+Without gulp
+```
+sass src/gosp.scss dist/gosp.css
+```
 
 ### Anchor
 *  Remove underline decoration and outline
@@ -29,7 +50,6 @@ sass style.scss style.css
 ### Box
 * Border none
 * Box sizing box
-* Box padding box
 * Box content box
 
 ### Cursor
@@ -177,7 +197,9 @@ NOTE: It's just based on previous grid system, doesn't contains another elements
 Example:
 
 <pre>
-sm-up(){
+// You could use -up and -down media queries.
+// xs and xl don't have these suffixes.
+@include sm-up {
     // rules
 }
 </pre>
@@ -192,6 +214,7 @@ This classes will be able to change property-value classes in each display resol
 * Padding
 * Font size (px, em, rem)
 * Position
+* Text align
 
 ### Credits
 * Flexboxgrid: Thanks to @kristoferjoseph https://github.com/kristoferjoseph/flexboxgrid
