@@ -1,3 +1,9 @@
+### 1.0.4
+
+- Restored col-auto (removed by mistake)
+- Added flex order (ord) classes (without media prefix)
+- Readme updated
+
 ### 1.0.3
 
 - Added justify-self, align-self to responsive helpers. center-box and text-align classes were moved to responsive helpers

@@ -6,3 +6,4 @@
 @include classmap(flex-wrap, $gosp-flex-wrap);
 @include class(fg, flex-grow, '', 0, $gosp-grid-columns / 2, 1);
 @include class(fsh, flex-shrink, '', 0, $gosp-grid-columns / 2, 1);
+@include class(ord, order, '', -1, $gosp-grid-columns, 1);

@@ -118,6 +118,9 @@ body.debug *::before {
       flex-basis: 0;
   max-width: 100%;
 }
+.col-auto {
+  width: auto;
+}
 .xs-start {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
@@ -375,6 +378,9 @@ body.debug *::before {
         flex-basis: 0;
     max-width: 100%;
   }
+  .col-auto {
+    width: auto;
+  }
   .sm-start {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
@@ -614,6 +620,9 @@ body.debug *::before {
         flex-basis: 0;
     max-width: 100%;
   }
+  .col-auto {
+    width: auto;
+  }
   .md-start {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
@@ -845,6 +854,9 @@ body.debug *::before {
         flex-basis: 0;
     max-width: 100%;
   }
+  .col-auto {
+    width: auto;
+  }
   .lg-start {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
@@ -1075,6 +1087,9 @@ body.debug *::before {
     -ms-flex-preferred-size: 0;
         flex-basis: 0;
     max-width: 100%;
+  }
+  .col-auto {
+    width: auto;
   }
   .xl-start {
     -webkit-box-pack: start;
@@ -9362,6 +9377,76 @@ a:hover {
 .fsh6 {
   -ms-flex-negative: 6;
       flex-shrink: 6;
+}
+.ord-1 {
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
+}
+.ord0 {
+  -webkit-box-ordinal-group: 1;
+      -ms-flex-order: 0;
+          order: 0;
+}
+.ord1 {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+.ord2 {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+.ord3 {
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+}
+.ord4 {
+  -webkit-box-ordinal-group: 5;
+      -ms-flex-order: 4;
+          order: 4;
+}
+.ord5 {
+  -webkit-box-ordinal-group: 6;
+      -ms-flex-order: 5;
+          order: 5;
+}
+.ord6 {
+  -webkit-box-ordinal-group: 7;
+      -ms-flex-order: 6;
+          order: 6;
+}
+.ord7 {
+  -webkit-box-ordinal-group: 8;
+      -ms-flex-order: 7;
+          order: 7;
+}
+.ord8 {
+  -webkit-box-ordinal-group: 9;
+      -ms-flex-order: 8;
+          order: 8;
+}
+.ord9 {
+  -webkit-box-ordinal-group: 10;
+      -ms-flex-order: 9;
+          order: 9;
+}
+.ord10 {
+  -webkit-box-ordinal-group: 11;
+      -ms-flex-order: 10;
+          order: 10;
+}
+.ord11 {
+  -webkit-box-ordinal-group: 12;
+      -ms-flex-order: 11;
+          order: 11;
+}
+.ord12 {
+  -webkit-box-ordinal-group: 13;
+      -ms-flex-order: 12;
+          order: 12;
 }
 .fl {
   float: left;
