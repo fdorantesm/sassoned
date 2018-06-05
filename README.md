@@ -148,10 +148,10 @@ sass src/gosp.scss dist/gosp.css
 |aife|align-items|flex-end|
 |aifs|align-items|flex-start|
 |aiu|align-items|unset|
-|aic|align-self|center|
-|aife|align-self|flex-end|
-|aifs|align-self|flex-start|
-|aiu|align-self|unset|
+|asc|align-self|center|
+|asfe|align-self|flex-end|
+|asfs|align-self|flex-start|
+|asu|align-self|unset|
 
 #### Flex direction
 |Class|Property|Value|
@@ -184,13 +184,13 @@ Note: From 0 to $gosp-grid-columns / 2
 |jcfs|justify-content|flex-start|
 |jcsa|justify-content|space-around|
 |jcsb|justify-content|space-between|
-|jcc|justify-self|center|
-|jcs|justify-self|stretch|
-|jcu|justify-self|unset|
-|jcfe|justify-self|flex-end|
-|jcfs|justify-self|flex-start|
-|jcsa|justify-self|space-around|
-|jcsb|justify-self|space-between|
+|jsc|justify-self|center|
+|jss|justify-self|stretch|
+|jsu|justify-self|unset|
+|jsfe|justify-self|flex-end|
+|jsfs|justify-self|flex-start|
+|jssa|justify-self|space-around|
+|jssb|justify-self|space-between|
 
 #### Flex order
 |Class|Property|Value|
