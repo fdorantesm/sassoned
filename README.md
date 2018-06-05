@@ -528,3 +528,4 @@ This classes will be able to change property-value classes in each display resol
 * Removed color palette mixin
 * Added xl media size
 * Added auto column
+* Added flex push and pull
