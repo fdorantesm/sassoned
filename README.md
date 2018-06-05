@@ -99,6 +99,8 @@ sass src/gosp.scss dist/gosp.css
 |biu|background-image|unset|
 
 #### Background repeat
+|Class|Property|Value|
+|:-:|:-:|:-:|
 |brnr|background-repeat|no-repeat|
 |brr|background-repeat|repeat|
 |brrx|background-repeat|repeat-x|
@@ -222,6 +224,8 @@ Note: From 0 to $gosp-grid-columns / 2
 Note: From 0 to $gosp-grid-columns / 2
 
 #### Flex wrap
+|Class|Property|Value|
+|:-:|:-:|:-:|
 |fwnw|flex-wrap|no-wrap|
 |fww|flex-wrap|wrap|
 |fwwr|flex-wrap|wrap-reverse|
@@ -379,6 +383,7 @@ Note: From 1 to $gosp-grid-columns / 2
 
 ### Table
 |Class| Description|
+|:-:|:-|
 |Collapsed| Border collapsed|
 |Fixed| Columns with the same width|
 |Responsive| Table rows to columns under sm size|
@@ -416,6 +421,7 @@ Note: From 1 to $gosp-grid-columns / 2
 |tdr|text-direction|rtl|
 
 |Class|Description|
+|:-:|:-|
 |paragraph-reset| Sets margin to 0|
 
 ### Vertial align
