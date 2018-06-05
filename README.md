@@ -277,7 +277,7 @@ Note: From 0 to $gosp-grid-columns / 2
 ### Grid
 |Type|Description|Nested|Offset|Pull|Push|
 |:-:|:-|:-:|:-:|:-:|:-:|
-|Flex| Based on flexboxgrid)| Yes | Yes | No | No
+|Flex| Based on flexboxgrid)| Yes | Yes | Yes | Yes
 |Float| Based on twbs bootstrap)| Yes | Yes | Yes | Yes
 |Inline| Same as bootstrap but using inline-block)| Yes | Yes | Yes | Yes
 |Fractionary| Using fractions like col-md-1-2 eq col-md-6 based on wp grid by Ricardo Aguirre)| Yes | Yes | Yes | Yes
