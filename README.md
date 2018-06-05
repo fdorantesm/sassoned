@@ -98,6 +98,12 @@ sass src/gosp.scss dist/gosp.css
 | :-: | :-: | :-: |
 |biu|background-image|unset|
 
+#### Background repeat
+|brnr|background-repeat|no-repeat|
+|brr|background-repeat|repeat|
+|brrx|background-repeat|repeat-x|
+|brry|background-repeat|repeat-y|
+
 ### Box
 * Border none
 * Box sizing box
@@ -131,6 +137,7 @@ sass src/gosp.scss dist/gosp.css
 * Justify
 * Order
 * Shrink
+* Direction
 
 #### Flex align
 |Class|Property|Value|
@@ -139,6 +146,18 @@ sass src/gosp.scss dist/gosp.css
 |aife|align-items|flex-end|
 |aifs|align-items|flex-start|
 |aiu|align-items|unset|
+|aic|align-self|center|
+|aife|align-self|flex-end|
+|aifs|align-self|flex-start|
+|aiu|align-self|unset|
+
+#### Flex direction
+|Class|Property|Value|
+|:-:|:-:|:-:|
+|fdc|flex-direction|column|
+|fdr|flex-direction|row|
+|fdcr|flex-direction|column-reverse|
+|fdrr|flex-direction|row-reverse|
 
 #### Flex grow
 |Class|Property|Value|
@@ -163,6 +182,13 @@ Note: From 0 to $gosp-grid-columns / 2
 |jcfs|justify-content|flex-start|
 |jcsa|justify-content|space-around|
 |jcsb|justify-content|space-between|
+|jcc|justify-self|center|
+|jcs|justify-self|stretch|
+|jcu|justify-self|unset|
+|jcfe|justify-self|flex-end|
+|jcfs|justify-self|flex-start|
+|jcsa|justify-self|space-around|
+|jcsb|justify-self|space-between|
 
 #### Flex order
 |Class|Property|Value|
@@ -194,6 +220,11 @@ Note: From 0 to $gosp-grid-columns / 2
 |fsh6|flex-shrink|6|
 
 Note: From 0 to $gosp-grid-columns / 2
+
+#### Flex wrap
+|fwnw|flex-wrap|no-wrap|
+|fww|flex-wrap|wrap|
+|fwwr|flex-wrap|wrap-reverse|
 
 ### Floats
 |Class|Property|Value|
@@ -271,6 +302,17 @@ Note: You can order flex columns using order classes and order media helpers.
 |:-:|:-:|
 |list-reset| Sets margin and padding to 0 and list-style to none |
 |list-inline| Displays list item as inline-block |
+
+|Class|Property|Value|
+|:-:|:-:|:-:|
+|list-columns-1|columns|1|
+|list-columns-2|columns|2|
+|list-columns-3|columns|3|
+|list-columns-4|columns|4|
+|list-columns-5|columns|5|
+|list-columns-6|columns|6|
+
+Note: From 1 to $gosp-grid-columns / 2
 
 |Class|Property|Value|
 |:-:|:-:|:-:|
@@ -369,6 +411,9 @@ Note: You can order flex columns using order classes and order media helpers.
 |tdsdo|text-decoration-style|dotted|
 |tdss|text-decoration-style|solid|
 |tdsw|text-decoration-style|wavy|
+|tdi|text-direction|initial|
+|tdl|text-direction|ltr|
+|tdr|text-direction|rtl|
 
 |Class|Description|
 |paragraph-reset| Sets margin to 0|
@@ -386,6 +431,15 @@ Note: You can order flex columns using order classes and order media helpers.
 |vat|vertical-align|top|
 |vatb|vertical-align|text-bottom|
 |vatt|vertical-align|text-top|
+
+### Visibility
+
+|Class|Property|Value|
+|:-:|:-:|:-:|
+vc|visibility|collapse|
+vh|visibility|hidden|
+vu|visibility|unset|
+vv|visibility|visible|
 
 ### Z Index
 |   Index   |   Elements   |
@@ -439,6 +493,8 @@ This classes will be able to change property-value classes in each display resol
 * Font size (px, em, rem)
 * Position
 * Text align
+* List columns
+* Hide and show
 
 | Property | Value| Helper class  |   Responsive helper   |
 | :-: | :-:| :-:| :-:|
@@ -459,6 +515,7 @@ This classes will be able to change property-value classes in each display resol
 * Flexboxgrid: Thanks to @kristoferjoseph https://github.com/kristoferjoseph/flexboxgrid
 * Bootstrap: Thanks to Twitter https://github.com/twbs/bootstrap
 * RicAg
+* @escueladigital: em and rem functions from ED-Grid https://github.com/escueladigital/EDgrid
 
 ### Changelog
 * Rebuilt lib using sass with scss syntax
