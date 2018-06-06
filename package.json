@@ -2,7 +2,7 @@
   "name": "gosp.css",
   "version": "1.0.11",
   "description": "A light weight powerful css library to make front-end fast",
-  "main": "src/gosp.scss",
+  "main": "gosp.js",
   "scripts": {
     "start": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
