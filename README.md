@@ -19,8 +19,27 @@ HTML Link Tag
 ```
 
 npm
+
 ```
 npm i gosp.css --save
+```
+
+gulpfile.js
+```
+let gosp = require('gosp.css').includePaths + '/src'
+
+sass({
+	includePaths: [gosp]
+})
+
+```
+
+style.scss
+```
+@import "gosp";
+/*
+	Your awesome styles
+*/
 ```
 
 ## Build
