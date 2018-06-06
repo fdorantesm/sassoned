@@ -1,6 +1,6 @@
 {
   "name": "gosp.css",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "A light weight powerful css library to make front-end fast",
   "main": "src/gosp.scss",
   "scripts": {
