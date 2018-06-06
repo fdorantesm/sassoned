@@ -2,14 +2,14 @@
   "name": "gosp.css",
   "version": "1.0.9",
   "description": "A light weight powerful css library to make front-end fast",
-  "main": "gulpfile.js",
+  "main": "src/gosp.scss",
   "scripts": {
     "start": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com//fdorantesm/gosp.css.git"
+    "url": "https://github.com/fdorantesm/gosp.css.git"
   },
   "keywords": [
     "css",
@@ -17,7 +17,7 @@
     "oriented",
     "grid"
   ],
-  "author": "fdorantesm",
+  "author": "fdorantesm <fedormon@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "gulp": "^3.9.1",

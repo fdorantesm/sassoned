@@ -1,3 +1,6 @@
+### 1.0.10
+* node_modules include bug
+
 ### 1.0.9
 * Added list-inline and list-block helpers and responsive helpers
 * Changed size readme prefix to media-query
