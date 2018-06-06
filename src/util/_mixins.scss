@@ -248,7 +248,23 @@
 }
 
 @mixin list-columns($columns, $prefix: null) {
-	.list-columns-#{if($prefix, $prefix + '-', '') + $columns} {
+	.#{if($prefix, $prefix + '-', '')}list-columns-#{$columns} {
 		columns: $columns;
+	}
+}
+
+@mixin list-helper($prefix: null){
+	.#{if($prefix, $prefix + '-', '')}list {
+		&-inline {
+			li {
+				display: inline-block;
+			}
+		}
+
+		&-block {
+			li {
+				display: block;
+			}
+		}
 	}
 }

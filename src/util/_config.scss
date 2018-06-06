@@ -1,4 +1,4 @@
-$gosp-version: "1.0.8";
+$gosp-version: "1.0.9";
 $gosp-responsive: true;
 $gosp-grid-type: 'flex'; // flex | float | inline
 $gosp-grid-columns: 12;
@@ -30,6 +30,8 @@ $gosp-breakpoints: (
 		min: em(1601px)
 	)
 );
+
+$gosp-media-queries: xs, sm, sm-up, sm-down, md, md-up, md-down, lg, lg-up, lg-down, xl;
 
 $gosp-font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
 $gosp-font-family-serif:       Georgia, "Times New Roman", Times, serif;

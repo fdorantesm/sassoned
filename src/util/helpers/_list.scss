@@ -2,87 +2,102 @@
 	list-style: none;
 }
 
-.list-reset {	
-	padding: 0;
-	margin: 0;
-	@extend .lsn;
-}
+@include list-helper();
 
 @for $x from 1 through ($gosp-grid-columns / 2) {
 	@include list-columns($x);
+}
+
+@each $key, $val in $gosp-list-style {
+	&.#{$key} {
+		list-style: $val;
+	}
+}
+
+@include xs {
+	@for $x from 1 through ($gosp-grid-columns / 2) {
+		@include list-columns($x, xs);
+	}
+
+	@include list-helper(xs);
 }
 
 @include sm {
 	@for $x from 1 through ($gosp-grid-columns / 2) {
 		@include list-columns($x, sm);
 	}
+
+	@include list-helper(sm);
 }
 
 @include sm-up {
 	@for $x from 1 through ($gosp-grid-columns / 2) {
 		@include list-columns($x, sm-up);
 	}
+	
+	@include list-helper(sm-up);
 }
 
 @include sm-down {
 	@for $x from 1 through ($gosp-grid-columns / 2) {
 		@include list-columns($x, sm-down);
 	}
+
+	@include list-helper(sm-down);
 }
 
 @include md {
 	@for $x from 1 through ($gosp-grid-columns / 2) {
 		@include list-columns($x, md);
 	}
+
+	@include list-helper(md);
 }
 
 @include md-up {
 	@for $x from 1 through ($gosp-grid-columns / 2) {
 		@include list-columns($x, md-up);
 	}
+
+	@include list-helper(md-up);
 }
 
 @include md-down {
 	@for $x from 1 through ($gosp-grid-columns / 2) {
 		@include list-columns($x, md-down);
 	}
+	
+	@include list-helper(md-down);
 }
 
 @include lg {
 	@for $x from 1 through ($gosp-grid-columns / 2) {
 		@include list-columns($x, lg);
 	}
+
+	@include list-helper(lg);
 }
 
 @include lg-up {
 	@for $x from 1 through ($gosp-grid-columns / 2) {
 		@include list-columns($x, lg-up);
 	}
+	
+	@include list-helper(lg-up);
 }
 
 @include lg-down {
 	@for $x from 1 through ($gosp-grid-columns / 2) {
 		@include list-columns($x, lg-down);
 	}
+
+	@include list-helper(lg-down);
 }
 
 @include xl {
 	@for $x from 1 through ($gosp-grid-columns / 2) {
 		@include list-columns($x, xl);
 	}
-}
 
-
-ul, ol {	
-	&.list-inline {
-		li {
-			display: inline-block;
-		}
-	}
-			
-	@each $key, $val in $gosp-list-style {
-		&.#{$key} {
-			list-style: $val;
-		}
-	}
+	@include list-helper(xl);
 }

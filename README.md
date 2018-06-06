@@ -305,7 +305,8 @@ Note: You can order flex columns using order classes and order media helpers.
 |Class|Description|
 |:-:|:-:|
 |list-reset| Sets margin and padding to 0 and list-style to none |
-|list-inline| Displays list item as inline-block |
+|list-inline| Displays list items as inline-block |
+|list-block| Displays list items as block |
 
 |Class|Property|Value|
 |:-:|:-:|:-:|
@@ -367,19 +368,19 @@ Note: From 1 to $gosp-grid-columns / 2
 |Class|
 |:-:|
 |hide|
-|hide-[size]|
-|hide-[size]|
-|hide-[size]|
-|hide-[size]-below|
-|hide-[size]-above|
-|hide-[size]|
+|hide-[media-query]|
+|hide-[media-query]|
+|hide-[media-query]|
+|hide-[media-query]-below|
+|hide-[media-query]-above|
+|hide-[media-query]|
 |show|
-|show-[size]|
-|show-[size]|
-|show-[size]|
-|show-[size]-below|
-|show-[size]-above|
-|show-[size]|
+|show-[media-query]|
+|show-[media-query]|
+|show-[media-query]|
+|show-[media-query]-below|
+|show-[media-query]-above|
+|show-[media-query]|
 
 ### Table
 |Class| Description|
@@ -517,6 +518,11 @@ This classes will be able to change property-value classes in each display resol
 | Font size | From 8 to 48 | fsp16 | md-fsp16 |
 | Font size | From 50 to 100 | fsp60 | xs-fsp20 |
 
+|Class| Responsive class| Description|
+|:-:|:-:|:-|
+|list-inline| [media-query]-list-inline|Displays list items as inline-block |
+|list-block| [media-query]-list-block|Displays list items as block |
+
 ### Credits
 * Flexboxgrid: Thanks to @kristoferjoseph https://github.com/kristoferjoseph/flexboxgrid
 * Bootstrap: Thanks to Twitter https://github.com/twbs/bootstrap
@@ -529,3 +535,5 @@ This classes will be able to change property-value classes in each display resol
 * Added xl media size
 * Added auto column
 * Added flex push and pull
+* Added list-inline and list-block helpers and responsive helpers
+* Changed size readme prefix to media-query
