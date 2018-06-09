@@ -557,3 +557,4 @@ This classes will be able to change property-value classes in each display resol
 * Added list-inline and list-block helpers and responsive helpers
 * Changed size readme prefix to media-query
 * node_module bug
+* Restores `.list-reset` class

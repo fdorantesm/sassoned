@@ -1,3 +1,6 @@
+### 1.0.14
+* Restored `list-reset` class deleted by mistake
+
 ### 1.0.10
 * node_modules include bug
 

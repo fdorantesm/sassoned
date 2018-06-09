@@ -12,7 +12,7 @@
  *     \/__/        \/__/        \/__/        \/__/  
  * 
  *
- * @version: 1.0.10
+ * @version: 1.0.14
  * @author: @fdorantesm
  * @website: https://gosp.dorant.es
  * @github: https://github.com/fdorantesm/gosp-css
@@ -10154,8 +10154,12 @@ form.gosp-form input, form.gosp-form select, form.gosp-form button {
 .h100vh {
   height: 100vh;
 }
-.lsn {
+.lsn, .list-reset {
   list-style: none;
+}
+.list-reset {
+  margin: 0;
+  padding: 0;
 }
 .list-inline li {
   display: inline-block;

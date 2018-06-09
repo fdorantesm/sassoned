@@ -2,6 +2,14 @@
 	list-style: none;
 }
 
+.list {
+	&-reset {
+		@extend .lsn;
+		margin: 0;
+		padding: 0;
+	}
+}
+
 @include list-helper();
 
 @for $x from 1 through ($gosp-grid-columns / 2) {
