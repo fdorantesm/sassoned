@@ -58,9 +58,11 @@
 				
 [class*="col-"] {	
 	width: 100%;
-	padding: {
-		right: $gosp-grid-column-gutter;
-		left: $gosp-grid-column-gutter;
+	@if ($gosp-grid-column-gutter > 0) {
+		padding: {
+			right: $gosp-grid-column-gutter;
+			left: $gosp-grid-column-gutter;
+		}
 	}
 	
 	@if isFlex() {
