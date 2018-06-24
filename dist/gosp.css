@@ -12,7 +12,7 @@
  *     \/__/        \/__/        \/__/        \/__/  
  * 
  *
- * @version: 1.0.14
+ * @version: 1.0.17
  * @author: @fdorantesm
  * @website: https://gosp.dorant.es
  * @github: https://github.com/fdorantesm/gosp-css
@@ -100,8 +100,6 @@ body.debug *::before {
 }
 [class*="col-"] {
   width: 100%;
-  padding-right: 0px;
-  padding-left: 0px;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;

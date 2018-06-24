@@ -1,0 +1,16 @@
+{
+  "name": "gosp.css",
+  "description": "A light weight powerful css library to make front-end fast",
+  "main": "gosp.js",
+  "authors": [
+    "fdorantesm <fedormon@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "css",
+    "object",
+    "oriented",
+    "grid"
+  ],
+  "homepage": "https://fdorantesm.github.io/gosp.css"
+}
