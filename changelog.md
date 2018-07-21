@@ -1,3 +1,6 @@
+### 1.0.19
+* Added functions import to media
+
 ### 1.0.14
 * Restored `list-reset` class deleted by mistake
 

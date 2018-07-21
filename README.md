@@ -558,3 +558,4 @@ This classes will be able to change property-value classes in each display resol
 * Changed size readme prefix to media-query
 * node_module bug
 * Restores `.list-reset` class
+* Added functions import to media
