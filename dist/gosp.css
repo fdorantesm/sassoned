@@ -12,7 +12,7 @@
  *     \/__/        \/__/        \/__/        \/__/  
  * 
  *
- * @version: 1.0.19
+ * @version: 1.0.20
  * @author: @fdorantesm
  * @website: https://gosp.dorant.es
  * @github: https://github.com/fdorantesm/gosp-css
@@ -409,7 +409,7 @@ body.debug *::before {
 }
 @media only screen and (max-width: 30em) {
   .container {
-    max-width: 460px;
+    max-width: 28.75em;
   }
   .col-xs,
   .col-sm,
@@ -430,6 +430,7 @@ body.debug *::before {
 @media only screen and (min-width: 30.0625em) {
   .container {
     width: 90%;
+    max-width: 36em;
   }
   .col-xs,
   .col-sm {
@@ -749,7 +750,7 @@ body.debug *::before {
 @media only screen and (min-width: 48.0625em) {
   .container {
     width: 90%;
-    max-width: 1200px;
+    max-width: 75em;
   }
   .col-xs,
   .col-sm,
@@ -1068,8 +1069,8 @@ body.debug *::before {
 }
 @media only screen and (min-width: 80.0625em) {
   .container {
-    width: 90%;
-    max-width: 1600px;
+    width: 85%;
+    max-width: 85.375em;
   }
   .col-lg {
     -ms-flex-preferred-size: 0;
@@ -1380,8 +1381,8 @@ body.debug *::before {
 }
 @media only screen and (min-width: 100.0625em) {
   .container {
-    width: 90%;
-    max-width: 1920px;
+    width: 75%;
+    max-width: 100em;
   }
   .col-xl {
     -ms-flex-preferred-size: 0;

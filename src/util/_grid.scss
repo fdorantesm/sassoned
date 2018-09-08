@@ -1,4 +1,5 @@
 @import "mixins";
+@import "functions";
 
 @if $gosp-grid-fractionary {
 	@warn "The fractionary grid is not optimized, it's experimental and it's not recommended to use yet.";
@@ -97,7 +98,7 @@
 	
 	@include xs {
 		.container {
-			max-width: 460px;
+			max-width: em(460px);
 		}
 		
 		@if isFlex() {
@@ -129,6 +130,7 @@
 	@include sm-up {	
 		.container {
 			width: 90%;
+			max-width: em(576px);
 		}
 		
 		@if isFlex() {	
@@ -155,7 +157,7 @@
 @include md-up {	
 	.container {	
 		width: 90%;
-		max-width: 1200px;
+		max-width: em(1200px);
 	}
 	
 	@if isFlex() {	
@@ -180,8 +182,8 @@
 	
 @include lg-up {
 	.container {
-		width: 90%;
-		max-width: 1600px;
+		width: 85%;
+		max-width: em(1366px);
 	}
 	
 	@if isFlex() {
@@ -196,8 +198,8 @@
 
 @include xl {
 	.container {
-		width: 90%;
-		max-width: 1920px;
+		width: 75%;
+		max-width: em(1600px);
 	}
 	
 	@if isFlex() {
