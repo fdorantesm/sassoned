@@ -1,0 +1,76 @@
+@import "../core/util/functions";
+
+//
+// --------------------------------------------------------------------------
+//  Responsive
+// --------------------------------------------------------------------------
+// 
+//  Set to false if you don't want to build responsive media queries and
+//  responsive helpers. You can use this variable in your project.
+// 
+
+$gosp-responsive: true !global;
+
+//
+// --------------------------------------------------------------------------
+//  Grid system
+// --------------------------------------------------------------------------
+// 
+//  It's recommended you try to get updated with the new css features.
+//  Flexbox is now 94% supported. If you want to get legacy support
+//  use inline instead float.
+// 
+
+$gosp-grid-type: 'flex' !global;
+
+//
+// --------------------------------------------------------------------------
+//  Grid columns
+// --------------------------------------------------------------------------
+// 
+//  Usually the standard grid has 12 columns, you can add or remove columns
+//  but take in mind as you increase or decrease this param the grid
+//  system will build more or less code.
+// 
+
+$gosp-grid-columns: 12 !global;
+
+//
+// --------------------------------------------------------------------------
+//  Fractionary grid
+// --------------------------------------------------------------------------
+// 
+//  If you hare the classic column notation, you would to use fractionary
+//  columns based in math fractions instead a number of columns.
+// 
+
+$gosp-grid-fractionary: false !global;
+
+//
+// --------------------------------------------------------------------------
+//  Column gutter
+// --------------------------------------------------------------------------
+// 
+//  This is the space between the column and its content. By default is 0
+//  because sometimes we need to cover full column dimensions.
+// 
+
+$gosp-grid-column-gutter: 0px !global;
+
+//
+// --------------------------------------------------------------------------
+//  Media queries
+// --------------------------------------------------------------------------
+// 
+//  We take 5 standard resolutions to make the grid, feel free to modify
+//  its params, you must be careful with blind media queries points.
+// 
+
+$gosp-xs-max: em(480px) !global;
+$gosp-sm-min: em(481px) !global;
+$gosp-sm-max: em(768px) !global;
+$gosp-md-min: em(769px) !global;
+$gosp-md-max: em(1280px) !global;
+$gosp-lg-min: em(1281px) !global;
+$gosp-lg-max: em(1600px) !global;
+$gosp-xl-min: em(1601px) !global;

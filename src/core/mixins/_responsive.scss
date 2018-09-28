@@ -1,0 +1,23 @@
+@mixin responsive-helpers($prefix: null) {
+	@each $key, $val in $gosp-margin {
+		@include class(#{$prefix + '-' + $key},  $val, px, 0, 50, 5);
+	}
+	
+	@each $key, $val in $gosp-padding {
+		@include class(#{$prefix + '-' + $key},  $val, px, 0, 50, 5);
+	}
+	
+	@include class(#{$prefix}-fsp, font-size, px, 8, 48, 2);
+	@include class(#{$prefix}-fsp, font-size, px, 50, 100, 10);
+
+	@include class(#{$prefix}-h, height, px, 0, 50, 10);
+	@include class(#{$prefix}-h, height, px, 100, 300, 50);
+	
+	@include classmap(align-items, $gosp-align-items, $prefix);
+	@include classmap(display, $gosp-display, $prefix);
+	@include classmap(flex-direction, $gosp-flex-direction, $prefix);
+	@include classmap(flex-wrap, $gosp-flex-wrap, $prefix);
+	@include classmap(float, $gosp-float, $prefix);
+	@include classmap(justify-content, $gosp-justify-content, $prefix);
+	@include classmap(position, $gosp-position, $prefix);
+}

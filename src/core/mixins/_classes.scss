@@ -1,0 +1,27 @@
+@mixin class($prefix, $attr, $type, $start: 0, $end: 50, $gap: 5, $important: false) {
+	@for $i from ($start/$gap) through ($end/$gap){
+		$raw: $i * $gap;
+		$val: null;
+		
+		@if isDecimal($raw){
+			$val: $raw * 100;
+		}
+		@else{	
+			$val: if(isDecimal($gap), $raw * 100, $raw);
+		}
+
+		$value: unquote($raw + $type);
+		
+		.#{$prefix + $val}{
+			#{$attr}: if($important, $value !important, $value);
+		}	
+	}
+}
+
+@mixin classmap($prop, $map, $prefix: null) {
+	@each $key, $val in $map {
+		.#{if($prefix, $prefix + '-' + $key, $key)} {
+			#{$prop}: $val;
+		}
+	}
+}

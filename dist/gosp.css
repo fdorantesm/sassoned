@@ -13,45 +13,27 @@
  * 
  *
  * @version: 1.0.20
- * @author: @fdorantesm
- * @website: https://gosp.dorant.es
- * @github: https://github.com/fdorantesm/gosp-css
+ * @author   Fernando Dorantes M. <fedormon@gmail.com>
+ * @description GOSP a framework for sass lets you make frontend easier and faster
+ * @website: https://gosp-sass-com
+ * @github: https://github.com/gosp-project/gosp-sass
  *
 */
-*, ::before, ::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-html {
-  min-height: 100%;
-}
-body {
-  margin: 0;
-}
-body.normalized {
-  margin: 0;
-  font-size: 16px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  min-height: inherit;
-}
-body.debug * {
-  border: 0.25px dashed #ccc;
-}
-body.debug *::before {
-  content: attr(class);
-  letter-spacing: normal;
-  display: table;
-  background: #ffff80;
-  width: 100%;
-  font-size: 0.75rem;
-  color: red;
-}
-.w100vw {
-  width: 100vw;
-}
-.fw {
-  width: 100%;
-}
+/*
+	$responsive: true;
+	$grid-type: flex;
+	$grid-fractionary: false;
+	$grid-columns: 12;
+	Breakpoints:
+		xs-max: 1 em(480px)
+		sm-min: 1 em(481px)
+		sm-max: 1 em(768px)
+		md-min: 1 em(769px)
+		md-max: 1 em(1280px)
+		lg-min: 1 em(1281px)
+		lg-max: 1 em(1600px)
+		xl-min: 1 em(1601px)
+*/
 .container,
 .container-fluid {
   margin-right: auto;
@@ -10062,6 +10044,40 @@ form.gosp-form button {
 form.gosp-form input, form.gosp-form select, form.gosp-form button {
   border: none;
   padding: 0;
+}
+*, ::before, ::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+html {
+  min-height: 100%;
+}
+body {
+  margin: 0;
+}
+body.normalized {
+  margin: 0;
+  font-size: 16px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  min-height: inherit;
+}
+body.debug * {
+  border: 0.25px dashed #ccc;
+}
+body.debug *::before {
+  content: attr(class);
+  letter-spacing: normal;
+  display: table;
+  background: #ffff80;
+  width: 100%;
+  font-size: 0.75rem;
+  color: red;
+}
+.w100vw {
+  width: 100vw;
+}
+.fw {
+  width: 100%;
 }
 .h0 {
   height: 0px;

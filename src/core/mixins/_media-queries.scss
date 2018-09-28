@@ -1,0 +1,109 @@
+@import "../util/functions";
+
+//
+// --------------------------------------------------------------------------
+//  Extra large
+// --------------------------------------------------------------------------
+// 
+//  Thinked to be used from SmartTVs up to biggest viewports.
+// 
+
+@mixin xl {
+	@include media(xl, true, false) {
+		@content;
+	}
+}
+
+//
+// --------------------------------------------------------------------------
+//  Large
+// --------------------------------------------------------------------------
+// 
+//  Thinked to be used in large monitors (+24')
+// 
+
+@mixin lg {
+	@include media(lg) {
+		@content;
+	}
+}
+
+@mixin lg-up {
+	@include media(lg, true, false) {
+		@content;
+	}
+}
+
+@mixin lg-down {
+	@include media(lg, false, true) {
+		@content;
+	}
+}
+
+//
+// --------------------------------------------------------------------------
+//  Medium
+// --------------------------------------------------------------------------
+// 
+//  This is the most used media query. You may only use md for desktop sizes.
+// 
+
+@mixin md {
+	@include media(md) {
+		@content;
+	}
+}
+
+@mixin md-up {
+	@include media(md, true, false) {
+		@content;
+	}
+}
+
+@mixin md-down {
+	@include media(md, false, true) {
+		@content;
+	}
+}
+
+//
+// --------------------------------------------------------------------------
+//  Small
+// --------------------------------------------------------------------------
+// 
+//  Thinked to be used with tablets or phablets.
+// 
+
+@mixin sm {
+	@include media(sm) {
+		@content;
+	}
+}
+
+@mixin sm-up {
+	@include media(sm, true, false) {
+		@content;
+	}
+}
+
+@mixin sm-down {
+	@include media(sm, false, true) {
+		@content;
+	}
+}
+
+//
+// --------------------------------------------------------------------------
+//  Extra small
+// --------------------------------------------------------------------------
+// 
+//  Thinked to be used with cellphones and very small gadgets like PSPs
+//  or iPods or whatever. As default all columns will take width
+//  100% from xs max width to down.
+// 
+
+@mixin xs {
+	@include media(xs, false, true) {
+		@content;
+	}
+}

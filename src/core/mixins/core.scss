@@ -1,24 +1,6 @@
-@import "functions";
-
-@mixin class($prefix, $attr, $type, $start: 0, $end: 50, $gap: 5, $important: false) {
-	@for $i from ($start/$gap) through ($end/$gap){
-		$raw: $i * $gap;
-		$val: null;
-		
-		@if isDecimal($raw){
-			$val: $raw * 100;
-		}
-		@else{	
-			$val: if(isDecimal($gap), $raw * 100, $raw);
-		}
-
-		$value: unquote($raw + $type);
-		
-		.#{$prefix + $val}{
-			#{$attr}: if($important, $value !important, $value);
-		}	
-	}
-}
+@import "../util/functions";
+@import "classes";
+@import "media-queries";
 
 @mixin media($size, $min: true, $max: true) {
 	@if $max and $min {
@@ -41,29 +23,7 @@
 	}
 }
 
-@mixin hide() {
-	display: none;
-}
-
-@mixin show() {
-	display: initial;
-}
-
-@mixin center-box($size, $side: null) {
-	.#{$size}#{if($side, '-' + $side, '')} {
-		&-center {
-			&-align {
-				margin: {
-					left: auto;
-					right: auto;
-				}
-			}
-		}
-	}
-}
-
 @mixin grid($size, $type: 'flex', $columns: $gosp-grid-columns, $fractionary: $gosp-grid-fractionary) {
-
 	@if isFlex() {	
 		.col {	
 			flex-grow: 1;
@@ -134,7 +94,6 @@
 				}
 			}
 		}
-
 	}
 			
 	
@@ -174,8 +133,6 @@
 									margin-left: $width;
 								}
 							}
-							
-
 						}
 						
 						@if isFlex() {
@@ -185,7 +142,7 @@
 									order: $k;
 								}
 							}
-						}						
+						}
 					}
 				}
 			}
@@ -207,64 +164,7 @@
 				right: percentage($item/$columns);
 			}
 		}
-		
 	}
 
 	@include classmap(text-align, $gosp-text-align, $size);
-}
-
-
-@mixin responsive-helpers($prefix: null) {
-	@each $key, $val in $gosp-margin {
-		@include class(#{$prefix + '-' + $key},  $val, px, 0, 50, 5);
-	}
-	
-	@each $key, $val in $gosp-padding {
-		@include class(#{$prefix + '-' + $key},  $val, px, 0, 50, 5);
-	}
-	
-	@include class(#{$prefix}-fsp, font-size, px, 8, 48, 2);
-	@include class(#{$prefix}-fsp, font-size, px, 50, 100, 10);
-
-	@include class(#{$prefix}-h, height, px, 0, 50, 10);
-	@include class(#{$prefix}-h, height, px, 100, 300, 50);
-	
-	@include classmap(align-items, $gosp-align-items, $prefix);
-	@include classmap(display, $gosp-display, $prefix);
-	@include classmap(flex-direction, $gosp-flex-direction, $prefix);
-	@include classmap(flex-wrap, $gosp-flex-wrap, $prefix);
-	@include classmap(float, $gosp-float, $prefix);
-	@include classmap(justify-content, $gosp-justify-content, $prefix);
-	@include classmap(position, $gosp-position, $prefix);
-
-}
-
-@mixin classmap($prop, $map, $prefix: null) {
-	@each $key, $val in $map {
-		.#{if($prefix, $prefix + '-' + $key, $key)} {
-			#{$prop}: $val;
-		}
-	}
-}
-
-@mixin list-columns($columns, $prefix: null) {
-	.#{if($prefix, $prefix + '-', '')}list-columns-#{$columns} {
-		columns: $columns;
-	}
-}
-
-@mixin list-helper($prefix: null){
-	.#{if($prefix, $prefix + '-', '')}list {
-		&-inline {
-			li {
-				display: inline-block;
-			}
-		}
-
-		&-block {
-			li {
-				display: block;
-			}
-		}
-	}
 }

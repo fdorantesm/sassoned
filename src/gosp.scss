@@ -1,33 +1,88 @@
-@import "util/config";
-@import "util/class-mapping";
-@import "util/functions";
+//
+// --------------------------------------------------------------------------
+//  Gosp header
+// --------------------------------------------------------------------------
+// 
+//  This will print a header into the non minified built file.
+// 
 
-/*
- *      ___          ___          ___          ___   
- *     /\__\        /\  \        /\__\        /\  \  
- *    /:/ _/_      /::\  \      /:/ _/_      /::\  \ 
- *   /:/ /\  \    /:/\:\  \    /:/ /\  \    /:/\:\__\
- *  /:/ /::\  \  /:/  \:\  \  /:/ /::\  \  /:/ /:/  /
- * /:/__\/\:\__\/:/__/ \:\__\/:/_/:/\:\__\/:/_/:/  / 
- * \:\  \ /:/  /\:\  \ /:/  /\:\/:/ /:/  /\:\/:/  /  
- *  \:\  /:/  /  \:\  /:/  /  \::/ /:/  /  \::/__/   
- *   \:\/:/  /    \:\/:/  /    \/_/:/  /    \:\  \   
- *    \::/  /      \::/  /       /:/  /      \:\__\  
- *     \/__/        \/__/        \/__/        \/__/  
- * 
- *
- * @version: #{$gosp-version}
- * @author: @fdorantesm
- * @website: https://gosp.dorant.es
- * @github: https://github.com/fdorantesm/gosp-css
- *
-*/
+@import "core/config/header";
 
-@import "util/media";
+//
+// --------------------------------------------------------------------------
+//  Core settings
+// --------------------------------------------------------------------------
+// 
+//  Please do not modify directly to avoid errors. Try overwriting properties
+//  on user settings files.
+// 
+
+@import "core/config/settings";
+
+//
+// --------------------------------------------------------------------------
+//  User settings
+// --------------------------------------------------------------------------
+// 
+//  These are the user settings, if you don't import or is empty GOSP will
+//  take default values from its core.
+// 
+
+@import "config/settings";
+
+//
+// --------------------------------------------------------------------------
+//  Functions
+// --------------------------------------------------------------------------
+// 
+//  These functions are using along the core to transform values or retrive
+//  values from maps.
+// 
+
+@import "core/util/functions";
+
+//
+// --------------------------------------------------------------------------
+//  Class maps
+// --------------------------------------------------------------------------
+// 
+//  These files include a map with properties with some values. Some
+//  properties includes all its possible values, anothers
+//  properties the most common used.
+// 
+
+@import "core/config/class-mapping";
+
+//
+// --------------------------------------------------------------------------
+//  Grid
+// --------------------------------------------------------------------------
+// 
+//  Uncomment to avoid grid built
+// 
+
+@import "core/layout/grid";
+
+//
+// --------------------------------------------------------------------------
+//  Media queries
+// --------------------------------------------------------------------------
+// 
+//  Comment below lines to avoid the @media queries will be build.
+// 
+
+@import "core/mixins/media-queries";
+@import "core/mixins/media-queries-helpers";
+
+//
+// --------------------------------------------------------------------------
+//  Helpers
+// --------------------------------------------------------------------------
+// 
+//  Add extra features to GOSP using OOCSS.
+// 
+
 @import "util/placeholders";
-@import "util/helpers/generals";
-@import "util/grid";
-@import "util/responsive-classes";
 @import "util/helpers/anchor";
 @import "util/helpers/background";
 @import "util/helpers/border";
@@ -39,6 +94,7 @@
 @import "util/helpers/float";
 @import "util/helpers/font";
 @import "util/helpers/form";
+@import "util/helpers/generals";
 @import "util/helpers/height";
 @import "util/helpers/list";
 @import "util/helpers/margin-and-padding";

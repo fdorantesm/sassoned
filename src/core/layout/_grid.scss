@@ -1,5 +1,4 @@
-@import "mixins";
-@import "functions";
+@import "../mixins/core";
 
 @if $gosp-grid-fractionary {
 	@warn "The fractionary grid is not optimized, it's experimental and it's not recommended to use yet.";
@@ -95,7 +94,7 @@
 @if $gosp-responsive {
 
 	@include grid(xs, $gosp-grid-type);
-	
+
 	@include xs {
 		.container {
 			max-width: em(460px);

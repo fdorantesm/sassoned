@@ -1,0 +1,199 @@
+//
+// --------------------------------------------------------------------------
+//  Version
+// --------------------------------------------------------------------------
+// 
+//  Please do not modify this version random if you contribute.
+//  If you contribute leave the current version, we'll
+//  append features to next releases.
+// 
+
+$gosp-version: "1.0.20"!default;
+
+//
+// --------------------------------------------------------------------------
+//  Debugs
+// --------------------------------------------------------------------------
+// 
+//  Prints a table to show some values on the built file.
+// 
+
+$gosp-debug: true!default;
+
+//
+// --------------------------------------------------------------------------
+//  Responsive
+// --------------------------------------------------------------------------
+// 
+//  Set to false if you don't want to build responsive media queries and
+//  responsive helpers. You can use this variable in your project.
+// 
+
+$gosp-responsive: true!default;
+
+//
+// --------------------------------------------------------------------------
+//  Grid system
+// --------------------------------------------------------------------------
+// 
+//  It's recommended you try to get updated with the new css features.
+//  Flexbox is now 94% supported. If you want to get legacy support
+//  use inline instead float.
+// 
+
+$gosp-grid-type: 'flex'!default;
+
+//
+// --------------------------------------------------------------------------
+//  Grid columns
+// --------------------------------------------------------------------------
+// 
+//  Usually the standard grid has 12 columns, you can add or remove columns
+//  but take in mind as you increase or decrease this param the grid
+//  system will build more or less code.
+// 
+
+$gosp-grid-columns: 12!default;
+
+//
+// --------------------------------------------------------------------------
+//  Fractionary grid
+// --------------------------------------------------------------------------
+// 
+//  If you hare the classic column notation, you would to use fractionary
+//  columns based in math fractions instead a number of columns.
+// 
+
+$gosp-grid-fractionary: false!default;
+
+//
+// --------------------------------------------------------------------------
+//  Column gutter
+// --------------------------------------------------------------------------
+// 
+//  This is the space between the column and its content. By default is 0
+//  because sometimes we need to cover full column dimensions.
+// 
+
+$gosp-grid-column-gutter: 0px!default;
+
+//
+// --------------------------------------------------------------------------
+//  Media queries
+// --------------------------------------------------------------------------
+// 
+//  We take 5 standard resolutions to make the grid, feel free to modify
+//  its params, you must be careful with blind media queries points.
+// 
+
+$gosp-xs-max: em(480px)!default;
+$gosp-sm-min: em(481px)!default;
+$gosp-sm-max: em(768px)!default;
+$gosp-md-min: em(769px)!default;
+$gosp-md-max: em(1280px)!default;
+$gosp-lg-min: em(1281px)!default;
+$gosp-lg-max: em(1600px)!default;
+$gosp-xl-min: em(1601px)!default;
+
+$gosp-breakpoints: (
+	xs: (
+		prefix: 'col-xs',
+		max: $gosp-xs-max
+	),
+	sm: (
+		prefix: 'col-sm',
+		min: $gosp-sm-min,
+		max: $gosp-sm-max
+	),
+	md: (
+		prefix: 'col-md',
+		min: $gosp-md-min,
+		max: $gosp-md-max
+	),
+	lg: (
+		prefix: 'col-lg',
+		min: $gosp-lg-min, 
+		max: $gosp-lg-max
+	),
+	xl: (
+		prefix: 'col-xl',
+		min: $gosp-xl-min
+	)
+);
+
+//
+// --------------------------------------------------------------------------
+//  List of media queries
+// --------------------------------------------------------------------------
+// 
+//  This is a list of all media queries mixins available to include in your
+//  project. Be careful if you modify these items, the grid and media
+//  helpers could be affected.
+// 
+
+$gosp-media-queries: xs, sm, sm-up, sm-down, md, md-up, md-down, lg, lg-up, lg-down, xl;
+
+//
+// --------------------------------------------------------------------------
+//  Font face families
+// --------------------------------------------------------------------------
+// 
+//  
+// 
+
+$gosp-font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$gosp-font-family-serif: Georgia, "Times New Roman", Times, serif;
+$gosp-font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace;
+$gosp-font-family-base: $gosp-font-family-sans-serif;
+
+//
+// --------------------------------------------------------------------------
+//  Font face sizes
+// --------------------------------------------------------------------------
+// 
+//  Sets the font size base to the 16px standard.
+// 
+
+$gosp-font-size-base: 16px;
+$gosp-font-size-large: ceil(($gosp-font-size-base * 1.25)); // ~18px
+$gosp-font-size-small: ceil(($gosp-font-size-base * 0.85)); // ~12px
+
+//
+// --------------------------------------------------------------------------
+//  Heading sizes
+// --------------------------------------------------------------------------
+// 
+//  Sets the heading font size to standard values based in 16px.
+// 
+
+$gosp-font-size-h1: floor(($gosp-font-size-base * 2.6)); // ~36px
+$gosp-font-size-h2: floor(($gosp-font-size-base * 2.15)); // ~30px
+$gosp-font-size-h3: ceil(($gosp-font-size-base * 1.7)); // ~24px
+$gosp-font-size-h4: ceil(($gosp-font-size-base * 1.25)); // ~18px
+$gosp-font-size-h5: $gosp-font-size-base;
+$gosp-font-size-h6: ceil(($gosp-font-size-base * 0.85)); // ~12px
+
+//
+// --------------------------------------------------------------------------
+//  Heading styles
+// --------------------------------------------------------------------------
+//  
+//  These styles resets the heading properties to a its standard in another
+//  another CSS frameworks.
+// 
+
+$gosp-headings-font-family: inherit;
+$gosp-headings-font-weight: 500;
+$gosp-headings-line-height: 1.1;
+$gosp-headings-color: inherit;
+
+//
+// --------------------------------------------------------------------------
+//  Line height
+// --------------------------------------------------------------------------
+// 
+//  Sets the line height base in the common text 20/14.
+// 
+
+$gosp-line-height-base: 1.428571429;
+$gosp-line-height-computed: floor(($gosp-font-size-base * $gosp-line-height-base));

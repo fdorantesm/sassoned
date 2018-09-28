@@ -1,4 +1,7 @@
-@import "mixins";
+@import "aux";
+@import "classes";
+@import "media-queries";
+@import "responsive";
 
 @include responsive-helpers(xs);
 @include center-box(xs);

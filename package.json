@@ -1,23 +1,22 @@
 {
-  "name": "gosp.css",
-  "version": "1.0.20",
-  "description": "A light weight powerful css library to make front-end fast",
-  "main": "gosp.js",
+  "name": "oocss",
+  "version": "1.0.0",
+  "description": "A oocss framework",
+  "main": "gulpfile.js",
   "scripts": {
     "start": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/fdorantesm/gosp.css.git"
+    "url": "https://github.com//fdorantesm/oocss.git"
   },
   "keywords": [
     "css",
     "object",
-    "oriented",
-    "grid"
+    "oriented"
   ],
-  "author": "fdorantesm <fedormon@gmail.com>",
+  "author": "fdorantesm",
   "license": "MIT",
   "devDependencies": {
     "gulp": "^3.9.1",
@@ -26,5 +25,8 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4"
+  },
+  "dependencies": {
+    "hoek": "^4.2.1"
   }
 }
